@@ -1,0 +1,85 @@
+Haengnam-eup Haengjeong-ri
+Hwaseong-si Hyangnam-myeon Haengjeong-ri
+Baebang-myeon Buksu-ri
+Chungnam Asan-si Baebang-eup Buksu-ri
+Gyeonggi-do Namyangju-si Jinjeop-eup Parya-ri
+Gyeonggi-do Namyangju-si Jinjeop-eup Parya-ri
+Namyangju-si Jinjeop-eup Parya-ri
+Namyangju-si Jinjeop-eup Parya-ri
+Jinjeop-eup Parya-ri
+Jinjeop-eup Parya-ri
+Gwangju-si Silchon-eup Manseon-ri
+Gwangju-si Silchon-myeon Manseon-ri
+Silchon-myeon Manseon-ri
+Sisilchon-myeon Manseon-ri
+Hwaseong-si Paltan-myeon Gujang-ri
+Bukjeju-gun Gujwa-eup Woljeong-ri
+Gyeonggi Yongin Jubuk-ri
+Ulsan Ulju-gun Beomseo Cheonsang-ri
+Ulsan-si Ulcheonsang-ri
+Gangwon-do Chuncheon-si Dongnae-myeon Hakgok-ri
+Gyeongnam Miryang-si Susan-ri
+Miryang-si Hanam-eup Susan-ri
+Yongin-si Pogok-myeon Samgye-ri
+Pogok-myeon Samgye-ri
+Bukjeju-gun Aewol-eup Sogil-ri
+Jinjeop-eup Jinbeol-ri
+Namyangju Jinjeop-eup Jinbeol-ri
+Namyangju-si Jinjeop-eup Jinbeol-ri
+Pyeongtaek-si Paengseong-eup Dongchang-ri
+Gyeongbuk Chilgok-gun Seokjeok-myeon Jung-ri
+Chilgok-gun Seokjeok-myeon Jung-ri
+Seokjeok-myeon Jung-ri
+-si Silchon-myeon Yeolmi-ri
+Silchon-myeon Yeolmi-ri
+Gwangju-si Silchon-eup Yeolmi-ri
+Gwangju-si gonjiam-eup Yeolmi-ri
+Busan Bugyangdeok
+Jeonju Wansan Handeul
+Jeonbuk Sansusong
+Deogyeon-dong Geumdang
+Seobaegun
+Daejeon Seobaegun
+Yangju-gun Yuyang
+Yangju-eup Yuyang
+Daejeon-si Dunsan
+Gyeonggi Icheon Anheung
+Siheung-si Jugyul-dong Saenggeum
+Jugyul-dong Saenggeum
+Dongjayang
+Jayang-dong Jayang
+Daejeon-dong Jayang
+Hyorim
+Sinhyeon-eup Junggok
+Ganseok Yaksan
+Gyeonggi Pocheon-gun Yeongpyeong
+Pocheon-gun Yeongpyeong
+Bitchan
+Gwangju Bukduam
+Gwangju-dong Gyerim
+Gyeonggi Pocheon-gun Gwanin
+Pocheon-gun Gwanin
+Sohol-eup Taebong
+Cheongwon-gun Galmal-eup Munhye
+Cheongwon-gun Galmal-eup Munhye
+Ulsan Jung Myeongjeong
+Gwangju Bukjungheung
+Bukjungheung
+Gyeongbuk An-dong
+Gyeongbuk An-dong Eun-dong
+Gyeongbuk Andong-si An-dong
+Wonsam Wonsam Duchangbungyo
+Jangmyeong Jeongeup-dong
+Jangmyeong-dong Jeongeup-dong
+Jeongeup-dong
+Jeongeup-si Jeongeup-dong
+Jeongeup-dong
+Jeongeup-dong Gukgyo
+Jeongeup-dong
+Jeonbuk Jeongeup-si Jeongeup-dong
+Jeonbuk Jeong-eup Jeongeup-dong
+Jeonbuk Jeongeup-dong
+Busan Namcheon
+Pocheon-gun Chukseok
+Gyeonggi Pocheon-gun Chukseok
+Jeonjunam

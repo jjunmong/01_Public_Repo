@@ -1,0 +1,3 @@
+my_column_list = nid, type, text, lcode, limit_date, complete_date, height_limit, weight_limit, time_id,road_work, result, request_date, poi_cat, poi_date, net_cat, net_date, map_cat, map_date, data_check, data_check, service_check, service_check, url, create_date, update_date
+full_column_list_for_admin = nid, type, text, lcode, limit_date, complete_date, height_limit, weight_limit, time_id,road_work, result, request_date, poi_cat, poi_date, net_cat, net_date, map_cat, map_date, data_check, service_check, url, create_date, update_date
+full_column_list_for_user = nid, type, text, lcode, limit_date, complete_date, height_limit, weight_limit, time_id,road_work, result, request_date, poi_cat, poi_date, net_cat, net_date, map_cat, map_date, url, create_date, update_date

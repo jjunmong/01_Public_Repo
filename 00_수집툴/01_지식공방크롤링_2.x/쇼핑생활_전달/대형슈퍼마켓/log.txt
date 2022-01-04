@@ -1,0 +1,12 @@
+pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=1&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+http://gssuper.gsretail.com/gssuper/ko/market-info/find-storelist?pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=1&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=2&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+http://gssuper.gsretail.com/gssuper/ko/market-info/find-storelist?pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=2&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=3&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+http://gssuper.gsretail.com/gssuper/ko/market-info/find-storelist?pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=3&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=4&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+http://gssuper.gsretail.com/gssuper/ko/market-info/find-storelist?pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=4&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=5&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+http://gssuper.gsretail.com/gssuper/ko/market-info/find-storelist?pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=5&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=6&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=
+http://gssuper.gsretail.com/gssuper/ko/market-info/find-storelist?pageSize=5&pagingNowIdx=&searchShopName=&totlPageNum=&pageNum=6&pagingCnt=&searchType=&searchGugun=&searchSido=&listCnt=5&stationFlag=

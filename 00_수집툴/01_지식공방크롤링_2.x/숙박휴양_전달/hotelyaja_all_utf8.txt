@@ -1,0 +1,169 @@
+##NAME|SUBNAME|TELNUM|ADDR|WEBSITE|FEAT@@호텔야자
+BROWN DOT|월곶점|0503-5052-1396|경기 시흥시 월곶동 1007-5|https://www.yanolja.com/motel/1000101746|주차가능
+NO.25|일산행신점|0503-5050-0506|경기 고양시 덕양구 행신동 945-2|https://www.yanolja.com/motel/1000105291|주차가능
+호텔야자|평택역점|0503-5052-0765|경기 평택시 평택동 294-5|https://www.yanolja.com/motel/1000099664|주차가능
+NO.25|이천터미널점|0503-5052-0892|경기 이천시 창전동 165-1|https://www.yanolja.com/motel/1000102852|주차가능
+NO.25|양주송추점|0503-5050-4383|경기 양주시 장흥면 부곡리 477-10|https://www.yanolja.com/motel/3020503|주차가능
+NO.25|안산점|0503-5051-9937|경기 안산시 단원구 고잔동 539-3|https://www.yanolja.com/motel/1000099770|주차가능
+NO.25|수원경기대점|0503-5052-0774|경기 수원시 장안구 연무동 14-8|https://www.yanolja.com/motel/1000100075|주차가능
+NO.25|송탄점|0503-5052-0630|경기 평택시 신장동 299-5|https://www.yanolja.com/motel/1000101685|주차가능
+NO.25|남양주북한강점|0503-5052-0838|경기 남양주시 화도읍 금남리 440-2|https://www.yanolja.com/motel/1000103668|주차가능
+NO.25|남양주별내점|0503-5051-9137|경기 남양주시 별내면 청학리 494-8|https://www.yanolja.com/motel/3018567|주차가능
+BROWN DOT|송탄/평택점|0503-5052-0543|경기 평택시 신장동 320-40|https://www.yanolja.com/motel/1000100113|주차가능
+호텔야자|하남시청점|031-792-0018|경기 하남시 신장동 524-13|https://www.yanolja.com/motel/3016074|주차가능
+얌모텔|이천설봉호수점|0503-5051-8410|경기 이천시 관고동 236-2|https://www.yanolja.com/motel/3016665|주차가능
+호텔야자|곤지암점|0503-5051-8343|경기 광주시 곤지암읍 곤지암리 220-4|https://www.yanolja.com/motel/3016066|주차가능
+얌모텔|신흥역점|0503-5051-7093|경기 성남시 수정구 신흥동 2530|http://www.yanolja.com/places/3013448|
+얌모텔|파주금촌점|0503-5051-5986|경기 파주시 금촌동 65-23|https://www.yanolja.com/places/3010541|주차가능
+호텔야자|이천터미널점|0503-5051-5793|경기 이천시 창전동 464 -7|https://www.yanolja.com/places/3009669|주차가능
+호텔야자|화정역점|0503-5050-3577|경기 고양시 덕양구 화정동 980-1|https://www.yanolja.com/places/3000350|
+호텔야자|산본역점|0503-5051-4822|경기 군포시 산본동 1142-1 &#40;8층&#41;|https://www.yanolja.com/places/1020338|주차가능
+호텔야자|위례점|0503-5051-5710|경기 성남시 수정구 창곡동 561-2 9층, 10층|https://www.yanolja.com/places/3009328|주차가능
+얌모텔|부천역점|0503-5051-5750|경기 부천시 심곡동 396-10|https://www.yanolja.com/places/3009476|주차가능
+얌모텔|의왕역점|0503-5051-5519|경기 의왕시 삼동 192-432|https://www.yanolja.com/places/3008378|주차가능
+호텔야자|용인터미널점|0503-5051-5304|경기 용인시 처인구 김량장동 104-1|https://www.yanolja.com/places/3002398|주차가능
+얌모텔|오산역점|0503-5051-5497|경기 오산시 원동 770-5|https://www.yanolja.com/places/3008269|
+호텔야자|수진역점|0503-5050-4075|경기 성남시 중원구 성남동 2223|http://www.yanolja.com/places/1020163|주차가능
+얌모텔|수원인계점|0503-5051-5184|경기 수원시 팔달구 인계동 952-22|https://www.yanolja.com/places/3002067|주차가능
+얌모텔|구리수택점|0503-5051-5006|경기 구리시 수택동 426-26|http://www.yanolja.com/places/3000355|주차가능
+호텔야자|시흥정왕점|0503-5051-4930|경기 시흥시 정왕동 1856-7|http://www.yanolja.com/places/3000110|주차가능
+호텔야자|모란역점|0503-5051-4481|경기 성남시 중원구 성남동 3266|https://www.yanolja.com/places/1019456|
+호텔야자|역곡역점|0503-5051-4331|경기 부천시 괴안동 113-11|https://www.yanolja.com/places/1019038|주차가능
+호텔야자|구리수택점|0503-5050-2018|경기 구리시 수택동 378-10|https://www.yanolja.com/places/27896|주차가능
+호텔야자|분당점|0503-5050-1731|경기 성남시 분당구 야탑동 355-3|https://www.yanolja.com/places/27227|주차가능
+호텔야자|부천역점|0503-5050-1703|경기 부천시 심곡동 140-3|https://www.yanolja.com/places/27183|주차가능
+얌모텔|산본역점|0503-5050-0268|경기 군포시 산본동 1129 &#40;6F~7F&#41;|https://www.yanolja.com/places/24110|
+호텔야자|안산중앙점|0503-5050-1320|경기 안산시 단원구 고잔동 539-16 4~5층|https://www.yanolja.com/places/26449|주차가능
+호텔야자|의정부역점|0503-5050-1024|경기 의정부시 의정부동 499-3|http://www.yanolja.com/places/25805|주차가능
+호텔야자|평촌역점|0503-5050-0912|경기 안양시 동안구 관양동 1603-3 5층|https://www.yanolja.com/places/25572|주차가능
+호텔야자|수원시청점|0503-5050-0348|경기 수원시 권선구 권선동 1017-14|https://www.yanolja.com/places/24314|주차가능
+호텔야자|안양1번가점|0503-5051-6780|경기 안양시 만안구 안양동 622-143|http://www.yanolja.com/places/3013475|주차가능
+호텔야자|수원역점|0503-5050-0773|경기 수원시 팔달구 매산로1가 43-8|http://www.yanolja.com/places/24217|
+얌모텔|동광주점&#40;각화동&#41;|0503-5052-0943|광주 북구 각화동 503-47|https://www.yanolja.com/motel/3020358|주차가능
+얌모텔|광주구시청점|0503-5051-4978|광주 동구 학동 95-7|https://www.yanolja.com/motel/3018429|주차가능
+호텔야자|광주역점|0503-5051-9280|광주 북구 신안동 120-13|https://www.yanolja.com/motel/3018430|주차가능
+얌모텔|광주금호점|0503-5051-6031|광주 서구 금호동 763-2|http://www.yanolja.com/places/3010714|주차가능
+호텔야자|광주하남점|0503-5051-5514|광주 광산구 우산동 1609-13|http://www.yanolja.com/places/3008361|주차가능
+호텔야자|광주충장로점|0503-5051-5172|광주 동구 불로동 27-5|http://www.yanolja.com/places/3002042|주차가능
+BROWN DOT|대구성서점|0503-5050-8052|대구 달서구 호산동 712-17|https://www.yanolja.com/motel/1000100557|주차가능
+BROWN DOT|대구동촌유원지점|0503-5050-8094|대구 동구 효목동 1015|https://www.yanolja.com/motel/3019213|주차가능
+호텔야자|대구성서점|0503-5052-0068|대구 달서구 호산동 711-1|https://www.yanolja.com/motel/1000100654|주차가능
+호텔야자|대구서문시장점|0503-5050-0875|대구 중구 시장북로 11-10|https://www.yanolja.com/motel/3015728|주차가능
+호텔야자|대구서부정류장점|0503-5051-4931|대구 달서구 성당동 220-12|https://www.yanolja.com/places/3000112|주차가능
+얌모텔|대전터미널점|0503-5051-8318|대전 동구 용전동 68-4|https://www.yanolja.com/motel/1009115|주차가능
+얌모텔|대전유성온천점|0503-5051-7194|대전 유성구 봉명동 440-12|https://www.yanolja.com/places/3013789|주차가능
+얌모텔|대전용문역점|0503-5051-6129|대전 서구 용문동 590-5|http://www.yanolja.com/places/3011049|주차가능
+호텔야자|KOTEL/대전터미널점|0503-5050-1817|대전 동구 용전동 78-14|https://www.yanolja.com/places/27378|주차가능
+BROWN DOT|사상괘법점|0503-5051-4937|부산 사상구 괘법동 272-26|https://www.yanolja.com/motel/3000144|주차가능
+NO.25|해운대점|0503-5050-9439|부산 해운대구 우동 637-7|https://www.yanolja.com/motel/3014619|주차가능
+NO.25|하단점|0503-5051-6796|부산 사하구 하단동 513-9|https://www.yanolja.com/motel/3013541|주차가능
+NO.25|초읍점|0503-5051-8740|부산 부산진구 초읍동 171-19|https://www.yanolja.com/motel/3017453|주차가능
+NO.25|용호점|0503-5051-6664|부산 남구 용호동 395-11|https://www.yanolja.com/motel/3012843|주차가능
+NO.25|서면역점|0503-5050-9117|부산 부산진구 부전동 260-12|https://www.yanolja.com/motel/3018210|주차가능
+NO.25|서면1번가점|0503-5050-9100|부산 부산진구 부전동 522-24|https://www.yanolja.com/motel/3018211|주차가능
+NO.25|사상모라점|051-301-2981|부산 사상구 모라동 724-3|https://www.yanolja.com/motel/3015075|주차가능
+NO.25|명지오션시티점/비즈니스|0503-5051-4810|부산 강서구 명지동 3237-6|https://www.yanolja.com/motel/1020322|주차가능
+NO.25|명지서부지청점|0503-5051-8433|부산 강서구 명지동 3602-2|https://www.yanolja.com/motel/3016703|주차가능
+NO.25|만덕점|0503-5051-8792|부산 북구 만덕동 73-14|https://www.yanolja.com/motel/3017776|주차가능
+NO.25|남포대청점|0503-5051-8422|부산 중구 대청동2가 7-1|https://www.yanolja.com/motel/3016684|주차가능
+NO.25|구서역점|0503-5050-1562|부산 금정구 구서동 85-29|https://www.yanolja.com/motel/26920|주차가능
+BROWN DOT|하단점|0503-5051-8733|부산 사하구 하단동 512-39|https://www.yanolja.com/motel/3017557|주차가능
+BROWN DOT|초읍점|0503-5051-6288|부산 부산진구 초읍동 291-5|https://www.yanolja.com/motel/3011654|주차가능
+BROWN DOT|정관점|0503-5052-0562|부산 기장군 정관읍 달산리 1049-5|https://www.yanolja.com/motel/1000102391|주차가능
+BROWN DOT|연산토곡점|0503-5051-4729|부산 연제구 연산동 417-23|https://www.yanolja.com/motel/1020116|주차가능
+BROWN DOT|엄궁점|0503-5050-1462|부산 사상구 엄궁동 385-3|https://www.yanolja.com/motel/1000103584|주차가능
+BROWN DOT|양정점|0503-5050-9083|부산 부산진구 양정동 394-25|https://www.yanolja.com/motel/3010272|주차가능
+BROWN DOT|신호점|0503-5051-6768|부산 강서구 신호동 317-2|https://www.yanolja.com/motel/3013405|주차가능
+BROWN DOT|수영점|051-755-3333|부산 수영구 수영동 450-5|https://www.yanolja.com/motel/3017446|주차가능
+BROWN DOT|송정점|0503-5051-6380|부산 해운대구 송정동 422-13|https://www.yanolja.com/motel/3011903|주차가능
+BROWN DOT|송도해수욕장점|0503-5051-6344|부산 서구 암남동 236-3, 4층~6층|https://www.yanolja.com/motel/3011820|주차가능
+BROWN DOT|센텀점|0503-5051-8964|부산 해운대구 재송동 1101-3|https://www.yanolja.com/motel/3017346|주차가능
+BROWN DOT|서면범천점|0503-5051-6855|부산 부산진구 범천동 858-52|https://www.yanolja.com/motel/3013748|주차가능
+BROWN DOT|서면1호점|0503-5051-5941|부산 부산진구 부전동 122-22|https://www.yanolja.com/motel/3010327|주차가능
+BROWN DOT|사상르네시떼점|0503-5050-0584|부산 사상구 괘법동 566-6|https://www.yanolja.com/motel/1000100680|주차가능
+BROWN DOT|부산진역점|0503-5051-7962|부산 동구 수정동 1-91|https://www.yanolja.com/motel/3015745|주차가능
+BROWN DOT|부산역점|0503-5051-6291|부산 동구 초량동 444-1|https://www.yanolja.com/motel/3011662|주차가능
+BROWN DOT|범일점|0503-5051-6195|부산 동구 범일동 62-741|https://www.yanolja.com/motel/1000100264|주차가능
+BROWN DOT|명지점|0503-5050-8837|부산 강서구 명지동 1526-3|https://www.yanolja.com/motel/3012445|주차가능
+BROWN DOT|덕천점|0503-5052-0134|부산 북구 덕천동 399-17|https://www.yanolja.com/motel/3018213|주차가능
+BROWN DOT|남포충무점|0503-5052-0357|부산 서구 충무동3가 1-166|https://www.yanolja.com/motel/1000100522|주차가능
+BROWN DOT|기장연화리점|051-723-2146|부산 기장군 기장읍 연화리 214-6|https://www.yanolja.com/motel/3018221|주차가능
+BROWN DOT|구서역점|0503-5051-6726|부산 금정구 구서동 85-7|https://www.yanolja.com/motel/3013260|주차가능
+BROWN DOT|광안리/민락점|0503-5051-6051|부산 수영구 민락동 181-154|https://www.yanolja.com/motel/3010782|주차가능
+HOUND|서면범천점|0503-5051-7678|부산 부산진구 범천동 858-48|https://www.yanolja.com/motel/3015279|주차가능
+HOUND|남포/프리미어|0503-5051-8478|부산 중구 부평동2가 51-3|https://www.yanolja.com/motel/3016801|주차가능
+HOUND|광안리|0503-5050-9322|부산 수영구 광안동 204-5|https://www.yanolja.com/motel/3007401|주차가능
+호텔야자|재송점|0503-5051-9393|부산 해운대구 재송동 1100-8|https://www.yanolja.com/motel/3018427|주차가능
+H AVENUE|광안리해변점|0503-5051-8895|부산 수영구 민락동 181-154|https://www.yanolja.com/motel/3017971|주차가능
+호텔야자|해운대점|0503-5050-2207|부산 해운대구 우동 762-52|https://www.yanolja.com/motel/3016442|주차가능
+호텔야자|광안리점|0503-5050-0867|부산 수영구 민락동 35-7|https://www.yanolja.com/motel/3016171?checkinDate=2018-12-26&amp;checkoutDate=2018-12-26&amp;list=searchResult&amp;position=1|주차가능
+얌모텔|하단점|0503-5051-5805|부산 사하구 하단동 515-28|https://www.yanolja.com/places/3009724|주차가능
+얌모텔|부산송도점|0503-5051-5820|부산 서구 암남동 351-2|https://www.yanolja.com/places/3009784|주차가능
+H AVENUE|광안리점|0503-5051-5525|부산 수영구 민락동 181-223|https://www.yanolja.com/places/3008403|주차가능
+얌모텔|해운대점|0503-5051-5124|부산 해운대구 우동 644-14|https://www.yanolja.com/places/3001884|주차가능
+호텔야자|사상터미널점|0503-5051-4974|부산 사상구 괘법동 270-12|https://www.yanolja.com/places/3000268|주차가능
+호텔야자|송정점|0503-5051-4495|부산 해운대구 송정동 203-22|https://www.yanolja.com/places/1019493|주차가능
+호텔야자|화명점|0503-5050-2099|부산 북구 화명동 2274-5|https://www.yanolja.com/places/28085|주차가능
+호텔야자|구서역점|0503-5050-1036|부산 금정구 구서동 85-12|https://www.yanolja.com/places/25829|주차가능
+호텔야자|동래점|0503-5050-0726|부산 동래구 온천동180-31|https://www.yanolja.com/places/25188|주차가능
+호텔야자|남포롯데점|0503-5050-0853|부산 중구 동광동 2가 11-10|https://www.yanolja.com/places/25461|주차가능
+호텔야자|서면1번가점|0503-5050-0641|부산 부산진구 부전동 535-26|http://www.yanolja.com/places/25006|주차가능
+호텔야자|서면롯데점|0503-5050-0602|부산 부산진구 부전동 516-37|https://www.yanolja.com/places/24912|주차가능
+BROWN DOT|종로점|0503-5052-1048|서울 종로구 낙원동 169-1|https://www.yanolja.com/motel/1000100054|주차가능
+NO.25|수유점|02-980-0417|서울 강북구 미아동 160-41|https://www.yanolja.com/motel/1000099374|주차가능
+NO.25|사당역점|0503-5050-0321|서울 관악구 남현동 602-16|https://www.yanolja.com/motel/1000099386|주차가능
+NO.25|방이점|0503-5051-9836|서울 송파구 방이동 36-15|https://www.yanolja.com/motel/1000099747|주차가능
+NO.25|김포공항점|0503-5051-4275|서울 강서구 외발산동 282-2|https://www.yanolja.com/motel/1000101674|주차가능
+BROWN DOT|성신여대점|0503-5050-0341|서울 성북구 동선동4가 85|https://www.yanolja.com/motel/1000100548|주차가능
+H AVENUE|건대점|0503-5051-6311|서울 광진구 화양동 24-15|https://www.yanolja.com/places/3011740|주차가능
+호텔야자|종로점|0503-5051-5011|서울 종로구 낙원동 86|https://www.yanolja.com/places/3000378|주차가능
+얌모텔|방이점|0503-5051-5132|서울 송파구 방이동 42|https://www.yanolja.com/places/3001896|주차가능
+H AVENUE|성신여대점|0503-5051-6123|서울 성북구 동선동1가 120-1|http://www.yanolja.com/places/3011024|주차가능
+H AVENUE|이대점|0503-5051-5640|서울 마포구 노고산동 1-74|https://www.yanolja.com/places/3008967|
+호텔야자|성신여대역점|0503-5051-5280|서울 성북구 동선동4가 20|https://www.yanolja.com/places/3002331|주차가능
+호텔야자|강남논현점|0503-5051-4517|서울 강남구 논현동 237-9|http://www.yanolja.com/places/1019547|주차가능
+호텔야자|강서구청점|0503-5050-2227|서울 강서구 화곡동 24-60|http://www.yanolja.com/places/100160|주차가능
+호텔야자|연신내역점|0503-5050-2263|서울 은평구 대조동 186-52|https://www.yanolja.com/places/100216|주차가능
+호텔야자|KOTEL/사당역점|0503-5050-2096|서울 관악구 남현동 1062-16|https://www.yanolja.com/places/28082|주차가능
+호텔야자|천호역점|0503-5050-2094|서울 강동구 천호동 454-57|https://www.yanolja.com/places/28080|
+얌모텔|구의역점|0503-5050-2179|서울 광진구 구의동 246-13|https://www.yanolja.com/places/100056|주차가능
+얌모텔|고려대점|0503-5050-1858|서울 동대문구 제기동 67-209|https://www.yanolja.com/places/27457|
+호텔야자|장한평역점|0503-5050-1536|서울 성동구 용답동 228-10|https://www.yanolja.com/places/26884|주차가능
+호텔야자|화곡점|0503-5050-1704|서울 강서구 화곡동 901-26|https://www.yanolja.com/places/27184|주차가능
+H AVENUE|역삼점|0503-5050-1306|서울 강남구 역삼동 678-14|https://www.yanolja.com/places/26429|주차가능
+호텔야자|건대점|0503-5050-0010|서울 성동구 송정동 20-10|http://www.yanolja.com/places/23218|주차가능
+호텔야자|홍대점|0503-5050-1219|서울 마포구 서교동 377-1|http://www.yanolja.com/places/26220|주차가능
+호텔야자|신림2호점|0503-5050-1127|서울 관악구 신림동 1422-8|https://www.yanolja.com/places/26021|주차가능
+호텔야자|경희대점|0503-5050-0902|서울 동대문구 휘경동 336|http://www.yanolja.com/places/25550|주차가능
+호텔야자|영등포점|0503-5050-0786|서울 영등포구 영등포동3가 2-3|https://www.yanolja.com/places/25316|
+호텔야자|신촌점|0503-5050-0147|서울 서대문구 창천동 29-59|https://www.yanolja.com/places/23732|
+호텔야자|수유미아점|0503-5050-0183|서울 강북구 미아동 160-26|https://www.yanolja.com/places/23873|주차가능
+호텔야자|고려대점|0503-5050-0608|서울 동대문구 제기동 1142-4|http://www.yanolja.com/places/24930|주차가능
+얌모텔|서래마을점|0503-5050-0623|서울 서초구 반포동 94-7|https://www.yanolja.com/places/24965|
+호텔야자|신림1호점|0503-5050-0514|서울 관악구 신림동 1423-30|https://www.yanolja.com/places/24709|주차가능
+NO.25|울산시청점&#40;달동&#41;|0503-5051-1092|울산 남구 달동 882-5|https://www.yanolja.com/motel/3018044|주차가능
+BROWN DOT|장생포점|0503-5052-0693|울산 남구 장생포동 87-7|https://www.yanolja.com/motel/3018222|주차가능
+BROWN DOT|울산정자해수욕장점|0503-5052-0331|울산 북구 산하동 311-15|https://www.yanolja.com/motel/3018224|주차가능
+BROWN DOT|울산신천점|0503-5052-0409|울산 북구 신천동 258-1|https://www.yanolja.com/motel/1000099760|주차가능
+BROWN DOT|울산삼산점|0503-5051-9061|울산 남구 삼산동 216-12|https://www.yanolja.com/motel/3018184|주차가능
+얌모텔|울산삼산점|0503-5051-4885|울산 남구 삼산동 1638-11|https://www.yanolja.com/places/1020520|주차가능
+호텔야자|울산달동점|0503-5050-1084|울산 남구 달동 1365-2|https://www.yanolja.com/places/25931|주차가능
+NO.25|인천용현점|0503-5050-0026|인천 미추홀구 용현동 628-40|https://www.yanolja.com/motel/1000104374|주차가능
+NO.25|인천신포점|032-761-1525|인천 중구 내동 139-1|https://www.yanolja.com/motel/1000095456|주차가능
+NO.25|송도점|032-834-8346|인천 연수구 옥련동 545-3|https://www.yanolja.com/motel/1000100312|주차가능
+얌모텔|동암역점|0503-5051-5380|인천 부평구 십정동 408-18|https://www.yanolja.com/places/3007071|주차가능
+얌모텔|부평문화의거리점|0503-5051-5934|인천 부평구 부평동 201-53|https://www.yanolja.com/places/3010295|
+호텔야자|동인천역점|0503-5051-5587|인천 중구 인현동 71|http://www.yanolja.com/places/3008744|주차가능
+얌모텔|부평역점|0503-5051-5303|인천 부평구 부평동 551-2|https://www.yanolja.com/places/3002395|주차가능
+호텔야자|인천송도점|0503-5051-4493|인천 연수구 옥련동 548-2|https://www.yanolja.com/places/1019488|주차가능
+호텔야자|부평역점|0503-5050-1151|인천 부평구 부평동 587-6|https://www.yanolja.com/places/26068|주차가능
+얌모텔|인천검단점|032-561-3595|인천 서구 마전동 979-6|https://www.yanolja.com/places/25500|
+BROWN DOT|천안/성정점|0503-5051-3602|충남 천안시 서북구 성정동 1410|https://www.yanolja.com/motel/1000104272|주차가능
+NO.25|천안역점|0503-5051-9735|충남 천안시 서북구 성정동 733-9|https://www.yanolja.com/motel/1017961|주차가능
+호텔야자|천안역점|0503-5051-5342|충남 천안시 서북구 성정동 746-5|https://www.yanolja.com/places/3006826|주차가능
+NO.25|청주점|0503-5052-1397|충북 청주시 흥덕구 비하동 781-1|https://www.yanolja.com/motel/1000102319|주차가능
+얌모텔|청주터미널점|0503-5051-8087|충북 청주시 흥덕구 가경동 1009|https://www.yanolja.com/motel/3015381|주차가능
+호텔야자|청주서문로점|0503-5051-7190|충북 청주시 상당구 서문동 178-11|https://www.yanolja.com/places/3013449|주차가능
+얌모텔|충북대점|0503-5051-5802|충북 청주시 흥덕구 복대동 871-3|https://www.yanolja.com/places/3009714|주차가능
+호텔야자|청주터미널점|0503-5050-1175|충북 청주시 흥덕구 가경동 1456-5|https://www.yanolja.com/places/26130|주차가능
+호텔야자|춘천후평점|0503-5051-4272|강원 춘천시 후평동 728-10|https://www.yanolja.com/places/1018881|주차가능

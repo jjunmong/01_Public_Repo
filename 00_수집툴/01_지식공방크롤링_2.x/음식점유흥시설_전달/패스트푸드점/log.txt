@@ -1,0 +1,1 @@
+http://www.burgerking.co.kr/api/store/searchmap/empty/?allhour=&delivery=&areacd=042&drive=&morning=

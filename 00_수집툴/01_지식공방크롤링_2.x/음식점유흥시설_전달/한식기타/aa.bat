@@ -1,0 +1,11 @@
+python ..\..\general_pp.py addal_utf8.txt ..\..\final\81026_°¨Åº¶±ººÀÌ.txt ansi noop
+python ..\..\general_pp.py bbanggoomteo_utf8.txt ..\..\final\80805_»§±ÀÅÍ.txt ansi noop
+python ..\..\general_pp.py gongcha_utf8.txt ..\..\final\80904_°øÂ÷.txt ansi noop
+python ..\..\general_pp.py nolboo_bossam_utf8.txt ..\..\final\81018_³îºÎº¸½Ó.txt ansi noop
+python ..\..\general_pp.py nolboo_budae_utf8.txt ..\..\final\81021_³îºÎºÎ´ëÂî°³.txt ansi noop
+python ..\..\general_pp.py pb_utf8.txt ..\..\final\80801_ÆÄ¸®¹Ù°Ô¶ß.txt ansi noop
+python ..\..\general_pp.py rotiboy_utf8.txt ..\..\final\80812_·ÎÆ¼º¸ÀÌ.txt ansi noop
+python ..\..\general_pp.py shillabakery_utf8.txt ..\..\final\80804_½Å¶ó¸í°ú.txt ansi noop
+python ..\..\general_pp.py sinsun_utf8.txt ..\..\final\81025_½Å¼±¼³³óÅÁ.txt ansi noop
+python ..\..\general_pp.py tlj_utf8.txt ..\..\final\80802_¶Ñ·¹Áê¸£.txt ansi noop
+python ..\..\general_pp.py wonandone_utf8.txt ..\..\final\81019_¿øÇÒ¸Ó´Ïº¸½Ó.txt ansi noop

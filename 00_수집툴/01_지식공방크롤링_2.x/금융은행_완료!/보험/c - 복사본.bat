@@ -1,0 +1,1 @@
+python ³óÇù»ý¸í.py >> log.txt

@@ -1,0 +1,85 @@
+Gangwon Yeongwol-gun Hadong-myeon
+Hadong-myeon
+Yeongwol-gun Gimsatgat-myeon
+Nakcheon-ri Ahopgunmaeul
+Nakcheon-ri Ahopgut Uijamaeul
+Nakcheon Ahopgunmaeul
+Jeju-si Hangyeong-myeon Ahopgunmaeul
+Jeju Ahopgunmaeul
+Hangyeong-myeon Ahopgunmaeul
+Ioesu Gamseongmaeul
+Hwacheon-gun Damok-ri Gamseongmaeul
+Damok-ri Gamseongmaeul
+Jinhae-si Yeojwa-dong
+Gyeongnam Jinhae-si Yeojwa-dong
+Buksam-myeon
+Chilgok-gun Buksam-myeon
+Gangseo-gu Daejeoil-dong
+Gangseo-gu Daejeo1-dong
+Daejeoil-dong
+Busan Gangseo-gu Daejeo1-dong
+Busan Daejeo1-dong
+Busan-si Gangseo-gu Daejeo1-dong
+Jeollanam-do Gwangju Sinan-dong
+Chungnam Dangjin Sunseong-myeon
+Gyeongnam Hamyang-gun Anui-myeon
+Gyeongnam Hamyang Anui-myeon
+Hamyang Anui-myeon
+Hamyang-gun Anui-myeon
+Geumcheon-gu Siheungsam-dong
+Chungbuk Eumseong-gun Soi
+Chungbuk Soi
+Chungbuk Eumseong Soi
+Ungsang-eup Ungsang
+Gwangmyeong Sohail-dong
+Gwangmyeong-si Sohail-dong
+Gyeonggi-do Gwangmyeong Sohail-dong
+Gyeonggi-do Gwangmyeong-si Soha 1(il)-dong
+Gyeonggi Gwangmyeong-si Soha 1(il)-dong
+Yangju-gun Yangju-eup Mansong-ri
+Yangju-gun Yangju-eup Mansong-ri
+Yangju-gun Yangju-eup Mansong-ri
+Mansong-ri
+Yangju-eup Mansong-ri
+Yangju-eup Mansong-ri
+Yanggu-eup Yang-gu
+Jucheon-myeon Seopdarimaeul
+Yeongwol-gun Jucheon-myeon Seopdarimaeul
+Sinhyeon-eup Gyeryong
+Oncheon Ioesam
+Seonhak-dong Nageune-gil
+Goyang-si Deogyang-gu Jichuk-dong
+Gyeonggi Goyang-si Deogyang-gu Jichuk-dong
+Gyeonggi Yangju-gun Goam
+Yangju-gun Goam
+Hoecheon-eup Goam
+Hoecheon-eup Yuljeong-ri
+Gyeonggi-do Yangju-si Yuljeong-dong
+Gyeonggi-do Yangju Yuljeong-dong
+Gyeonggi Yangju-si Yuljeong-dong
+Yangju-gun Hoecheon-eup Yuljeong-ri
+Yangju-gun Hoecheon-eup Yuljeong-ri
+Yangju-si Yuljeong-dong
+Baekhak-myeon Nogok
+Pocheon-eup Eoryong-ri
+Pocheon-si Pocheon-eup Eoryong-ri
+Pocheon Eoryong-dong
+Jinhae-si Pungho-dong
+Gyeongnam Jinhae-si Pungho-dong
+Mirinae Pamseutei
+Pamseutei Mirinae
+Pamseutei Mirinae Seongjimaeul
+Bongcheon Je11-dong
+Miryang-si Samnangjin-eup
+Gyeongnam Miryang-si Samnangjin-eup
+Goryeong-eup
+Goryeong-gun Goryeong-eup
+Gyeongbuk Goryeong-gun Goryeong-eup
+Gyeongbuk Goryeong-eup
+Busan Jakjimaeul
+Gangseo-gu Daejeo2-dong Jakjimaeul
+Gangseo-gu Daejeoi-dong Jakjimaeul
+Gangseo-gu Jakjimaeul
+Daejeo2-dong Jakjimaeul
+Daejeoi-dong Jakjimaeul
+Yangju-gun Hoecheon-eup Hoejeong-ri

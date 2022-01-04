@@ -1,0 +1,752 @@
+##NAME|SUBNAME|TELNUM|NEWADDR|HOMEPAGE@@도서관
+강북문화정보도서관|||서울특별시 강북구 오현로 145|http://www.gangbuklib.seoul.kr/
+강서구립/가양도서관|||서울특별시 강서구 양천로61길 101(가양동)|http://lib.gangseo.seoul.kr/
+강서구립/곰달래도서관|||서울특별시 강서구 강서로5길 50|http://lib.gangseo.seoul.kr/index.jsp
+강서구립꿈꾸는어린이도서관|||서울특별시 강서구 공항대로 615|http://lib.gangseo.seoul.kr/
+강서구립등빛도서관|||서울특별시 강서구 강서로 62길 48|http://lib.gangseo.seoul.kr/
+강서구립우장산숲속도서관|||서울특별시 강서구  우현로34|http://lib.gangseo.seoul.kr/
+강서구립푸른들청소년도서관|||서울특별시 강서구 강서로45 다길 71(화곡3동)|http://lib.gangseo.seoul.kr/index.jsp
+강서영어도서관|||서울특별시 강서구 곰달래로57가 길26|http://blog.naver.com/gangseoelib
+관악문화관도서관|||서울특별시 관악구 신림로3길 35(대학동 209-1)|http://www.gwanakcullib.seoul.kr
+광진정보도서관|||서울특별시 광진구 아차산로 78길 90(광장동)|http://www.gwangjinlib.seoul.kr/
+구립구산동도서관마을|||서울시 은평구 연서로 13길 29-23(구산동)|http://www.gsvlib.or.kr/
+금천구립/금나래도서관|||서울특별시 금천구 시흥대로 73길 70(시흥동 1020)|http://geumcheonlib.seoul.kr/doc_gc4/
+금천구립가산정보도서관|||서울특별시 금천구 가산로 5길 43(가산동 235-3)|http://geumcheonlib.seoul.kr/doc_gc2
+금천구립독산도서관|||서울특별시 금천구 독산로54길 114|http://www.geumcheonlib.seoul.kr/
+금천구립시흥도서관|||서울특별시 금천구 금하로 764(시흥동)|http://geumcheonlib.seoul.kr/index.do
+내를건너서숲으로도서관|||서울특별시 은평구 증산로 17길 50|http://www.nslib.or.kr
+노원어린이도서관|||서울특별시 노원구 동일로 204길 13|http://www.nowonilib.kr/
+노원정보도서관|||서울특별시 노원구 노원로34길 43 (상계동)|http://www.nowonlib.seoul.kr/
+대림정보문화도서관|||서울특별시 영등포구 도신로 27(대림동 608-2)|http://www.dllib.or.kr/index.jsp
+도곡정보문화도서관|||서울특별시 강남구 도곡로 18길57(도곡동)|http://dogoklib.gangnam.go.kr/
+도봉문화정보도서관|||서울특별시 도봉구 덕릉로 315|http://dobonglib.seoul.kr/
+도봉어린이문화정보도서관|||서울특별시 도봉구 노해로 69길 151(창동)|http://www.kidlib.dobong.kr/
+동대문구답십리도서관|||서울특별시 동대문구 서울시립대로4길 75|http://www.l4d.or.kr/homepage/s.index.php?libCho=MF
+동대문구정보화도서관|||서울특별시 동대문구 회기로10길 60 (청량리동)|http://www.L4D.or.kr
+동대문구휘경어린이도서관|||서울특별시 동대문구 망우로18가길 38(휘경동)|http://www.l4d.or.kr/homepage/s.index.php?libCho=MJ
+마포구립서강도서관|||서울특별시 마포구 독막로 165 (서강동주민센터)|http://sglib.mapo.go.kr
+문래정보문화도서관|||서울특별시 영등포구 문래로20길 49 (문래동3가 98)|http://www.mllib.or.kr
+상계문화정보도서관|||서울특별시 노원구 동일로243길 57 (상계동)|http://www.sglib.kr/
+서구어린이도서관|||대전광역시 서구 정림동로 25|http://www.seogu.go.kr/learming/childlib.index.do
+서울도서관|||서울특별시 중구 세종대로 110|http://lib.seoul.go.kr/
+서울특별시교육청강남도서관|||서울특별시 강남구 선릉로116길 45|http://gnlib.sen.go.kr
+서울특별시교육청강동도서관|||서울특별시 강동구 양재대로116길 57|http://gdlib.sen.go.kr/gdlib_index.jsp
+서울특별시교육청강서도서관|||서울특별시 강서구 등촌로51나길 29|http://gslib.sen.go.kr/gslib_index.jsp
+서울특별시교육청개포도서관|||서울특별시 강남구 선릉로4길 30|http://gplib.sen.go.kr
+서울특별시교육청고덕평생학습관|||서울특별시 강동구 고덕로 295|http://gdllc.sen.go.kr
+서울특별시교육청고척도서관|||서울특별시 구로구 고척로45길 31|http://gclib.sen.go.kr
+서울특별시교육청구로도서관|||서울특별시 구로구 공원로 15|http://grlib.sen.go.kr
+서울특별시교육청남산도서관|||서울특별시 용산구 후암동 30-84|http://nslib.sen.go.kr
+서울특별시교육청노원평생학습관|||서울특별시 노원구 중계3동 508|http://nwllc.sen.go.kr
+서울특별시교육청도봉도서관|||서울특별시 도봉구 삼양로 556|http://dblib.sen.go.kr
+서울특별시교육청동대문도서관|||서울특별시 동대문구 천호대로4길 22|http://ddmlib.sen.go.kr
+서울특별시교육청동작도서관|||서울특별시 동작구 노량진2동 310-150|http://djlib.sen.go.kr
+서울특별시교육청마포평생학습관|||서울특별시 마포구 서교동 341-1|http://mpllc.sen.go.kr
+서울특별시교육청마포평생학습관아현분관|||서울특별시 마포구 마포대로 224|http://ahyon.sen.go.kr
+서울특별시교육청서대문도서관|||서울특별시 서대문구 모래내로 412|http://sdmlib.sen.go.kr
+서울특별시교육청송파도서관|||서울특별시 송파구 동남로 263|http://splib.sen.go.kr
+서울특별시교육청양천도서관|||서울특별시 양천구 목동서로 113|http://yclib.sen.go.kr
+서울특별시교육청어린이도서관|||서울특별시 종로구 사직로9길 7|http://childlib.sen.go.kr/childlib/index.do
+서울특별시교육청영등포평생학습관|||서울특별시 영등포구 버드나루로15길 10|http://ydpllc.sen.go.kr
+서울특별시교육청용산도서관|||서울특별시 용산구 두텁바위로 160|http://yslib.sen.go.kr
+서울특별시교육청정독도서관|||서울특별시 종로구 북촌로5길 48(화동2번지)|http://jdlib.sen.go.kr
+서울특별시교육청종로도서관|||서울특별시 종로구 사직로9길 15-14(사직동 1-28번지)|http://jnlib.sen.go.kr
+서초구립반포도서관|||서울특별시 서초구 고무래로 34|http://banpolib.or.kr/
+선유정보문화도서관|||서울특별시 영등포구 선유로43가길 10-8(양평동3가 88-1)|http://www.sylib.or.kr/
+성동구립금호도서관|||서울특별시 성동구 난계로 20(금호1가 688)|https://www.sdlib.or.kr/
+성동구립도서관(구/성동문화정보센터)|||서울특별시 성동구 고산자로 10길9 (행당동 142-4)|https://www.sdlib.or.kr/
+성동구립무지개도서관|||서울시 성동구 도산자로 270 성동구청 3층|https://www.sdlib.or.kr/rainbow/
+성동구립성수도서관|||서울시 성동구 뚝섬로1길 43 성수문화복지회관 내 7층|http://www.sdlib.or.kr/ss
+성동구립용답도서관|||서울특별시 성동구 용답 중앙3길 10(용답동 95-1)|https://www.sdlib.or.kr/YD/
+성동구립청계도서관|||서울시 성동구 마장로 141|http://www.sdlib.or.kr/CG
+송파구립거마도서관(거마도서정보센터)|||서울특별시 송파구 거마로2길 19  거여제2동 주민센터|http://www.splib.or.kr/spglib/index.jsp
+송파글마루도서관|||서울 송파구 충민로 120|http://www.splib.or.kr/spjlib/index.jsp
+송파돌마리도서관|||서울시 송파구 백제고분로 37길 16 석촌동 주민센터 5층|http://www.splib.or.kr/spdlib/index.jsp
+송파위례도서관|||서울특별시 송파구 위례광장로 210, 4-5층|http://www.splib.or.kr/spwlib/index.jsp
+오류도서관|||서울특별시 구로구 경인로19길 29-6|http://oryulibrary.or.kr/
+은평구/상림마을작은도서관|||서울특별시 은평구 진관4로 48-25|http://www.eplib.or.kr/
+은평구립도서관|||서울특별시 은평구 통일로78가길 13-84|http://www.eplib.or.kr
+은평뉴타운도서관|||서울특별시 은평구 진관2로 111-51|http://www.enlib.or.kr/
+응암정보도서관|||서울특별시 은평구 가좌로 7길 15(응암동 730-3)|http://www.ealib.or.kr/
+이진아기념도서관|||서울특별시 서대문구 독립문공원길 80(현저동 101)|http://lib.sdm.or.kr/main/main.asp
+중곡문화체육센터도서관|||서울특별시 광진구 능동로 433|http://www.gwangjinlib.seoul.kr/
+중랑구립면목정보도서관|||서울특별시 중랑구 면목로 397|http://www.jungnanglib.seoul.kr/mmlib/index.php
+중랑구립정보도서관|||서울특별시 중랑구 신내로15길 197|http://www.jungnanglib.seoul.kr
+증산정보도서관|||서울특별시 은평구 증산로5길 6|http://www.jsplib.or.kr
+지샘터올림픽공원도서관|||서울특별시 송파구 올림픽로 424 스포츠비즈홀 1층|http://lib.kspo.or.kr/index.do
+한국점자도서관|||서울특별시 강동구 상암로4가길 32|http://infor.kbll.or.kr
+한국학생공공도서관|||서울특별시 중구 동호로27길 30|http://www.ksplibrary.co.kr/main/main.php
+구덕도서관|||부산광역시 서구 서대신동 3가 산2|http://www.guducklib.kr
+구포도서관|||부산광역시 북구 백양대로1016번다길 43|http://www.gupolib.or.kr/
+금곡도서관|||부산광역시 북구 효열로203번길 34(금곡동 92-2번지)|http://bglib.bsbukgu.go.kr/
+금정도서관|||부산광역시 금정구 금정도서관로 33|http://library.geumjeong.go.kr
+기장도서관|||부산광역시 기장군 차성동로126번길 13-5(동부리 444-2)|http://library.gijang.go.kr
+남구도서관|||부산광역시 남구 수영로 267번길 61|http://library.bsnamgu.go.kr
+다대도서관|||부산광역시 사하구 다대낙조2길 9|http://dadaelib.saha.go.kr/00main/index.php
+동구도서관|||부산광역시 동구 성북로 36번길 54|http://library.bsdonggu.go.kr/design10/new/index.php
+동래읍성도서관|||부산시 동래구 동래로 159번길 153(칠산동)|http://lib.dongnae.go.kr/
+명장도서관|||부산광역시 동래구 명장1동 611-4|http://www.mjlib.kr
+반송도서관|||부산광역시 해운대구 아랫반송로 22 (반송동)|http://www.bansonglib.or.kr
+부산강서도서관|||부산광역시 강서구 공항로811번길 10|http://library.bsgangseo.go.kr/gangseo/index.php
+부산북구디지털도서관|||부산광역시 북구 은행나무로 26 (만덕2동 843번지)|http://library.bsbukgu.go.kr
+부산수영구도서관|||부산광역시 수영구 남천서로 33 (남천1동 489-33번지)|http://library.suyeong.go.kr
+부산시민도서관|||부산광역시 부산진구 월드컵대로 462(초읍동 산51-1)|http://www.siminlib.go.kr/
+부산중앙도서관|||부산광역시 중구 망양로193번길 146(보수1가 산31-41)|http://joonganglib.busan.kr
+부산진구어린이청소년도서관|||부산광역시 부산진구 백양순환로 110번길 25 3층|http://cylib.busanjin.go.kr/
+부전도서관|||부산광역시 부산진구 동천로 79|http://www.bjl.go.kr
+사상도서관|||부산광역시 사상구 덕상로 72번길 9|http://www.sasang.go.kr/library/index.sasang
+사하도서관|||부산광역시 사하구 승학로 247|http://www.sahalib.kr
+서동도서관|||부산광역시 금정구 서부로 76번길 5|http://www.seodonglib.kr
+안락누리도서관|||부산광역시 동래구 명안로10번길 64|http://lib.dongnae.go.kr/allak/
+연산도서관|||부산광역시 연제구 고분로191번길 16(연산9동)|http://www.yeonsanlib.kr
+연제도서관|||부산광역시 연제구 황령산로 612|http://library.yeonje.go.kr/
+영도도서관|||부산광역시 영도구 함지로79번길 6(동삼동516-1)|http://library.yeongdo.go.kr/ydlib/
+정관도서관|||부산광역시 기장군 정관읍 정관중앙로 100|http://jglib.gijang.go.kr/
+해운대도서관|||부산광역시 해운대구 양운로 183|http://www.haeundaelib.or.kr
+해운대인문학도서관|||부산광역시 해운대구 반여로 132|http://www.haeundae.go.kr/inmunlib/
+화명도서관|||부산광역시 북구 화명대로12번길 59|http://hmlib.bsbukgu.go.kr/
+2・28민주운동기념회관|||대구광역시 중구 2.28길 9|http://www.228lib.or.kr/
+달서구립달서가족문화도서관|||대구광역시 달서구 조암남로 137(대천동)|http://www.dalseolib.kr/
+달서구립달서어린이도서관|||대구광역시 달서구 송현로 67 (상인동 806-1)|http://www.dalseolib.kr/
+달서구립도원도서관|||대구광역시 달서구 한실로 113(도원동 1438-3번지)|http://www.dalseolib.kr/
+달서구립본리도서관|||대구광역시 달서구  당산로 37-25(본리동)|http://www.dalseolib.kr/
+달서구립성서도서관|||대구광역시 달서구 선원남로 129(이곡동)|http://www.dalseolib.kr/
+달성군립도서관|||대구광역시 달성군 다사읍 달구벌대로174길 10-13(죽곡리 25-2)|http://www.dalseonglib.kr/
+대구/북구/구수산도서관|||대구광역시 북구 대천로 21|http://lib.buk.daegu.kr/library/
+대구2·28기념학생도서관|||대구광역시 동구 아양로41길 56|http://228lib.daegu.kr/main.do
+대구동구신천도서관|||대구광역시 동구 동부로6길 65|http://www.donggu-lib.kr
+대구시립/남부도서관|||대구광역시 남구 앞산순환로 512|http://www.nbl.or.kr
+대구시립/달성도서관|||대구광역시 달성군 현풍면 현풍동로19길 26|http://www.dsl.daegu.kr
+대구시립/동부도서관|||대구광역시 동구 신암북로 11길 54|http://www.dongbu-lib.daegu.kr
+대구시립/두류도서관|||대구광역시 달서구 두류3동 154|http://www.duryu-lib.daegu.kr
+대구시립/북부도서관|||대구광역시 북구 옥산로 75|http://www.bukbu-lib.daegu.kr
+대구시립/서부도서관|||대구광역시 서구 국채보상로49길 12|http://www.seobu-lib.daegu.kr/
+대구시립/수성도서관(구/효목도서관)|||대구광역시 수성구 만촌로 151|http://www.suseong-lib.daegu.kr/
+대구시립/중앙도서관|||대구광역시 중구 공평로10길 25|http://www.tglnet.or.kr
+대현도서관|||대구광역시 북구 대현남로 43|http://lib.buk.daegu.kr/library/
+수성구립/고산도서관|||대구광역시 수성구 달구벌대로650길 6(신매동)|http://library.suseong.kr/gosan
+수성구립/범어도서관|||대구광역시 수성구 달구벌대로 2451|http://library.suseong.kr/beomeo/
+수성구립/용학도서관|||대구광역시 수성구 지범로 41길 36번지 (범물동 1283-1번지)|http://library.suseong.kr/yonghak/
+안심도서관|||대구광역시 동구 금호강변로 360|http://www.donggu-lib.kr/
+태전도서관|||대구광역시 북구 영송로 36-16|http://lib.buk.daegu.kr
+강화군립도서관|||인천광역시 강화군 강화읍 북문길42번길 5|http://www.ghlib.net/
+계양도서관|||인천광역시 계양구 계양산로134번길 18|https://lib.ice.go.kr/gyeyang/index.do
+남동구립서창도서관|||인천광역시 남동구 독곡로 16번길 15(서창동588-1)|http://www.namdonglib.go.kr/sclib/index.jsp
+부개도서관|||인천광역시 부평구 부일로83번길 46|http://www.bppl.or.kr/usr/mav/MainView.do?libcd=1
+부평기적의도서관|||인천광역시 부평구 길주남로 166|http://www.bppl.or.kr/gj/
+부평도서관|||인천광역시 부평구 경원대로 1191|https://lib.ice.go.kr/bupyeong/index.do
+삼산도서관|||인천광역시 부평구 부평북로 445(삼산동)|http://www.bppl.or.kr/ss
+서구도서관|||인천광역시 서구 건지로 334번길 45|http://www.sgl.go.kr
+송림도서관|||인천광역시 동구 새천년로72(송림동)|http://songlimlib.icdonggu.go.kr/
+수봉도서관|||인천광역시 남구 경인로 218|http://www.imla.kr/sb/index.do
+연수도서관|||인천광역시 연수구 함박뫼로 152번길 96|http://www.yslib.go.kr
+영종도서관|||인천광역시 중구 영종대로 85|http://www.imla.kr/yj/index.do?scd=3
+영종하늘도서관|||인천광역시 중구 하늘중앙로 132|http://www.michuhollib.go.kr/hanul/index.do
+율목도서관|||인천광역시 중구 답동로24번길 17|http://www.ymlib.or.kr
+인천광역시북구도서관|||인천광역시 부평구 신트리로 21|https://lib.ice.go.kr/bukgu/index.do
+인천광역시평생학습관|||인천광역시 연수구 경원대로 73|http://www.ilec.go.kr
+인천미추홀도서관|||인천광역시 광역시 남동구 인주대로 776번길 53(구월동)|http://www.michuhollib.go.kr
+인천중앙도서관|||인천광역시 남동구 정각로 9|http://www.ijlib.or.kr/
+주안도서관|||인천광역시 남구 구월남로 27|https://lib.ice.go.kr/juan/index.do
+청라국제도서관|||인천광역시 서구 담지로 24|http://www.michuhollib.go.kr/gugje/index.do
+청라호수도서관|||인천광역시 서구 크리스탈로 59|http://www.michuhollib.go.kr/hosu/index.do
+청천도서관|||인천광역시 부평구 원길로 23|http://www.bppl.or.kr/usr/mav/MainView.do?libcd=6
+화도진도서관|||인천광역시 동구 화도진로 122|https://lib.ice.go.kr/hwadojin/index.do
+계림꿈나무도서관|||광주광역시 동구 경양로247번길 26|없음
+광산구립신가도서관|||광주광역시 광산구 신가로 40번길 24|http://lib.gwangsan.go.kr/main/
+광산구립장덕도서관|||광주광역시 광산구 풍영로 179|http://lib.gwangsan.go.kr/main/
+광주광역시남구청소년도서관|||광주광역시 남구 제석로 100(봉선동)|http://lib.namgu.gwangju.kr/main/
+광주광역시중앙도서관분관/석봉도서관|||광주광역시 북구 설죽로 315번길 8|http://lib.gen.go.kr/seokbong/
+광주남구문화정보도서관|||광주광역시 남구 봉선로 208|http://lib.namgu.gwangju.kr/
+광주남구푸른길도서관|||광주광역시 남구 금당로 140|http://lib.namgu.gwangju.kr/
+광주북구운암도서관|||광주광역시 북구 북문대로 118(운암동)|http://ilgoklib.bukgu.gwangju.kr/main/main_u.php
+광주북구일곡도서관|||광주광역시 북구 일곡로 55|http://ilgoklib.bukgu.gwangju.kr/main/main_a.php
+광주송정도서관|||광주광역시 광산구 송정공원로 8-13|http://songjung.gen.go.kr
+광주시립도서관/사직분관|||광주광역시 남구 제중로 56|http://www.citylib.gwangju.kr
+광주시립도서관/산수분관|||광주광역시 동구 경양로 355|http://www.citylib.gwangju.kr
+광주시립무등도서관|||광주광역시 북구 면앙로 130|http://citylib.gwangju.kr/
+광주중앙도서관|||광주광역시 동구 장동로 23-16(동명동)|http://jungang.gen.go.kr/
+광주첨단도서관|||광주광역시 광산구 임방울대로 673-12|http://lib.gwangsan.go.kr/main/
+광주학생교육문화회관|||광주광역시 서구 상무민주로 77|http://gecs.gen.go.kr
+광주학생독립운동기념회관|||광주광역시 서구 백일로30(화정동 512)|http://student.gen.go.kr
+금호평생교육관|||광주광역시 남구 중앙로 15|http://lib.gen.go.kr/geumho
+상록도서관|||광주광역시 서구 상무대로 1171번길 11|http://lib.seogu.gwangju.kr/
+서구공공도서관|||광주광역시 서구 마재로 3|http://www.ymcakwangju.or.kr
+서구어린이생태학습도서관|||광주광역시 서구 풍암공원로 8|http://lib.seogu.gwangju.kr/
+운남어린이도서관|||광주광역시 광산구 목련로 217번길 10|http://lib.gwangsan.go.kr/main/
+이야기꽃도서관|||광주광역시립 광산구 선운중앙로 67번길 6|http://lib.gwangsan.go.kr/main/
+가수원도서관|||대전광역시 서구 가수원로 91-11|http://www.gasuwonlib.or.kr
+가양도서관(구/대전동구문화정보관)|||대전광역시 동구 우암로277번길 72 (가양2동 22-4)|http://lib.donggu.go.kr/html/library/gayanglib/
+가오도서관|||대전광역시 동구 동구청로 147(가오동)|http://lib.donggu.go.kr/html/library/gaolib/
+갈마도서관|||대전광역시 서구 신갈마로 127번길 138|http://galmalib.or.kr
+관평도서관|||대전광역시 유성구 테크노4로 131|http://www.gplib.or.kr
+구암도서관|||대전광역시 유성구 유성대로 626번길 57|http://lib.yuseong.go.kr/?now_url=contents/mainProcess.php?simport=gulib
+구즉도서관|||대전광역시 유성구 와룡로 37번길 20|http://lib.yuseong.go.kr/
+노은도서관|||대전광역시 유성구 노은동로 234번길 34|http://lib.yuseong.go.kr/
+대전학생교육문화원|||대전광역시 중구 동서대로 1360|http://www.djsecc.or.kr
+둔산도서관(갈마도서관/분관)|||대전광역시 서구 청사로 263(둔산동)|http://www.dunsanlib.or.kr
+산성도서관(대전학생교육문화원/부설,/구/대전평생학습관)|||대전광역시 중구 산서로 62번길 53(사정동)|http://www.djsecc.or.kr/
+송촌평생학습도서관|||대전광역시 대덕구 송촌로 59|https://lib.daedeok.go.kr/main.jsp
+신탄진평생학습도서관|||대전광역시 대덕구 신탄진동로 64|http://stlib.daedeok.go.kr
+안산평생학습도서관|||대전광역시 대덕구 계족로 663번길 25|http://ansan.daedeok.go.kr
+용운도서관|||대전광역시 동구 새울로 68번길 23-23|http://lib.donggu.go.kr/html/library/yongunlib/
+원신흥도서관|||대전광역시 유성구 원신흥남로 59|http://lib.yuseong.go.kr/m/main/main.php
+유성도서관|||대전광역시 유성구 대덕대로 507-38|http://lib.yuseong.go.kr/contents/contents.php?pageCode=070301
+진잠도서관|||대전광역시 유성구 진잠로 160번길 19|http://lib.yuseong.go.kr/
+한밭도서관|||대전광역시 중구 서문로 10|http://hanbatlibrary.kr/
+도산도서관|||울산광역시 남구 번영로54번길 6 (야음동)|http://dosanlib.ulsannamgu.go.kr/
+신복도서관|||울산광역시 남구 신복로 72번길 18-13|http://book.ulsannamgu.go.kr
+약숫골도서관|||울산광역시 중구 평산4길 38|http://lib.junggu.ulsan.kr/
+옥현어린이도서관|||울산광역시 남구 옥현로 58번길 40|http://book.ulsannamgu.go.kr
+울산남부도서관|||울산광역시 남구 거마로13번길 6|http://www.usnl.or.kr
+울산도서관|||울산광역시 남구 꽃대나리로 140(여천동)|https://library.ulsan.go.kr/cmm/main/mainPage.do
+울산동부도서관|||울산광역시 동구 봉수로 505|http://www.usdl.or.kr/
+울산북구매곡도서관|||울산광역시 북구 매곡로 138-19(매곡동,795-35번지)|https://usbl.bukgu.ulsan.kr/
+울산북구중앙도서관|||울산광역시 북구 두부곡1길 9 (연암동)|https://usbl.bukgu.ulsan.kr/
+울산중부도서관|||울산광역시 중구 도서관길 60|http://www.usjl.or.kr
+울주도서관|||울산광역시 울주군 언양읍 어음리 238-2|http://www.usul.or.kr
+울주선바위도서관|||울산광역시 울주군 범서읍 점촌3길 40(구영리)|http://uljulib.ulju.ulsan.kr/
+울주옹기종기도서관|||울산광역시 울주군 온양읍 온양로 38-1|http://uljulib.ulju.ulsan.kr/
+고양시립원당도서관|||경기도 고양시 덕양구 호국로 790번길 49-9(성사동)|http://www.goyanglib.or.kr/www2/wondang
+가평군립중앙도서관|||경기도 가평군 가평읍 가화로 64|http://www.gaplib.or.kr
+경기과천교육도서관|||경기도 과천시 도서관길 36 (별양동 2번지)|http://www.kwalib.kr/
+경기광주교육도서관|||경기도 광주군 경안안길 58번길 3 (경안동 47-1번지)|http://www.gjlib.or.kr
+경기김포교육도서관|||경기도 김포시 봉화로 68|http://www.gimpolib.or.kr
+경기성남교육도서관|||경기도 성남시 수정구 공원로370번길 26 (신흥2동 2344)|http://www.snlib.or.kr
+경기여주가남교육도서관|||경기도 여주시 가남읍 태평로2길 28-7|http://www.yjlib.or.kr
+경기의정부교육도서관|||경기도 의정부시 체육로265-25(녹양동)|http://www.nylib.or.kr
+경기중앙교육도서관|||경기도 수원시 장안구 조원로 18(조원동 495번지)|http://www.gglib.or.kr/
+경기평생교육학습관|||경기도 수원시 권선구 권중로55(권선동)|http://www.gglec.go.kr
+경기평택교육도서관|||경기도 평택시 서정북로125번길 103|http://www.ptlib.or.kr
+경기포천교육도서관|||경기도 포천시 중앙로 92-6 (신읍동 33)|http://www.pclib.or.kr
+경기화성교육도서관|||경기도 화성시 향남읍 발안로 85-10|http://www.balib.or.kr
+고양시립/백석도서관|||경기도 고양시 일산동구 일산로 118(백석동 1231)|http://www.goyanglib.or.kr/www2/baekseok/
+고양시립/화정도서관|||경기도 고양시 덕양구 화정동 873|http://www.koyanglib.or.kr
+고양시립/화정어린이도서관|||경기도 고양시 덕양구 화정2동 945번지|http://www.koyanglib.or.kr
+고양시립가좌도서관|||경기도 고양시 일산서구 가좌3로 16|http://www.goyanglib.or.kr
+고양시립대화도서관|||경기도 고양시 일산서구 일산로 689(대화동)|http://www.koyanglib.or.kr/www2/dae/
+고양시립덕이도서관|||경기도 고양시 일산서구 하이파크로 128(덕이동 1533)|http://www.goyanglib.or.kr/center/main/index.asp
+고양시립마두도서관|||경기도 고양시 일산동구 일산로 355(마두동)|http://www.koyanglib.or.kr
+고양시립삼송도서관|||경기도 고양시 덕양구 덕수천1로 73(삼송동)|http://www.goyanglib.or.kr/sam/main/index.asp
+고양시립식사도서관|||경기도 일산동구 위시티2로 43-6(식사동)|http://www.goyanglib.or.kr/center/main/index.asp
+고양시립신원도서관|||경기도 고양시 덕양구 신원2로 24|http://www.goyanglib.or.kr/center/main/index.asp
+고양시립아람누리도서관|||경기도 고양시 일산동구 중앙로 1286(마두동)|http://www.goyanglib.or.kr
+고양시립주엽어린이도서관|||경기도 고양시 일산서구 주엽로 104(주엽동)|http://www.goyanglib.or.kr
+고양시립풍동도서관|||경기도 고양시 일산동구 숲속마을로 108(풍동)|http://www.goyanglib.or.kr/www2/pung/
+고양시립한뫼도서관|||경기도 고양시 일산서구 탄중로 125(일산동 1558)|http://www.goyanglib.or.kr/www2/han/
+고양시립행신도서관|||경기도 고양시 덕양구 행당로33번길 25-6|http://www.goyanglib.or.kr/center/main/index.asp
+고양시립행신어린이도서관|||경기도 고양시 덕양구 소원로181번길 42(행신동 804)|http://www.goyanglib.or.kr/center/main/index.asp
+고촌도서관|||경기도 김포시 고촌읍 장차로 14|http://www.gimpo.go.kr/lib/main.do
+과천시문원도서관|||경기도 과천시 문원로 104(문원동)|http://munwon.gclib.go.kr/MW/
+과천시정보과학도서관|||경기도 과천시 갈현동 677|http://www.gclib.go.kr/
+광교홍재도서관|||경기도 수원시 영통구 대학로 88(이의동)|http://gh.suwonlib.go.kr/
+광명시소하도서관|||경기도 광명시 소하일로 7|http://www.gmlib.or.kr/gmlibIntro.do
+광명시중앙도서관|||경기도 광명시 원광명안로 48|http://www.gmlib.or.kr/gmlibIntro.do
+광명시철산도서관|||경기도 광명시 철산로 56|http://www.gmlib.or.kr/CheolsanMain.do
+광명시하안도서관|||경기도 광명시 철망산로 46(하안2동)|http://www.gmlib.or.kr/gmlibIntro.do
+교하도서관|||경기도 파주시 교하읍 숲속노을로 256|http://www.gyohalib.or.kr/
+군포시산본도서관|||경기도 군포시 광정로 96(산본동 1122)|http://gunpolib.or.kr
+군포시중앙도서관|||경기도 군포시 수리산로 79|http://www.gunpolib.or.kr
+김포시중봉도서관|||경기도 김포시 봉화로 130번길 26|http://lib.gimpo.go.kr
+남양주시도농도서관|||경기도 남양주시 경춘로 409(도농동 산53-1)|http://lib.nyj.go.kr
+남양주시별내도서관|||경기도 남양주시 별내면 청학리 416|http://www.nyj.go.kr/lib/s14_blib/staff.jsp
+남양주시오남도서관|||경기도 남양주시 오남읍 양지로 240번길 12|http://lib.nyj.go.kr/onam/
+남양주시와부도서관|||경기도 남양주시 와부읍 월문천로 43|http://www.nyj.go.kr
+남양주시진건도서관|||경기도 남양주시 진건읍 진건오남로 41-25|http://lib.nyj.go.kr
+남양주시진접도서관|||경기도 남양주시 진접읍 금강로 1554-11|http://lib.nyj.go.kr/jinjeop/
+남양주시진접푸른숲도서관|||경기도 남양주시 진접읍 해밀예당2로 35|http://lib.nyj.go.kr/jinjeopgw/
+남양주시퇴계원도서관|||경기도 남양주시 퇴계원면 도제원로 12|http://lib.nyj.go.kr/toegyewon/index.jsp
+남양주시평내도서관|||경기도 남양주시 의안로 134|http://lib.nyj.go.kr/pynae/
+남양주시호평도서관|||경기도 남양주시 천마산로67|http://lib.nyj.go.kr/hp/index.jsp
+남양주시화도도서관|||경기도 남양주시 화도읍 수레로1260번길 33|http://lib.nyj.go.kr
+논골작은도서관|||경기도 성남시 수정구 논골로23번길 2|없음
+다원이음터도서관|||경기도 화성시 동탄순환대로 754-14(영천동)|http://www.hscitylib.or.kr
+동두천꿈나무정보도서관|||경기도 동두천시 지행로 38|http://lib.ddc.go.kr/
+동두천시립도서관|||경기도 동두천시 상패로 60|http://www.ddclib.net
+동탄복합문화센터도서관|||경기도 화성시 노작로 134|http://www.hdmc.or.kr/
+별빛도서관|||경기도 남양주시 별내중앙로 102(별내동)|http://lib.nyj.go.kr/bbit/
+부곡도서관|||경기도 안산시 상록구 성호로 333 (부곡동 709-2)|http://lib.iansan.net/main.asp?sitekey=8
+부천시립꿈빛도서관|||경기도 부천시 신흥로275번길 19|http://www.bcl.go.kr/site/main/index001
+부천시립꿈여울도서관|||경기도 부천시 오정구 까치로 103(작동)|http://kkumyeoul.bcl.go.kr/
+부천시립도당도서관|||경기도 부천시 부천로 360|http://www.bcl.go.kr/
+부천시립동화도서관|||경기도 부천시 장말로 104|www.bcl.go.kr
+부천시립북부도서관|||경기도 부천시 삼작로301번길 5|http://www.bcl.go.kr/site/main/index001
+부천시립상동도서관|||경기도 부천시 원미구 상이로 12|http://sangdong.bcl.go.kr/
+부천시립송내도서관|||경기도 부천시 소사구 경인로92번길 33(송내동)|http://www.bcl.go.kr
+부천시립심곡도서관|||경기도 부천시 성무로 24 (심곡본동)|http://www.bcl.go.kr/site/main/index001
+부천시립오정도서관|||경기도 부천시 성오로 172 오정어울마당|없음
+부천시립원미도서관|||경기도 부천시 소사로 456|http://www.bcl.go.kr
+부천시립책마루/분관|||경기도 부천시 심중로 121|http://www.bcl.go.kr
+부천시립한울빛도서관|||경기도 부천시 소사로 107|http://hanwoolbit.bcl.go.kr/
+서현도서관|||성남시 분당구 중앙공원로 77|https://www.snlib.go.kr
+성남시구미도서관|||경기도 성남시 분당구 미금일로 105(구미동 16번지)|http://gm.snlib.net
+성남시분당도서관|||경기도 성남시 분당구 불정로 110|http://bd.snlib.net
+성남시수정도서관|||경기도 성남시 수정구 수정로332번길 32|http://sj.snlib.net
+성남시중앙도서관|||경기도 성남시 분당구 판교로 546(야탑동)|http://ct.snlib.net/snct/main/index.asp
+성남시중원도서관|||경기도 성남시 중원구 원터로17번길 46|http://jw.snlib.net
+성남시중원어린이도서관|||경기도 성남시 중원구 산성대로 408번길 42|http://cjw.snlib.net/
+성남시판교도서관|||경기도 성남시 운중로225번길 37(판교동 553)|http://pg.snlib.net/
+성남시판교어린이도서관|||경기도 성남시 분당구 판교익로75(백현동)|http://cpg.snlib.go.kr/index.do
+세종도서관|||경기도 여주군 여주읍 영릉로 125|http://www.yjlib.go.kr/egovMain.do
+수원시광교푸른숲도서관|||경기도 수원시 영통구 광교호수로 131|http://www.suwonlib.go.kr/gps
+수원시대추골도서관|||경기도 수원시 장안구 수일로 164(조원동)|http://www.suwonlib.go.kr/dcg/
+수원시매여울도서관|||경기도 수원시 영통로 효원로 415|http://www.suwonlib.go.kr/myu
+수원시버드내도서관|||경기도 수원시 권선구 세권로102번길|http://bdn.suwonlib.go.kr
+수원시북수원도서관|||경기도 수원시 장안구 만석로 65|http://www.suwonlib.go.kr/buk/index.asp
+수원시서수원도서관|||경기도 수원시 권선구 탑동로57번길 35 (탑동)|http://www.suwonlib.go.kr/seo/
+수원시선경도서관|||경기도 수원시 팔달구 신풍로 23길68|http://sk.suwonlib.go.kr
+수원시영통도서관|||경기도 수원시 영통구 청명로|http://www.suwonlib.go.kr/yt
+수원시일월도서관|||경기도 수원시 장안구 일월천로 77 (천천동)|http://www.suwonlib.go.kr/iw/index.asp
+수원시중앙도서관|||경기도 수원시 팔달구 팔달산로 318 (교동)|http://suwonlib.go.kr/ct/
+수원시창룡도서관|||경기도 수원시 팔달구 월드컵로 381번길 36|http://www.suwonlib.go.kr/cy/
+수원시태장마루도서관|||경기도 수원시 영통구 태장로 46|http://www.suwonlib.go.kr/tm
+수원시한림도서관|||경기도 수원시 권선구 동수원로 25번길 32-52|http://www.suwonlib.go.kr/hl/
+수원시화서다산도서관|||경기도 수원시 팔달구 화양로68번길 7-35 (화서동)|http://www.suwonlib.go.kr/hd
+슬기샘어린이도서관|||경기도 수원시 장안구 송죽동 417-23번지|http://skid.suwonlib.go.kr/
+시흥시군자도서관|||경기도 시흥시 군자로 499|http://www.shcitylib.or.kr
+시흥시능곡도서관|||경기도 시흥시 능곡중앙로 85|http://www.shcitylib.or.kr/index.ax
+시흥시대야도서관|||경기도 시흥시 대야동 571-3|http://www.shcitylib.or.kr
+시흥시대야어린이도서관|||경기도 시흥시 비둘기공원로 25(시흥시 대야동 562-4)|http://www.shcitylib.or.kr
+시흥시매화도서관|||경기도 시흥시 매화로20|https://lib.siheung.go.kr/index.ax
+시흥시신천도서관|||경기도 시흥시 신천로 89-18|https://lib.siheung.go.kr/index.ax
+시흥시월곶도서관|||경기도 시흥시 월곶해안로 161번길 7|https://lib.siheung.go.kr/index.ax
+시흥시장곡도서관|||경기도 시흥시 인선길 52(장곡문화체육센터 내)|http://lib.siheung.go.kr/
+시흥시정왕어린이도서관|||경기도 시흥시 정왕시장길 45|http://www.shcitylib.or.kr
+시흥시중앙도서관|||경기도 시흥시 정왕동 1845-2|http://www.shcitylib.or.kr
+안산미디어라이브러리|||경기도 안산시 단원구 광덕1로 198(고잔동 782-1)|https://lib.iansan.net/main.do?sitekey=31
+안산시/선부도서관|||경기도 안산시 단원구 선부로100|https://lib.iansan.net/
+안산시감골도서관|||경기도 안산시 상록구 감골공원안길 16-1(사동 산81-3)|https://lib.iansan.net/main.do
+안산시관산도서관|||경기도 안산시 단원구 관산길 29 (원곡동)|https://lib.iansan.net/main.do?sitekey=2
+안산시단원어린이도서관|||경기도 안산시 단원구 화정로 30(초지동667-3)|https://lib.iansan.net/main.do
+안산시대부도서관|||경기도 안산시 단원구 대남로 30|https://lib.iansan.net/main.do?sitekey=30
+안산시본오도서관|||경기도 안산시 상록구 각골로 49(본오동)|http://lib.iansan.net/main.asp?sitekey=24
+안산시상록어린이도서관|||경기도 안산시 상록구 구룡체육관로 45(이동 산70-1)|https://lib.iansan.net/main.do
+안산시성포도서관|||경기도 안산시 상록구 충장로 528|http://lib.iansan.net
+안산시수암도서관|||경기도 안산시 상록구 원당골1길 23-3|https://lib.iansan.net/main.do
+안산시중앙도서관|||경기도 안산시 단원구 안산천남로 14 (고잔동)|http://lib.iansan.net
+안성시립공도도서관|||경기도 안성시 공도읍 공도5로 26|http://apl.go.kr/gongdo/info_s.asp
+안성시립보개도서관|||경기도 안성시 보개면 종합운동장로 205|http://www.apl.go.kr
+안성시립일죽도서관|||경기도 안성시 일죽면 금일로 433|http://www.apl.go.kr/illzuk/info_s.asp
+안성시립중앙도서관|||경기도 안성시 안성맞춤대로 1150|http://apl.go.kr/index.asp
+안성시립진사도서관|||경기도 안성시 공도읍 진사2길 70|http://www.apl.go.kr/jinsa/info_s.asp
+안양시립관양도서관|||경기도 안양시 동안구 동편로 124|http://anyanglib.or.kr/hermes/web.main.Main.ex?command=Main
+안양시립비산도서관|||경기도 안양시 동안구 관악대로 123호(비산동)|http://anyanglib.or.kr/hermes/web.main.Main.ex?command=Main
+안양시립삼덕도서관|||경기도 안양시 만안구 병목안로 58|http://anyanglib.or.kr/
+안양시만안도서관|||경기도 안양시 만안구 냉천로 51|http://anyanglib.or.kr/hermes/web.main.Main.ex?command=Main
+안양시박달도서관|||경기도 안양시 만안구 박달로 459|http://www.anyanglib.or.kr
+안양시벌말도서관|||경기도 안양시 동안구 흥안대로 434번길 19-27(평촌동)|http://anyanglib.or.kr/hermes/web.main.Main.ex?command=Main
+안양시석수도서관|||경기도 안양시 만안구 양화로217번길 34|http://www.anyanglib.or.kr
+안양시평촌도서관|||경기도 안양시 동안구 관평로 213|http://www.anyanglib.or.kr
+안양시호계도서관|||경기도 안양시 동안구 경수대로685번길 26|http://anyanglib.or.kr/hermes/web.main.Main.ex?command=Main
+안양어린이도서관|||경기도 안양시 동안구 동안로 66|http://child.anyanglib.or.kr/
+양곡도서관|||경기도 김포시 양촌읍 양곡4로 197번길 40|http://www.gimpo.go.kr/lib/main.do
+양주덕정도서관|||경기도 양주시 화합로1371번길 11|http://www.libyj.go.kr/hmLibMain.do
+양주시립꿈나무도서관|||경기도 양주시 백석읍 꿈나무로 199 (오산리 548-4)|http://www.libyj.go.kr/hmLibMain.do
+양주희망도서관|||경기도 양주시 삼숭로 38번길 78-47|http://www.libyj.go.kr/hmLibMain.do
+양평군립도서관|||경기도 양평군 양평읍 양근로 240-9|http://www.yplib.or.kr/
+여주도서관|||경기도 여주시 여양로 190-17|http://www.yjlib.go.kr/egovMain.do
+연천군중앙도서관|||경기도 연천군 전곡읍 전은길 9-26|http://lib.iyc21.net
+오산시중앙도서관|||경기도 오산시 운암로 87|http://ja.osanlibrary.go.kr
+의왕시글로벌도서관|||경기도 의왕시 보식골로 30-10|http://www.uwlib.or.kr/global/
+의왕시내손도서관|||경기도 의왕시 복지로 109(내손2동 849-2번지)|http://www.uwlib.or.kr
+의왕시중앙도서관|||경기도 의왕시 골우물길 10(고천동 159번지)|http://www.uwlib.or.kr
+의정부시정보도서관|||경기도 의정부시 의정로 41 (의정부동 326-7)|http://www.uilib.go.kr/information/jsp/homepage/uilib/information/main/Main_ko.jsp?menuid=null&websy
+이천시립도서관|||경기도 이천시 설봉로81번길 50|http://www.icheonlib.go.kr/
+이천시립어린이도서관|||경기도 이천시 중리동 187 종합복지타운 내|http://www.icheonlib.go.kr/child
+이천시립효양도서관|||경기도 이천시 부발읍 경충대로 2250번길 35|http://www.icheonlib.go.kr/hyoyang/
+이천시청미도서관|||경기도 이천시 장호원읍 장호원3리 371|http://icheonlib.go.kr
+인창도서관|||경기도 구리시 건원대로 34번길 90 (인창동)|http://www.gurilib.go.kr/
+장기도서관|||경기도 김포시 김포한강2로 42(장기동)|http://www.gimpo.go.kr
+통진도서관|||경기도 김포시 통진읍 조강로 132|http://www.gimpo.go.kr
+파주시립중앙도서관/문산분관|||경기도 파주시 문산읍 문산리 35-13(개포래길 62)|http://www.pajulib.or.kr
+파주시립중앙도서관/법원도서관|||경기도 파주시 법원읍 사임당로 947|http://www.pajulib.or.kr
+파주시중앙도서관|||경기도 파주시 금촌동 995(파주시 쇠재로 78)|http://www.uilib.net/
+평택시립도서관|||경기도 평택시 비전로 27 (비전동)|http://www.ptlib.net
+평택시립도서관/팽성분관|||경기도 평택시 팽성읍 안정로95번길 15-25|http://www.ptlib.net
+평택시립도서관안중분관|||경기도 평택시 안중읍 서동대로 1531(학천리 산86-1)|http://www.ptlib.net
+평택시립배다리도서관|||경기도 평택시 죽백6로 20|http://www.ptlib.go.kr
+평택시립장당도서관|||경기도 평택시 장당길 116(장당동)|http://www.ptlib.net/jdlib
+평택시립지산초록도서관|||경기도 평택시 지산동 1099-1|http://www.ptlib.go.kr/jslib/index.jsp
+풍무도서관|||경기도 김포시 풍무로 146번길 101|http://www.gimpo.go.kr/lib/main.do
+하남시나룰도서관|||경기도 하남시 덕풍북로 180(덕풍동 739)|http://www.hanamlib.go.kr
+하남시덕풍도서관|||경기도 하남시 역말로14 (덕충동)|https://www.hanamlib.go.kr/
+하남시신장도서관|||경기도 하남시 하남대로740(신장동)|http://www.hanamlib.go.kr/silib/
+한빛도서관|||경기도 파주시 와석순환로94(야당동)|http://www.pajulib.or.kr/hblib/
+한울도서관|||경기도 파주시 교하로 239|https://lib.paju.go.kr/hulib/index.do
+해솔도서관|||경기도 파주시 해솔로34|http://www.pajulib.or.kr/hslib/index.aspx
+호매실도서관|||경기도 수원시 권선구 칠보로169|http://hms.suwonlib.go.kr/
+화성시남양도서관|||경기도 화성시 대학길 27(남양동 1584)|http://www.hscitylib.or.kr
+화성시동탄중앙이음터도서관|||경기도 화성시 동탄대로 시범길 117|http://www.hscitylib.or.kr/iutlib/
+화성시립두빛나래도서관|||경기도 화성시 동탄숲속로 69-14|http://www.hscitylib.or.kr
+화성시립둥지나래어린이도서관|||경기 화성시 향남읍 행정리 490번지|http://hscitylib.or.kr
+화성시립봉담도서관|||경기도 화성시 봉담읍 상리 27-49번지|http://www.hscitylib.or.kr
+화성시립삼괴도서관|||경기 화성시 우정읍 쌍봉로 109-26|http://www.hscitylib.or.kr/
+화성시병점도서관|||경기도 화성시 병점3로(병점2동 823번지)|http://www.hscitylib.or.kr
+화성시송산도서관|||경기도 화성시 송산면 사강리 상일공원로 87|http://www.hscitylib.or.kr/sslib/index.jsp
+화성시정남도서관|||경기도 화성시 정남면 만년로 527(발산리 405-6)|http://www.hscitylib.or.kr/jnlib/index.jsp
+화성시진안도서관|||경기도 화성시 진안동 병점중앙로 229|http://www.hscitylib.or.kr/jalib/index.jsp
+화성시태안도서관|||경기도 화성시 용주로 22(태안읍 안녕리 20-1)|Http://www.hscitylib.or.kr
+(정선)사북도서관|||강원도 정선군 사북읍 파랑새길 33|http://www.sbl.or.kr/
+강릉교육문화관|||강원도 강릉시 노암동 351-2|http://lib.gwe.go.kr/kanglib/egovMain.do
+강릉시립도서관|||강원도 강릉시 강릉대로448(포남동 1295-1)|http://www.gnslib.or.kr/
+고성교육도서관|||강원도 고성군 거진읍 거탄진로29번길 7|http://lib.gwe.go.kr/gosung/egovMain.do
+고성군립간성도서관|||강원도 고성군 간성읍 상리 210-1|없음
+동해교육도서관|||강원도 동해시 천곡동 829|http://lib.gwe.go.kr/donglib/egovMain.do
+동해시립/발한도서관|||강원도 동해시 해안로 535|http://www.donghaelib.go.kr/
+동해시립/북삼도서관|||강원도 동해시 효자로 649|http://www.donghaelib.go.kr/
+둔내태성도서관|||강원도 횡성군 둔내면 둔방로 4번길 38|없음
+명주교육도서관|||강원도 강릉시 주문진읍 교항리 161|http://lib.gwe.go.kr/mjlib/egovMain.do
+문막교육도서관|||강원도 원주시 문막읍 문막리 233-1|http://lib.gwe.go.kr/munmaklib/egovMain.do
+삼척교육문화관|||강원도 삼척시 진주로 48-41|http://www.samleic.or.kr
+삼척도계도서관|||강원도 삼척시 도계읍 도계리 287-5|없음
+삼척원덕도서관|||강원도 삼척시 원덕읍 호산리 242|http://www.goyanglib.or.kr
+속초교육도서관|||강원도 속초시 교동 636-69|http://www.sokcholib.or.kr
+속초교육문화관|||강원도 속초시 금호동 488-2|http://www.library.or.kr
+양구교육도서관|||강원도 양구군 양구읍 정림리 2-2|http://www.yglib.go.kr
+양양교육도서관|||강원도 양양군 양양읍 군행리 13|http://lib.gwe.go.kr/yanglib/egovMain.do
+영월교육도서관|||강원도 영월군 영월읍 영월로 1914-7 (하송6리 318)|http://www.ywlib.or.kr
+원주교육문화관|||강원도 원주시 북원로 2312(단계동 산 11-7)|http://www.wonjulib.or.kr/
+원주시립도서관|||강원도 원주시 단계동 909|http://lib.wonju.go.kr
+인제교육도서관|||강원도 인제군 인제읍 인제로193번길 15-1|http://lib.gwe.go.kr/injelib/egovMain.do
+정선교육도서관|||강원도 정선군 정선읍 봉양4길 9|http://www.jslib.or.kr
+중천철학도서관|||강원도 원주시 남원로 105|없음
+철원갈말도서관|||강원도 철원군 갈말읍 지포리 85|http://cwgmlib.kr/
+철원교육도서관|||강원도 철원군 철원읍 금학로273번길 21-14|http://lib.gwe.go.kr/cwlib/egovMain.do
+철원김화도서관|||강원도 철원군 서면 와수리 1171-35|http://www.cwghlib.kr
+춘성교육도서관|||강원도 춘천시 신북읍 율문 5리 316|http://lib.gwe.go.kr/cslib/egovMain.do
+춘천교육문화관|||강원도 춘천시 중앙로3가 26-1|http://lib.gwe.go.kr/kleic/egovMain.do
+춘천시립도서관|||강원도 춘천시 삼천동 30|http://library.chuncheon.go.kr
+춘천시립청소년도서관|||강원도 춘천시 옛경춘로 830-24(삼천동)|https://library.chuncheon.go.kr/home.do
+태백/산소드림도서관|||강원도 태백시 장수길33|없음
+태백교육도서관|||강원도 태백시 황지동 211|http://www.tblib.or.kr/
+태백시립도서관|||강원도 태백시 장성동 99-36|http://www.tbmlib.or.kr/
+토성공공도서관|||강원도 고성군 토성면 천진리 145-1번지|없음
+평창교육도서관|||강원도 평창군 평창읍 하리 104-3|http://www.plib.go.kr/
+평창군립대관령도서관|||강원 평창군 대관령면 대관령로 83-1|http://lib.happy700.or.kr
+평창군립대화도서관|||강원도 평창군 대화면 남산2길 27|http://lib.happy700.or.kr
+평창군립봉평도서관|||강원도 평창군 봉평면 기풍4길 10|http://lib.happy700.or.kr
+평창군립진부도서관|||강원도 평창군 봉평면 석두로 12-8|http://lib.happy700.or.kr
+홍천교육도서관|||강원도 홍천군 홍천읍 신장대리 79-50|http://www.hclib.or.kr
+화천교육도서관|||강원도 화천군 화천읍 하리 76|http://www.hwcl.or.kr
+횡성교육도서관|||강원도 횡성군 횡성읍 읍하3리 176-1|http://lib.gwe.go.kr/hslib/egovMain.do
+횡성군립도서관|||강원도 횡성군 횡성읍 문예로 75 (문화체육공원 내 군립도서관)|http://lib.hsg.go.kr/
+괴산교육도서관|||충북 괴산군 괴산읍 읍내로12길 38|http://www.gsl.go.kr
+금왕교육도서관|||충북 음성군 응천서길27번길 33(금왕읍 무극리 4리 53-3)|http://www.kwlib.go.kr
+다누리도서관|||충북 단양군 단양읍 수변로 111|https://www.danuri.go.kr/lib/
+단양교육도서관|||충청북도 단양군 단양읍 상진12길 18|http://www.dylib.go.kr
+대소도서관|||충북 음성군 대소면 오태로 80-14|http://lib.eumseong.go.kr/html/kr/
+레인보우영동도서관|||충북 영동군 영동읍 계산로2길 25|https://www.rainbowlib.go.kr/rb/
+미원교육도서관|||충북 청주시 미원면 상당구 단재로 2494-1|http://www.cwlib.go.kr/
+보은교육도서관|||충북 보은군 보은읍 삼산로 56-10|http://www.boeunlib.or.kr
+영동교육도서관|||충북 영동군 영동읍 부용리 20-3|http://www.ydlib.go.kr
+옥천교육도서관|||충북 옥천군 옥천읍 관성로 3길(금구리 39-1)|http://oclib.go.kr
+옥천군평생학습원(옥천군민도서관)|||충북 옥천군 옥천읍 관성로4길 10|https://edulife.oc.go.kr/index.jsp
+음성교육도서관|||충북 음성군 음성읍 시장로126번길 29|http://www.uslib.go.kr/index.do
+제천기적의도서관|||충북 제천시 고암동 1134|http://www.kidslib.org
+제천시립도서관|||충북 제천시 내제로 318|http://www.jclib.or.kr
+제천학생회관|||충북 제천시 청전동 470|http://www.jcsh.go.kr
+중원교육도서관|||충북 충주시 주덕읍 창전길 221|http://www.jwlib.go.kr
+증평교육도서관|||충북 증평군 증평읍 광장로 154|http://www.jplib.go.kr
+진천교육도서관|||충북 진천군 진천읍 상산1길 11|http://www.jclib.go.kr
+진천군립광혜원도서관|||충북 진천군 광혜원면 광혜원리 화랑길 72|https://lib.jincheon.go.kr/main.php
+청주강내도서관|||충북 청주시 흥덕구 강내면 가로수로 568|http://library.cheongju.go.kr/lib-gn/index.do
+청주기적의도서관|||충북 청주시 서원구 구룡산로 356(수곡1동 97-2)|http://library.cheongju.go.kr/lib-ml/index.do
+청주상당도서관|||충북 청주시 상당구 대성로 195(수동)|http://library.cheongju.go.kr/
+청주서원도서관|||충북 청주시 분평로 35(분평동)|http://library.cheongju.go.kr/lib-sw/index.do
+청주시립도서관|||충북 청주시 상당구 용암로 55(용암동)|http://www.cjcil.com/
+청주신율봉어린이도서관|||충북 청주시 흥덕구 신율로 153번길 16|http://library.cheongju.go.kr/
+청주오송도서관|||충북 청주시 흥덕구 오송읍 오송생명1로 180|http://library.cheongju.go.kr/lib-cj/index.do
+청주오창도서관|||충북 청주시 청원구 두릉유리로 1141-10|http://library.cheongju.go.kr/lib-oc/index.do
+청주오창호수도서관|||충북 청주시 청원구 오창읍 오창공원로 102|http://library.cheongju.go.kr/lib-hs/index.do
+청주옥산도서관|||충북 청주시 흥덕구 옥산면 옥산5길 10|http://library.cheongju.go.kr
+청주청원도서관|||충북 청주시 청원구 사뜸로61번길 88-14(사천동)|http://library.cheongju.go.kr/
+청주흥덕도서관|||충북 청주시 흥덕구 증안로 90번길 34 (복대동)|http://library.cheongju.go.kr/
+충주시립도서관|||충북 충주시 예성로 207|http://lib.chungju.go.kr/
+충주시립호암도서관|||충북 충주시 중원대로 3324 (호암동 562) 청소년수련원 2층|http://lib.chungju.go.kr/
+충청북도교육도서관|||충북 청주시 서원구 충렬로 19(사직동)|http://www.cbjalib.go.kr/index.do
+충청북도중원문화원|||충북 충주시 호암대로 50|http://www.cjsh.go.kr/index.do
+계룡도서관|||충남 계룡시 새터산길 27 (금암동)|http://lib.gyeryong.go.kr/
+공주시/강북도서관|||충남 공주시 월송동현로 51|http://www.gongjulib.go.kr
+공주시/웅진도서관|||충청남도 공주시 고마나루길 17|http://www.gongjulib.go.kr
+공주유구도서관|||충남 공주시 유구읍 중앙 1길 49-17(백교리 145-2)|http://www.yugulib.or.kr
+광천공공도서관|||충남 홍성군 광천읍 신진리 411-2 5층 사무실(내포로 164)|http://www.gcplib.org
+국립세종도서관|||세종특별자치시 다솜3로 48|http://sejong.nl.go.kr/
+금산기적의도서관|||충남 금산군 금산읍 비단로 296-13|http://www.gspl.kr/
+금산인삼고을도서관|||충남 금산군 금산읍 금산로 1543|http://www.gspl.kr/
+논산강경도서관|||충남 논산시 강경읍 계백로 173|http://www.nonsan.go.kr/ngl/index.do
+논산연무도서관|||충남 논산시 연무읍 안심로47번길 6-15|http://www.nyl.go.kr
+당진시립송악도서관|||충남 당진시 송악읍 틀모시로 840|http://lib.dangjin.go.kr
+당진시립중앙도서관|||충남 당진시 당진중앙2로 132-30|http://lib.dangjin.go.kr
+당진시립합덕도서관|||충남 당진시 합덕읍 면천로 1578-1|http://lib.dangjin.go.kr
+보령공공도서관|||충남 보령시 천변북길 121|http://www.brlib.or.kr
+삽교공공도서관|||충남 예산군 삽교읍 두리별리길 34 (두리 722-5)|http://www.sglib.go.kr/
+서산시립대산도서관|||충남 서산시 대산1로78-22(대산리 91-7)|http://www.dslib.or.kr
+서산시립도서관|||충남 서산시 부춘공원2로 26|http://www.smlib.or.kr
+서산어린이도서관|||충남 서산시 서령로 136|http://www.ssclib.or.kr/
+세종특별자치시평생교육학습관|||세종특별자치시 조치원읍 문화2길25|https://www.sjle.go.kr/index.do
+아산시둔포도서관|||충남 아산시 둔포면 둔포중앙로 161번길 27-6|http://www.ascl.or.kr/index.php
+아산시배방도서관|||충남 아산시 배방읍 모산로 140-12|http://www.ascl.or.kr/index.php
+아산시송곡도서관|||충남 아산시 염치읍 송곡남길 82-4|http://www.ascl.or.kr
+아산시어린이도서관|||충남 아산시 시민로 500|http://www.ascl.or.kr/index.php
+아산시중앙도서관|||충남 아산시 남부로 229|http;//ascl.asan.go.kr
+아산시탕정온샘도서관|||충남 아산시 탕정면 한내로 209|없음
+엄사도서관|||충남 계룡시 엄사면 번영7길 17|http://lib.gyeryong.go.kr/
+예산군립도서관|||충남 예산군 예산읍 벛꽃로 214|http://www.ysplib.go.kr/
+장항공공도서관|||충남 서천군 장항읍 성화로 26-2|http://www.jhlib.kr/
+정산도서관|||충남 청양군 정산면 역말길 5-5|http://lib.cheongyang.go.kr/
+죽정도서관|||충남 보령시 체육관길17|http://www.brlib.or.kr/
+진산도서관|||충남 금산군 진산면 읍내로 63|http://www.gspl.kr/
+천안시문화도서관사업소도솔분관|||충남 천안시 서북구 번영로 156|http://www.cheonan.go.kr/lib.do
+천안시문화도서관사업소두정분관|||충남 천안시 서북구 부성3길 9|http://www.cheonan.go.kr/lib.do
+천안시문화도서관사업소성거분관|||충남 천안시 서북구 성거읍 천흥3길 3(천흥리 434)|http://www.cheonan.go.kr/lib.do
+천안시문화도서관사업소신방분관|||충남 천안시 동남구 통정4로 7(신방동)|http://www.cheonan.go.kr/lib.do
+천안시문화도서관사업소쌍용도서관|||충남 천안시 서북구 월봉4로 153 (쌍용동 121-2)|http://www.cheonan.go.kr/lib.do
+천안시문화도서관사업소아우내분관|||충남 천안시 동남구 병천면 병천2로 57(병천리 360-1)|http://www.cheonan.go.kr/lib.do
+천안시문화도서관사업소중앙도서관|||충남 천안시 동남구 중앙로 118(원성동 261-38)|http://www.cheonan.go.kr/lib.do
+천안시문화도서관사업소청수도서관|||충남 천안시 동남구 청수 16로 5-10|http://www.cheonan.go.kr/lib.do
+천안아산상생협력센터도서관|||충청남도 천안시 서북구 공원로 109|www.xacapc.go.kr/library
+추부도서관|||충남 금산군 추부면 하마전로 31|http://www.gspl.kr/
+충남도서관|||충남 홍성군 홍북읍 도청대로 585|-
+충청남도공주교육지원청공주도서관|||충남 공주시 영명학당2길 24-5|http://www.glib.or.kr
+충청남도교육청남부평생교육원|||충남 논산시 부창동 77|http://www.cnbl.or.kr
+충청남도교육청서부평생교육원|||충남 서산시 동서1로 41-4 (석림동 457-15)|http://www.csbl.or.kr
+충청남도교육청평생교육원|||충남 천안시 동남구 목천읍 충절로 843 (신계리 300-2)|http://www.cle.or.kr
+충청남도교육청학생교육문화원|||충남 천안시 동남구 예농고1길 41(원성동 260-2)|https://www.cnsec.or.kr/main.php
+충청남도금산교육지원청금산도서관|||충남 금산군 금산읍 금산천길 28(상옥2리 467-160)|http://www.kslib.or.kr/
+충청남도당진교육지원청당진도서관|||충남 당진시 서부로 139(채운동 239)|http://www.djl.or.kr
+충청남도보령교육지원청보령도서관|||충남 보령시 보령남로 27(명천동)|http://www.e-brlib.or.kr/
+충청남도보령교육지원청웅천도서관|||충남 보령시 웅천읍 대창리 182-5|http://www.uclib.or.kr
+충청남도부여교육지원청부여도서관|||충남 부여군 부여읍 성왕로 259|http://www.bylib.go.kr
+충청남도서산교육지원청해미도서관|||충남 서산시 해미면 서문4길 12|http://www.shlib.or.kr
+충청남도서천교육지원청서천도서관|||충남 서천군 서천읍 군사리 176-4|http://www.sc-lib.or.kr
+충청남도아산교육지원청아산도서관|||충남 아산시 문화로 53번지(실옥동 158-7번지)|http://www.asl.or.kr
+충청남도예산교육지원청예산도서관|||충남 예산군 예산읍 예중길 42|http://www.yesan-lib.or.kr
+충청남도천안교육지원청성환도서관|||충남 천안시 서북구 신선동길 25(성환읍 성환리 358-13)|http://www.csl.or.kr
+충청남도청양교육지원청청양도서관|||충남 청양군 청양읍 칠갑산로1길 15|http://www.cylib.or.kr
+충청남도태안교육지원청태안도서관|||충남 태안군 태안읍 남문리 417-2|http://www.ta-lib.or.kr
+충청남도홍성교육지원청홍성도서관|||충남 홍성군 홍성읍 오관리 375|http://www.hsl.or.kr
+태안군립안면도서관|||충남 태안군 안면읍 장터로 99-15|http://www.taean.go.kr/area/sub08_00.do
+태안군립중앙도서관|||충남 태안군 태안읍 백화로 184|http://www.taplib.or.kr/
+고창군립도서관|||전북 고창군 고창읍 모양성로 11|http://lib.gccl.kr
+고창군립성호도서관|||전북 고창군 고창읍 모양성로 50|http://lib.gccl.kr
+군산교육문화회관|||전북 군산시 조촌4길 46 (조촌동 853-1)|http://www.gec.go.kr/
+군산교육문화회관/대야분관|||전라북도 군산시 대야면 석화로 84|http://www.gecdy.kr/
+군산시립늘푸른도서관|||전북 군산시 하나운로 17(나운동)|http://lib.gunsan.go.kr/index.gunsan
+군산시립도서관(구/군산청소년/도서관)|||전북 군산시 축동로 72|http://lib.gunsan.go.kr/
+군산시립설림도서관|||전북 군산시 설림길 25|http://lib.gunsan.go.kr/index.gunsan
+김제교육문화회관|||전북 김제시 요촌북로 72|http://www.gecc.go.kr/
+김제교육문화회관/금산분관|||전북 김제시 금산면 원평로 97|http://www.wpl.or.kr
+김제시립금구분관|||전북 김제시 양시7길 57|http://www.gjl.or.kr/
+김제시립도서관|||전북 김제시 서낭당길 151|http://www.gjl.or.kr
+김제시립도서관/만경분관|||전북 김제시 만경읍 만경로 776|http://www.gjl.or.kr/
+남원교육문화회관|||전북 남원시 용성로 49|http://www.necc.go.kr
+남원교육문화회관/운봉분관|||전북 남원시 운봉읍 서하길7-8(서천리 48-1)|http://www.neccl.or.kr/
+남원시립도서관|||전북 남원시 광한북로 54|http://lib.namwon.go.kr/
+마한교육문화회관|||전북 익산시 고봉로 55|http://www.mec.go.kr
+마한교육문화회관/함열분관|||전북 익산시 함열중앙로 53(함열읍 와리 261-1)|http://hy.mec.go.kr/
+부안교육문화회관|||전북 부안군 부안읍 남문안길 10|http://www.bec.go.kr/
+부안군립도서관|||전북 부안군 부안읍 매창로 125|http://www.buanlibrary.or.kr
+순창군립도서관|||전라북도 순창군 순창읍 순창5길 18|http://lib.sunchang.go.kr
+완주군립고산도서관|||전북 완주군 고산면 고산로 69-13|http://lib.wanju.go.kr/index.do
+완주군립둔산영어도서관|||전라북도 완주군 봉동읍 둔산2로 62(둔산리 898-1)|http://englib.wanju.go.kr/index.do
+완주군립삼례도서관|||전북 완주군 삼례읍 삼봉로 215-12|http://lib.wanju.go.kr
+완주군립중앙도서관|||전북 완주군 용진면 지암로 61|http://lib.wanju.go.kr/
+익산시립마동도서관(분관)|||전북 익산시 선화1로 99(마동)|http://lib.iksan.go.kr/
+익산시립모현도서관|||전북 익산시 선화로 6길 7(모현동)|http://lib.iksan.go.kr/
+익산시립부송도서관|||전북 익산시 무왕로25길 30|http://lib.iksan.go.kr/
+익산시립영등도서관|||전북 익산시 궁동로 57(영등동)|http://lib.iksan.go.kr
+임실군립도서관|||전북 임실군 오수면 충효로 2050|http://www.imsil.go.kr/bbs/board.php?bo_table=cms_culture&wr_id=118
+장수군립도서관|||전북 장수군 장계면 장계7길 15 (장계리 271-1)|없음
+전라북도교육청고창도서관|||전북 고창군 고창읍 천변북로 109|http://www.gec.go.kr/
+전라북도교육청무주도서관|||전북 무주군 무주읍 향한로 37 (읍내리 343)|http://www.mujulibrary.or.kr
+전라북도교육청순창도서관|||전북 순창군 순창읍 장류로 379 (남계리 268-1)|http://www.sclib.or.kr
+전라북도교육청완주도서관|||전북 완주군 봉동동서로 109(봉동읍 장기리 301)|http://wjplib.or.kr/index.jsp
+전라북도교육청임실도서관|||전북 임실군 임실읍 봉황로 145|http://www.islib.or.kr
+전라북도교육청장수도서관|||전북 장수군 장수읍 호비로 58|http://www.jpl.or.kr
+전라북도교육청진안도서관|||전북 진안군 진안읍 대광길 4|http://www.jinanplib.or.kr
+전북교육문화회관|||전북 전주시 덕진구 안덕원로 71(진북동 301-70)|http://www.jec.go.kr
+전주시립건지도서관|||전북 전주시 덕진구 호성로 25|http://lib.jeonju.go.kr/
+전주시립금암도서관|||전북 전주시 덕진구 거북바우로 13|http://lib.jeonju.go.kr/
+전주시립삼천도서관|||전북 전주시 완산구 용리로 107|http://lib.jeonju.go.kr/
+전주시립서신도서관(서신분관)|||전북 전주시 완산구 서신천변14길 10|http://lib.jeonju.go.kr/
+전주시립송천도서관|||전북 전주시 덕진구 송내로 212(송천동 2가 168-5)|http://lib.jeonju.go.kr/
+전주시립아중도서관|||전북 전주시 덕진구 무삼지2길 7(인후동1가 907-1)|http://lib.jeonju.go.kr/index.sko
+전주시립완산도서관|||전북 전주시 완산구 곤지산4길 12(동완산동 1가 464-1)|http://lib.jeonju.go.kr
+전주시립인후도서관|||전북 전주시 덕진구 안덕원로 349|http://lib.jeonju.go.kr/
+전주시립쪽구름도서관|||전북 전주시 덕진구 여암2길 9|http://lib.jeonju.go.kr/index.sko
+전주시립평화도서관(평화분관)|||전북 전주시 완산구 평화14길 27-51|http://lib.jeonju.go.kr/
+전주시립효자도서관|||전북 전주시 완산구 우전로 181|http://lib.jeonju.go.kr/index.sko
+정읍기적의도서관|||전북 정읍시 수성5로 45-5|http://www.jeongeup.go.kr/cenlib/index.jeongeup
+정읍시립도서관/신태인분관|||전북 정읍시 신태인읍 신태인중앙로47(구석리 416)|http://www.jeongeuplib.go.kr
+정읍시립중앙도서관|||전북 정읍시 벛꽃로 511(상동274-9번지)|http://www.jeongeuplib.go.kr
+정읍학생복지회관|||전북 정읍시 구미길 14-4|http://www.jshall.or.kr
+강진군립도서관|||전남 강진군 강진읍 남문길 10|http://www.gjlib.go.kr
+고흥군립중앙도서관|||전남 고흥군 고흥읍 고흥로 1793|http://www.ghlib.go.kr/
+고흥평생교육관|||전남 고흥군 고흥읍 남계리 458-7|http://www.ghlife.go.kr
+곡성교육문화회관(구/곡성공공도서관)|||전남 곡성군 곡성읍 읍내리 726-3|http://www.gokseong-lib.or.kr
+광양공공도서관|||전남 광양시 지동길 9(광양읍 성황동 342)|http://www.gylib.or.kr
+광양시립중마도서관|||전남 광양시 광장로 14|http://lib.gwangyang.go.kr/lib/
+광양시립중앙도서관|||전남 광양시 광양읍 우산리 536|http://lib.gwangyang.go.kr
+광양용강도서관|||전남 광양시 광양읍 기두5길 5|http://lib.gwangyang.go.kr/lib/
+광양평생교육관|||전남 광양시 안산길 23|http://www.gylife.go.kr
+광양희망도서관|||전남 광양시 광양읍 인덕로 1022|http://lib.gwangyang.go.kr/lib/
+구례공공도서관|||전남 구례군 구례읍 학교길 119-6|http://www.grlib.or.kr
+구례군매천도서관|||전남 구례군 구례읍 서시천로 76-22|http://www.gurye.go.kr/library/
+금일공공도서관|||전남 완도군 금일읍 금일로 365-2|http://www.wando.go.kr/lib
+나주공공도서관|||전남 나주시 남고문로 51|http://www.najulib.or.kr
+나주시립도서관|||전남 나주시 영산포로 185-6|http://lib.naju.go.kr/
+남평공공도서관|||전남 나주시 남평읍 남평3로 14-11|http://www.nplib.or.kr
+노화공공도서관|||전남 완도군 노화읍 노화로 816-1|http://www.wando.go.kr/lib
+담양공공도서관|||전남 담양군 담양읍 백동리 256-4|http://www.dylib.or.kr
+목포공공도서관|||전남 목포시 원산주택로3번길 6|http://www.mokpolib.kr
+목포시립도서관|||전남 목포시 용당로 160번길 32|http://www.mokpolib.or.kr/
+목포어린이도서관|||전남 목포시 옥암로186번길 30-7|http://www.mokpochildlib.or.kr/
+무안공공도서관|||전남 무안군 무안읍 교촌리 257-1|http://www.muan-lib.or.kr
+무안군공공도서관|||전남 무안군 해제면 신정리 23-3|http://cafe.daum.net/muanlib
+벌교공공도서관|||전남 보성군 벌교읍 월곡길 13|http://www.beolgyolib.or.kr
+보성공공도서관|||전남 보성군 보성읍 현충로 57-76|http://www.boseonglib.or.kr
+순천시립그림책도서관|||전남 순천시 도서관길 33|https://pblibrary.sc.go.kr/
+순천시립기적의도서관|||전남 순천시 해룡면 기적의도서관길 60|https://miracle.sc.go.kr/
+순천시립삼산도서관|||순천시 중앙로 232(석현동)|http://www.sclibrary.or.kr/
+순천시립신대도서관|||전남 순천시 해룡면 매안로 162|https://library.sc.go.kr/
+순천시립연향도서관|||전남 순천시 연향번영길 54|https://library.sc.go.kr/
+순천시립조례호수도서관|||전남 순천시 조례2길 31|https://library.sc.go.kr/
+신안군립도서관|||전남 신안군 압해면 압해로 825 (학교리 694-10)|http://user.chollian.net/~sinanlib/
+여수시립도서관|||전남 여수시 학동서4길 18-12|http://yslib.yeosu.go.kr
+여수시립쌍봉도서관/소라분관|||전남 여수시 소라면 덕양로 344|http://yslib.yeosu.go.kr
+여수시립쌍봉도서관/율촌분관|||전남 여수시 율촌면 율촌로 100-11|http://yslib.yeosu.go.kr
+여수시립현암도서관|||전남 여수시 충민사길 43 (덕충동)|http://yslib.yeosu.go.kr/main/
+여수시립현암도서관/돌산분관|||전남 여수시 돌산읍 강남해안로 129|http://yslib.yeosu.go.kr
+여수시립환경도서관|||전남 여수시 문수로 53-32(문수동)|http://enlib.yeosu.go.kr
+영광공공도서관|||전남 영광군 영광읍 천년로 13길 2-16|http://www.yklib.or.kr
+영광군립도서관|||전남 영광군 영광읍 중앙로 228-16|http://www.yggunlib.go.kr
+영암공공도서관|||전남 영암군 영암읍 서남역로 27-11|http://www.yalib.or.kr
+영암군삼호도서관|||전남 영암군 삼호읍 삼호중앙로 140|http://library.yeongam.go.kr/
+영암도서관|||전남 영암군 영암읍 교동로 89-5|http://library.yeongam.go.kr
+옥과공공도서관|||전남 곡성군 옥과면 리문4길 16|http://www.oklib.or.kr/
+완도군립도서관|||전남 완도군 완도읍 주도길 11-2|http://lib.wando.go.kr/
+장성공공도서관|||전남 장성군 장성읍 청운 7길 22|http://jslib.jne.go.kr/index.es?sid=b8
+장흥공공도서관|||전남 장흥군 장흥읍 중앙로2길 33|http://www.jhlib.or.kr
+전라남도립도서관|||전남 무안군 삼향읍 남악로 210|http://lib.jeonnam.go.kr/
+전라남도학생교육문화회관|||전남 여수시 대통1길 55|http://www.jsecc.go.kr
+진도공공도서관|||전남 진도군 진도읍 군강공원길 10-1|http://www.jindolib.or.kr
+함평공공도서관|||전남 함평군 함평읍 신기산길 46-12|http://www.hplib.go.kr
+해남공공도서관|||전남 해남군 해남읍 서림길 20|http://www.hnlib.or.kr
+해남군립도서관|||전남 해남군 해남읍 군청길 4 (성내리 4)|http://lib.haenam.go.kr
+화순공공도서관|||전남 화순군 화순읍 도서관길 15|http://www.hwasunlib.or.kr
+(성주)청사도서관|||경북 성주군 성주읍 청사도서관길 13|없음
+경산시립도서관|||경북 경산시 하양읍 문화로 10길 15(금락리 97)|http://lib.gbgs.kr
+경산시립장산도서관|||경북 경산시 경산로13길 7|https://lib.gbgs.go.kr/renew/main/index.php
+경상북도교육청/고령도서관|||경북 고령군 대가야읍 향교길 25(연조리 599-2)|http://www.golib.go.kr/
+경상북도교육청/구미도서관|||경북 구미시 산책길41(원평동 964-616)|http://gumilib.go.kr
+경상북도교육청/봉화도서관|||경북 봉화군 봉화읍 내성로3길 6 (내성리 194-4 번지)|http://www.bhlib.or.kr/
+경상북도교육청/상주도서관|||경북 상주시 상서문1길 127(남성동 118-3)|http://www.sjlib.go.kr
+경상북도교육청/상주도서관/화령분관|||경북 상주시 화서면 중화로 2193|http://www.hwaryeong.go.kr
+경상북도교육청/성주도서관|||경북 성주군 성주읍 주천로 15-11 (예산리 612번지)|http://www.sjulib.kr
+경상북도교육청/안동도서관|||경북 안동시 안기천로 48 (당북동 333-157번지)|http://www.gbelib.kr/ad/index.do
+경상북도교육청/안동도서관/용상분관|||경북 안동시 경동로 884-8|http://www.gbelib.kr/ad/index.do
+경상북도교육청/안동도서관/풍산분관|||경북 안동시 풍산읍 하리들길 22 (하리리247-1번지)|http://www.gbelib.kr/ad/index.do
+경상북도교육청/영덕도서관|||경북 영덕군 영덕읍 군청길 102(화개리 87-8)|http://www.ydl.or.kr
+경상북도교육청/영양도서관|||경북 영양군 영양읍 팔수로 538 (서부리)|http://www.yylib.go.kr
+경상북도교육청/영일도서관|||경북 포항시 북구 흥해읍 약성리 100-2|http://gbelib.kr/yi/index.do
+경상북도교육청/영주선비도서관|||경북 영주시 중앙로 7|http://www.yl.or.kr
+경상북도교육청/영주선비도서관/풍기분관|||경북 영주시 풍기읍 남원로 152-12|http://pungsan.andonglib.go.kr/
+경상북도교육청/영천금호도서관|||경북 영천시 금호읍 금호로 173 (교대리 130-2번지)|http://www.yklib.go.kr
+경상북도교육청/예천도서관|||경북 예천군 예천읍 중앙로 40-5|http://www.yecheon-lib.go.kr/
+경상북도교육청/외동도서관|||경북 경주시 외동읍 입실로 98|http://www.odlib.go.kr
+경상북도교육청/울릉도서관|||경북 울릉군 봉래길 128-10(저동리 440)|http://www.ullib.go.kr
+경상북도교육청/울진도서관|||경북 울진군 울진읍 월변7길 17|http://www.uljinlib.or.kr
+경상북도교육청/의성도서관|||경북 의성군 의성읍 중리길 44|http://www.uslib.kr/uslib/
+경상북도교육청/점촌도서관|||경북 문경시 호서로 133|http://www.jumdolib.go.kr
+경상북도교육청/점촌도서관/가은분관|||경북 문경시 가은읍 대야로 2508|http://www.gaeunlib.go.kr
+경상북도교육청/정보센터|||경북 경산시 원효로 60 (계양동 478-3번지)|http://www.geic.kr
+경상북도교육청/청도도서관|||경북 청도군 청도읍 청화로 124|http://www.chongdolib.or.kr
+경상북도교육청/청송도서관|||경북 청송군 청송읍 군청로 25|http://www.cslib.go.kr
+경상북도교육청/칠곡도서관|||경북 칠곡군 왜관읍 군청3길 13|http://cg-lib.or.kr
+경주시립도서관|||경북 경주시 원화로 431-12 (황성동 370)|http://www.kjlib.or.kr
+구미봉곡도서관|||경북 구미시 봉곡로15길 54(봉곡동)|http://bk.gumilib.or.kr/
+구미시립도서관|||경북 구미시 형곡동 142(경은로 85)|http://gumilib.go.kr
+구미시립도서관/선산분관|||경북 구미시 선산읍 선산대로 1400-16(동부리)|http://ss.gumilib.or.kr/
+김천시립도서관|||경북 김천시 평화순환길 111|http://www.gcl.go.kr/
+다산도서관|||경북 고령군 다산면 다산로 681|http://lib.goryeong.go.kr/
+문경시립문희도서관|||경북 문경시 문경읍 체육관길11|https://www.gbmg.go.kr/
+문경시립중앙도서관|||경북 문경시 신흥로 101|http://www.gbmg.go.kr/open.content/mgculture/
+삼국유사군위도서관|||경북 군위군 군위읍 군청로 175|http://www.gunwilib.or.kr:8000/
+안동시립도서관|||경북 안동시 태사길 78 (동문동 446-2)|http://lib.andong.go.kr/
+영천시립도서관|||경북 영천시 중앙동 1길 80|http://www.yclib.go.kr
+의성군립도서관|||경북 의성군 안계면 안계길 114|http://usc.go.kr/open_content/life/library/
+청도어린이도서관|||경북 청도군 화양읍 청화로 79-3|http://lib.cd.go.kr/
+청송군립진보공공도서관|||경북 청송군 진보면 진보로 183-15|http://jinbolib.cs.go.kr/
+칠곡군립도서관|||경북 칠곡군 왜관읍 달오1길 6-7|http://library.chilgok.go.kr/
+포항시립포은도서관|||경북 포항시 북구 삼호로 31|http://www.phlib.or.kr/
+거제도서관|||경남 거제시 계룡로7길 2 (고현동 511)|http://gjlib.gne.go.kr/
+거창군립한마음도서관|||경남 거창군 거창읍 거열로6길 11|http://library.geochang.go.kr
+거창도서관|||경남 거창군 거창읍 하동1길 9|http://gclib.gne.go.kr/
+경남대표도서관|||경남 창원시 의창구 사림로45번길 59|http://lib.gyeongnam.go.kr/index.lib
+고성도서관|||경남 고성군 고성읍 동외로195번길 6|http://gslib.gne.go.kr/
+김해도서관|||경남 김해시 가락로93번길 72|http://ghlib.gne.go.kr/
+김해장유도서관|||경남 김해시 대청로176번길 7 (대청동 299)|http://lib.gimhae.go.kr
+김해칠암도서관|||경상남도 김해시 활천로285번길 14|http://lib.gimhae.go.kr
+남해도서관|||경남 남해군 남해읍 화전로43번길 11-3|http://nhlib.gne.go.kr/
+마산도서관|||경남 창원시 마산합포구 용마산길 12|http://mslib.gne.go.kr/
+마산도서관지혜의바다분관|||경상남도 창원시 마산회원구 구암동 1333|http://jhlib.gne.go.kr
+마산합포도서관|||경남 창원시 마산합포구 월영동16길 22|http://www.cwcl.or.kr/2010/lib/happo/main/main.php
+마산회원도서관|||경남 창원시 마산회원구 3·15대로 558|http://www.cwcl.or.kr/2010/lib/hoewon/main/main.php
+마산회원도서관/내서분관|||경남 창원시 마산회원구 내서읍 삼풍로 79|http://www.cwcl.or.kr/2010/lib/naeseo/main/main.php
+밀양도서관|||경남 밀양시 삼랑진읍 만어로 7 (송지리 162-7)|http://mrlib.gne.go.kr/
+밀양시립도서관|||경남 밀양시 중앙로 265|http://www.myclib.or.kr
+밀양하남도서관|||경남 밀양시 하남읍 수산중앙로 63|http://hnlib.gne.go.kr/
+사천도서관|||경남 사천시 사천읍 평화2길 21|http://salib.gne.go.kr/
+산청도서관|||경남 산청군 산청읍 꽃봉산로79번길 45|http://www.sanlib.or.kr
+삼천포도서관|||경남 사천시 삼천포 대교로 622|http://scplib.gne.go.kr/
+성산도서관|||경남 창원시 성산구 외리로 47(남산동 산17번지)|http://www.cwcl.or.kr/2010/lib/seongju/main/main.php
+성산도서관/상남분관|||경남 창원시 성산구 원이대로 810 (가음정동)|http://www.cwcl.or.kr/2010/lib/sangnam/main/main.php
+양산도서관|||경남 양산시 희망1길 25|http://yslib.gne.go.kr/r.kr
+양산시립도서관|||경남 양산시 물금읍 청룡로 11|http://lib.yangsan.go.kr/
+양산영어도서관|||경남 양산시 대평들1길 9-10|http://lib.yangsan.go.kr/00main/main.php
+양산웅상도서관|||경남 양산시 웅상대로 1009-2 (웅상읍 주진리 산63-15)|http://lib.yangsan.go.kr/00main/main.php
+의령도서관|||경남 의령군 의령읍 의병로25길 9-8|http://urlib.gne.go.kr/
+의창도서관|||경남 창원시 의창구 용호로 50 (반송동 산51-5번지)|http://www.cwcl.or.kr/2010/lib/changwon/main/main.php
+의창도서관/고향의봄분관|||경남 창원시 의창구 평산로135번길 32(서상동 산60)|http://www.cwcl.or.kr/2010/lib/gohyang/main/main.php
+의창도서관/명곡도서관(분관)|||경남 창원시 의창구 서곡길21(명서동 31-1)|http://www.cwcl.or.kr/2010/lib/myeonggok/main/main.php
+진동도서관|||경남 창원시 마산합포구 진동면 삼진의거대로 661-94|http://jdlib.gne.go.kr/
+진양도서관|||경남 진주시 문산읍 동부로588번길 24|http://jinlib.gne.go.kr/
+진영도서관|||경남 김해시 진영읍 진영로265번길 9-61|http://jylib.gne.go.kr/
+진영한빛도서관|||경남 김해시 진영읍 김해대로 440|http://lib.gimhae.go.kr/
+진주서부도서관|||경남 진주시 평거로 249|http://www.jinjulib.or.kr/
+진주연암도서관|||경남 진주시 모덕로47번길 13-17|http://www.jinjulib.or.kr/
+진해도서관|||경남 창원시 진해구 충장로 141|http://www.cwcl.or.kr/2010/lib/jinhae/main/main.php
+진해동부도서관|||경남 창원시 진해구 용재로 66|http://www.cwcl.or.kr/2010/lib/dongbu/main/main.php
+진해어린이전문도서관(진해기적의도서관)|||경상남도 창원시 진해구 석동로  70|http://www.jhml.or.kr
+창녕군영산도서관|||경남 창녕군 영산면 원다리길 34|https://ysl.cng.go.kr/main/index.jsp?null
+창녕남지도서관|||경남 창녕군 남지읍 낙동로 437|http://njlib.gne.go.kr/
+창녕도서관|||경상남도 창녕군 창녕읍 말흘리 302|http://cnlib.gne.go.kr/
+창원도서관|||경남 창원시 성산구 두대로 197-33|http://cwlib.gne.go.kr
+통영도서관|||경남 통영시 봉수로37(봉평동)|http://tylib.gne.go.kr/
+통영시립도서관|||경남 통영시 무전3길 29|http://www.tongyeonglib.or.kr/
+하동도서관|||경남 하동군 하동읍 경서대로 80|http://hdlib.gne.go.kr/
+함안군립칠원도서관|||경남 한안군 칠원면 원서로 56|http://chilwonlib.or.kr/
+함안도서관|||경남 함안군 가야읍 함안대로 495|http://hmlib.gne.go.kr/
+함양도서관|||경남 함양군 함양읍 함양로 1143-1|http://hylib.gne.go.kr/
+합천도서관|||경남 합천군 합천읍 동서로 152|http://hylib.gne.go.kr/
+동녘도서관|||제주특별자치도 제주시 구좌읍 일주동로 3132|http://www.dnlib.or.kr
+서귀포기적의도서관|||제주특별자치도 서귀포시 일주동로 8593 (동홍동 646-1)|http://lib.jeju.go.kr/?&sso=ok
+서귀포도서관|||제주특별자치도 서귀포시 중앙로150번길 4-1|http://www.sscclib.jeju.kr
+서귀포시동부도서관|||제주특별자치도 서귀포시 일주동로 8232|http://lib.jeju.go.kr/?&sso=ok
+서귀포시삼매봉도서관|||제주특별자치도 서귀포시 남성중로 153번길 15 (서홍동 621)|http://lib.jeju.go.kr/?&sso=ok
+서귀포시서부도서관|||제주특별자치도 서귀포시 중문관광로 346 방초꽃집(중문동 1921-1)|http://lib.jeju.go.kr/?&sso=ok
+서귀포시성산일출도서관|||제주특별자치도 서귀포시 성산읍 고성오조로 133|http://lib.jeju.go.kr/?&sso=ok
+서귀포시안덕산방도서관|||제주특별자치도 서귀포시 안덕면 화순서서로 44|http://lib.jeju.go.kr/?&sso=ok
+서귀포시중앙도서관|||제주특별자치도 서귀포시 김정문화로 32|http://lib.jeju.go.kr/?&sso=ok
+서귀포시표선도서관|||제주특별자치도 서귀포시 표선면 표선백사로110번길 17-10|http://lib.jeju.go.kr/?&sso=ok
+송악도서관|||제주특별자치도 서귀포시 대정읍 동일하모로149번길 12|http://www.songaklib.go.kr
+애월도서관|||제주특별자치도 제주시 애월읍 일주서로 6339|http://lib.jeju.go.kr/?&sso=ok
+우당도서관|||제주특별자치도 제주시 사라봉동길 30|http://lib.jeju.go.kr/?&sso=ok
+제남도서관|||제주특별자치도 서귀포시 남원읍 남원체육관로 183|http://www.jnlib.go.kr
+제주기적의도서관|||제주특별자치도 제주시 동광로12길 19|http://lib.jeju.go.kr/?&sso=ok
+제주도서관|||제주특별자치도 제주시 연삼로 489(이도2동 414)|http://www.jejulib.or.kr
+조천도서관|||제주특별자치도 제주시 조천읍 일주동로 1189 (함덕리 919)|http://lib.jeju.go.kr/?&sso=ok
+탐라도서관|||제주특별자치도 제주시 정원로 50|http://lib.jeju.go.kr/?&sso=ok
+한경도서관|||제주특별자치도 제주시 한경면 신한로 13|http://lib.jeju.go.kr/?&sso=ok
+한라도서관|||제주특별자치도 제주시 오남로 133(오라동 899-3)|http://lib.jeju.go.kr/?&sso=ok
+한수풀도서관|||제주특별자치도 제주시 한림읍 한림상로 240-11|http://www.hsplib.go.kr/

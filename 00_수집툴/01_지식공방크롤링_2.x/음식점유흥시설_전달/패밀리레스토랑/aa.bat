@@ -1,0 +1,14 @@
+python ..\..\general_pp.py ashley_utf8.txt ..\..\final\80520_애슐리.txt ansi noop
+python ..\..\general_pp.py bonobono_utf8.txt ..\..\final\80507_보노보노.txt ansi noop
+python ..\..\general_pp.py cafeamoje_utf8.txt ..\..\final\80523_카페아모제.txt ansi noop
+python ..\..\general_pp.py domino_utf8.txt ..\..\final\80505_도미노피자.txt ansi noop
+python ..\..\general_pp.py hansdeli_utf8.txt ..\..\final\80518_한스델리.txt ansi noop
+python ..\..\general_pp.py mrpizza_utf8.txt ..\..\final\80504_미스터피자.txt ansi noop
+python ..\..\general_pp.py muscus_utf8.txt ..\..\final\80515_무스쿠스.txt ansi noop
+python ..\..\general_pp.py outback_utf8.txt ..\..\final\80501_아웃백스테이크하우스.txt ansi noop
+python ..\..\general_pp.py pizzahut_utf8.txt ..\..\final\80503_피자헛.txt ansi noop
+python ..\..\general_pp.py sevensprings_utf8.txt ..\..\final\80517_세븐스프링스.txt ansi noop
+python ..\..\general_pp.py sorrento_utf8.txt ..\..\final\80521_쏘렌토.txt ansi noop
+python ..\..\general_pp.py tgifridays_utf8.txt ..\..\final\80506_TGI프라이데이스.txt ansi noop
+python ..\..\general_pp.py todai_utf8.txt ..\..\final\80519_토다이.txt ansi noop
+python ..\..\general_pp.py vips_utf8.txt ..\..\final\80513_빕스.txt ansi noop

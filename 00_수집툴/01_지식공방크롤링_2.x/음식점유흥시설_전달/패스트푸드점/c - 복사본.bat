@@ -1,0 +1,1 @@
+python burgerking.py > log.txt

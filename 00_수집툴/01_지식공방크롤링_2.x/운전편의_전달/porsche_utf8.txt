@@ -1,0 +1,13 @@
+##NAME|SUBNAME|TELNUM|NEWADDR|SUBNAME2|XCOORD|YCOORD@@포르쉐
+포르쉐센터|Yongsan|02-6263-0911|Seoul 12, Ichon-ro, Yongsan-gu|Yongsan/Sports/Automobile/Ltd.|126.954239|37.5303574
+포르쉐센터|Porsche/Studio/Cheongdam|02-6191-0911|Seoul G Floor, Cheongdam Square,  420, Dosan-daero, Gangnam-gu|Stuttgart/Sports/Cars/Ltd.|127.041969|37.5233154
+포르쉐센터|대치|02-2051-0911|Seoul 401, Yeongdong-Daero, Gangnam-gu|Stuttgart/Sports/Cars/Ltd|127.064468|37.5052032
+포르쉐센터|서초|02-440-0911|Seoul 2215, Nambusunhwan-ro, Seocho-gu|Stuttgart/Sports/Cars/Ltd.|126.994255|37.47396
+포르쉐센터|Bundang/Pangyo|031-729-0911|Gyung-gi do, Seongnam 18, Yeosu-Daero, Sujung-gu |Stuttgart/Sports/Cars/Ltd.|127.1044|37.4218826
+포르쉐센터|Bundang-Satellite/Showroom|031-729-0911|Gyeonggi-do, Seongnam-si 18, Yeosu-daero, Sujeong-gu||127.10215|37.42192
+포르쉐센터|Ilsan|031-813-0911|Gyung-gi do, Goyang 136, Goyang-Daero, Ilsan Seo-gu|Autostadt/Inc.|126.725807|37.6617966
+포르쉐센터|인천|032-450-3000|Incheon 686, Inju-daero, Namdong-gu|Stuttgart/Sports/Cars/Ltd.|126.71315|37.4491119
+포르쉐센터|Suwon|+82312140911|Yongin  20,  Joonbu-daero, Kiheung-gu|Deutsch/Auto|127.071037|37.2674
+포르쉐센터|Suwon/Satellite/Showroom|+823151740911|Suwon-si 308-5, Gwonseon-ro|수원/도이치오토월드/포르쉐/쇼룸|126.986794|37.25935
+포르쉐센터|부산|051-744-6911|Busan 277, Haeun-daero, Haeundae-gu|Stuttgart/Sports/Cars/Ltd|129.1311|35.1759148
+포르쉐센터|Changwon|55-251-0911|Changwon 157, Bongyang-ro, Masanhoe51348 Changwon-si, Gyeongsangnam-dowon-gu, ||128.604355|35.2184944

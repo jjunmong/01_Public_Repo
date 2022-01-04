@@ -1,0 +1,1 @@
+python ..\general_pp.py public_healthcare_utf8.txt ..\final\30301_º¸°Ç¼Ò2.txt ansi noop
