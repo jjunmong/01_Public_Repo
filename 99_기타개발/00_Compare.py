@@ -29,6 +29,7 @@ def compare_excel(old_xlsx, new_xlsx, column_name):
 
     # 삭제된 데이터
     df_dropped = df_old[df_old[column_name].isin(id_dropped)].iloc[:, :-1]
+
     # 추가된 데이터
     df_added = df_new[df_new[column_name].isin(id_added)].iloc[:, :-1]
 
@@ -39,6 +40,7 @@ def compare_excel(old_xlsx, new_xlsx, column_name):
 
     #남은 데이터 중 동일한 아이디 값이 두개 이상 존재하면 정보가 변경된 데이터.
     duplicated_list = changes[changes[column_name].duplicated()][column_name].to_list()
+
     df_changed = changes[changes[column_name].isin(duplicated_list)]
 
     df_changed_old = df_changed[df_changed['ver'] == 'old'].iloc[:, :-1]
@@ -51,8 +53,9 @@ def compare_excel(old_xlsx, new_xlsx, column_name):
     df_info_changed = df_changed_old.copy()
     for i in range(len(df_changed_new.index)):
         for j in range(len(df_changed_new.columns)):
-            if (df_changed_new.iloc[i, j] != df_changed_old.iloc[i, j]):
-                df_info_changed.iloc[i, j] = str(df_changed_old.iloc[i, j]) + " ==> " + str(df_changed_new.iloc[i, j])
+                if (df_changed_new.iloc[i, j] != df_changed_old.iloc[i, j]):
+                    df_info_changed.iloc[i, j] = str(df_changed_old.iloc[i, j]) + " ==> " + str(df_changed_new.iloc[i, j])
+
     result_name = str(new_xlsx).replace('.xlsx','').replace('new_','')+'_'+'result.xlsx'
     # 엑셀 저장
     with pd.ExcelWriter(result_name) as writer:

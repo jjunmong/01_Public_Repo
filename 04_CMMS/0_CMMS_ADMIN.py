@@ -304,7 +304,7 @@ class Ui_Mainwindow(object):
                         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
                         chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
                         self.tableWidget.setItem(i, j, QTableWidgetItem(chkBoxItem))
-                elif j == 4 and t < today: # 지연 대상들 빨간색
+                elif j == 4 and t < today : # 지연 대상들 빨간색
                     self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
                     self.tableWidget.item(i, j).setBackground(QtGui.QColor(255, 102, 102))
                 elif j == 4 and a < 11 : # 임박 10일 대상들 노란색
@@ -321,7 +321,7 @@ class Ui_Mainwindow(object):
         column = item.column()
         try:
             if item.checkState() == QtCore.Qt.Checked:
-                if column in (18,19) :
+                if column in (18,20) :
                     t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
                     t_port = "5432"  # default postgres port
                     t_dbname = "postgres"
@@ -345,7 +345,7 @@ class Ui_Mainwindow(object):
                     QMessageBox.warning(self.tableWidget, '확인', '데이터 확인 필드 업데이트 완료')
                 else : pass
             elif item.checkState() == QtCore.Qt.Unchecked:
-                if column in (18, 19):
+                if column in (18, 20):
                     print('"%s" Unchecked' % item.text())
                     t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
                     t_port = "5432"  # default postgres port
@@ -500,10 +500,13 @@ class Ui_Mainwindow(object):
             self.tableWidget.setRowCount(len(rows))
             i = 0
             for elem in rows:
+                self.tableWidget.setRowCount(self.tableWidget.rowCount() + 1)
                 j = 0
                 for t in elem:
-                    try: a = int(str(t - today).split(' ')[0])
-                    except: a = 0
+                    try:
+                        a = int(str(t - today).split(' ')[0])
+                    except:
+                        a = 0
                     if t == None: t = ''
                     if j == 0:
                         # 해당 필드 숫자 형식으로 바꾸기 위함.
@@ -512,13 +515,14 @@ class Ui_Mainwindow(object):
                         self.tableWidget.setItem(i, j, QTableWidgetItem(item))
                     elif j in (12, 13, 14, 15, 16, 17):
                         item = QTableWidgetItem()
+                        item.setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEditable | QtCore.Qt.ItemIsEnabled)
                         item.setData(QtCore.Qt.DisplayRole, t)
                         item.setBackground(QtGui.QColor(129, 216, 208))
                         self.tableWidget.setItem(i, j, QTableWidgetItem(item))
-                    elif j == 20:
+                    elif j == 22:
                         t = str(t).replace('\\\\', '\\')
                         self.tableWidget.setItem(i, j, QTableWidgetItem(t))
-                    elif j in (18, 19):
+                    elif j in (18, 20):
                         chkBoxItem = QTableWidgetItem()
                         if t == 'Yes':
                             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
@@ -599,20 +603,20 @@ class Ui_Mainwindow(object):
             if column == 12: column_name = 'poi_cat'
             if column == 13:
                 column_name = 'poi_date'
-                content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                if content == '--' : content = 'NULL'
+                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                # if content == '--' : content = 'NULL'
             if column == 14: column_name = 'net_cat'
             if column == 15:
                 column_name = 'net_date'
-                content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                if content == '--': content = 'NULL'
+                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                # if content == '--': content = 'NULL'
             if column == 16: column_name = 'map_cat'
             if column == 17:
                 column_name = 'map_date'
-                content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                if content == '--': content = 'NULL'
+                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                # if content == '--': content = 'NULL'
             if column == 18: column_name = 'data_check'
-            if column == 19: column_name = 'service_check'
+            if column == 20: column_name = 'service_check'
             nid = self.tableWidget.item(row, 0).text()
             if content == 'NULL' :
                 query = "update cmms_list set %s=%s where nid=%s;" % (str(column_name), content, int(nid))
@@ -656,7 +660,7 @@ class Ui_Mainwindow(object):
             csv_file = open("도로개통정보.csv", "w",encoding='utf-8')
             writer = csv.writer(csv_file, lineterminator="\n", delimiter='|', quoting=csv.QUOTE_NONE, escapechar='\\')
             csv_file.write("TEXT|NID|TYPE|ROAD_WORK|TIME_ID|COMPLETE_DATE|LIMIT_DATE|NET_DATE\n")
-            query = "select text, nid, type, road_work,time_id, complete_date,limit_date,net_date from cmms_list where type not in ('아파트','시설') and net_cat = '완료' and del_flag ='0' order by complete_date"
+            query = "select text, nid, type, road_work,time_id, complete_date,limit_date,net_date from cmms_list where type not in ('아파트','시설') and del_flag ='0' order by complete_date"
             self.cursor = self.conn.cursor()
             self.cursor.execute(query)
             row = self.cursor.fetchall()

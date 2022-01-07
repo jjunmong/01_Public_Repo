@@ -20,7 +20,7 @@ def oracle_export():
     csv_file = open("workList.csv", "w")
     writer = csv.writer(csv_file, lineterminator="\n", delimiter='}', quoting=csv.QUOTE_NONE, escapechar='\\')
     csv_file.write(
-        "TYPE}TEXT}NID}LCODE}COMPETE_DATE}LIMIT_DATE}RESULT}REQUEST_DATE}REVIEW_DATE}HEIGHT_LIMIT}WEIGHT_LIMIT}ROAD_WORKD}TIME_ID}URL}CREATE_DATE}UPDATE_DATE}DEL_FLAG}POLYGON_TEXT\n")
+        "TYPE}TEXT}NID}LCODE}COMPETE_DATE}LIMIT_DATE}RESULT}REQUEST_DATE}REVIEW_DATE}HEIGHT_LIMIT}WEIGHT_LIMIT}ROAD_WORK}TIME_ID}URL}CREATE_DATE}UPDATE_DATE}DEL_FLAG}POLYGON_TEXT\n")
     r = cursor.execute("SELECT TYPE, REGEXP_replace(REGEXP_replace(REGEXP_replace(text, chr(13)||chr(10), ''),'\\',''),'\n',''), NID, LCODE, COMPLETE_DATE,LIMIT_DATE,RESULT, REQUEST_DATE, REVIEW_DATE,HEIGHT_LIMIT,WEIGHT_LIMIT,ROAD_WORK,TIME_ID,REGEXP_replace(REGEXP_replace(replace(URL, chr(10)||chr(13), ''), '\n',''),chr(34),''), CREATE_DATE,UPDATE_DATE, REGEXP_REPLACE(DEL_FLAG,',',''),sdo_util.to_wktgeometry(gshape) FROM imduser.tbw_dt_infocol")
     for row in r:
         writer.writerow(row)
@@ -131,7 +131,7 @@ def postgresql_backup_update():
     print('임시 테이블의 일부 칼럼 삭제')
     time.sleep(1)
 
-    #백업 테이블에 CSV Data inset
+    #백업 테이블에 CSV Data inset #칼럼 구조 맞춰 주기
     t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
     t_port = "5432"  # default postgres port
     t_dbname = "postgres"
@@ -140,7 +140,17 @@ def postgresql_backup_update():
     conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw)
     cursor = conn.cursor()
     csv_file_name = 'workList.csv'
-    sql = "copy cmms.cmms_list_temp from STDIN DELIMITER '}' HEADER CSV"
+    sql = """
+    copy cmms.cmms_list_temp from STDIN DELIMITER '}' HEADER CSV;
+    alter table cmms.cmms_list_temp add column poi_cat varchar(20) Null;
+    alter table cmms.cmms_list_temp add column poi_date varchar(20) Null;
+    alter table cmms.cmms_list_temp add column net_cat varchar(20) Null;
+    alter table cmms.cmms_list_temp add column net_date varchar(20) Null;
+    alter table cmms.cmms_list_temp add column map_cat varchar(20) Null;
+    alter table cmms.cmms_list_temp add column map_date varchar(20) Null;
+    alter table cmms.cmms_list_temp add column data_check varchar(20) Null;
+    alter table cmms.cmms_list_temp add column service_check varchar(20) Null;
+    """
     cursor.copy_expert(sql,open(csv_file_name, "r"))
     conn.commit()
     conn.close()
@@ -155,12 +165,21 @@ def postgresql_backup_update():
     t_pw = "rjator"
     conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw, options="-c search_path=cmms")
     cursor = conn.cursor()
-    query5 = "update cmms_list SET type=cmms_list_temp.type, text=cmms_list_temp.text, lcode=cmms_list_temp.lcode, result=cmms_list_temp.result, request_date=cmms_list_temp.request_date, review_date=cmms_list_temp.review_date, url=cmms_list_temp.url, del_flag=cmms_list_temp.del_flag, polygon_text =cmms_list_temp.polygon_text  from cmms_list_temp  where cmms_list.nid = cmms_list_temp.nid;"
+    query5 = """
+    update cmms_list SET type=cmms_list_temp.type, text=cmms_list_temp.text, nid=cmms_list_temp.nid, lcode=cmms_list_temp.lcode, complete_date=cmms_list_temp.complete_date, limit_date=cmms_list_temp.limit_date, result=cmms_list_temp.result, request_date=cmms_list_temp.request_date, review_date=cmms_list_temp.review_date, height_limit=cmms_list_temp.height_limit, weight_limit=cmms_list_temp.weight_limit, road_work=cmms_list_temp.road_work, time_id=cmms_list_temp.time_id, url=cmms_list_temp.url, create_date=cmms_list_temp.create_date, update_date=cmms_list_temp.update_date, del_flag=cmms_list_temp.del_flag, polygon_text=cmms_list_temp.polygon_text from cmms_list_temp where cmms_list.nid = cmms_list_temp.nid;
+    insert into cmms_list (type, text, nid, lcode, complete_date, limit_date, result, request_date, review_date, height_limit, weight_limit, road_work, time_id,poi_cat,poi_date,net_cat,net_date,map_cat,map_date,data_check,service_check, url, create_date, update_date, del_flag, polygon_text) 
+    select a.type, a.text, a.nid ,a.lcode, a.complete_date, a.limit_date, a.result, a.request_date, a.review_date, a.height_limit, a.weight_limit, a.road_work, a.time_id ,a.poi_cat,a.poi_date,a.net_cat,a.net_date,a.map_cat,a.map_date,a.data_check,a.service_check, a.url, a.create_date, a.update_date, a.del_flag, a.polygon_text
+    from cmms_list_temp a
+    left join cmms_list
+    on  cmms_list.nid = a.nid 
+    where cmms_list.nid is null;   
+    """
     cursor.execute(query5)
     conn.commit()
     conn.close()
     print("cmms_list 테이블 업데이트 완료")
     time.sleep(1)
+
 
     # 구축시한 값이 변경될 경우 구축완료 상태인 것들 요청으로 변경하기.
     try:
@@ -524,17 +543,6 @@ def postgresql_backup_update():
 #     conn.close()
 #     return a
 
-
-######### test#######
-# print('Start', datetime.date.today())
-# schedule.every().day.at("15:14").do(oracle_export)
-# schedule.every().day.at("15:14").do(postgresql_backup_update)
-# schedule.every().day.at("15:13").do(SendMail)
-# print('다음 작업 수행 대기중')
-#
-# while True :
-#     schedule.run_pending()
-
 print('Start', datetime.date.today())
 # schedule.every().day.at("08:00").do(SendMail)
 schedule.every().day.at("23:00").do(oracle_export)
@@ -544,6 +552,5 @@ print('다음 작업 수행 대기중')
 while True :
     schedule.run_pending()
 
-
-# postgresql_backup_update()
 # oracle_export()
+# postgresql_backup_update()

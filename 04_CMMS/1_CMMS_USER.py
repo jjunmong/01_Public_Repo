@@ -520,18 +520,18 @@ class Ui_Mainwindow(object):
             if column == 12: column_name = 'poi_cat'
             if column == 13:
                 column_name = 'poi_date'
-                content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                if content == '--' : content = 'NULL'
+                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                # if content == '--' : content = 'NULL'
             if column == 14: column_name = 'net_cat'
             if column == 15:
                 column_name = 'net_date'
-                content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                if content == '--': content = 'NULL'
+                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                # if content == '--': content = 'NULL'
             if column == 16: column_name = 'map_cat'
             if column == 17:
                 column_name = 'map_date'
-                content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                if content == '--': content = 'NULL'
+                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                # if content == '--': content = 'NULL'
             nid = self.tableWidget.item(row, 0).text()
             if content == 'NULL' :
                 query = "update cmms_list set %s=%s where nid=%s;" % (str(column_name), content, int(nid))
