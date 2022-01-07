@@ -8,5 +8,3 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 
 
-today = datetime.today()
-print (today.strftime("%U"))
