@@ -1,14 +1,33 @@
+import json
 import time
 import codecs
 import requests
 import random
-import json
 from datetime import datetime
+import traceback
+import os,sys
 
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\06_3_폐교학교\\') == False : os.makedirs('수집결과\\06_3_폐교학교\\')
+outfilename = '수집결과\\06_3_폐교학교\\폐교학교_{}.txt'.format(today)
+outfilename_true = '수집결과\\06_3_폐교학교\\폐교학교_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\06_3_폐교학교\\폐교학교_{}.log_실패.txt'.format(today)
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\폐교학교_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("MTRP_PRVC_NM|EDU_OFFC|ABOL_SCH_NM|GRADE|ADDRESS|DEPT_NM|CHRGR_TEL|ABOL_SCH_YY|USE_STATE|"
                   "BUDG_AREA|GRD_AREA|SUM_PRIC|LOAN_CD|LOAN_DESC|LOAN_COST|LOAN_COMP_DAY|WISEOPEN_CNT\n")
@@ -37,9 +56,7 @@ def main():
         page += 1
         if page == 100: break
         time.sleep(random.uniform(0.3,0.6))
-
     outfile.close()
-
 
 def getinfo(intPageNo):
     url = 'http://www.eduinfo.go.kr/portal/service/openInfSColViewListAll.do?ibpage={}&onepagerow=100&colWidth=&infId=ZX' \
@@ -84,4 +101,9 @@ def getinfo(intPageNo):
              "GRD_AREA": GRD_AREA, "SUM_PRIC": SUM_PRIC,"LOAN_CD":LOAN_CD,"LOAN_DESC":LOAN_DESC,"LOAN_COST":LOAN_COST,"LOAN_COMP_DAY":LOAN_COMP_DAY,"WISEOPEN_CNT":WISEOPEN_CNT})
     return data
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

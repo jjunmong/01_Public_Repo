@@ -1,11 +1,34 @@
 import requests
 import bs4
-import codecs
-from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import time
 import random
+import codecs
 from datetime import datetime
+import traceback
+import os, sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\20_2_부동산114\\') == False : os.makedirs('수집결과\\20_2_부동산114\\')
+outfilename = '수집결과\\20_2_부동산114\\부동산114_{}.txt'.format(today)
+outfilename_true = '수집결과\\20_2_부동산114\\부동산114_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\20_2_부동산114\\부동산114_{}.log_실패.txt'.format(today)
+
+def main():
+    try:
+        getIdAll()
+        getStoreInfo_all()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
 def getIdAll():
     sido_list = ['서울특별시', '경기도', '강원도', '충청북도', '충청남도', '경상북도', '경상남도', '전라북도', '전라남도', '인천광역시', '대전광역시', '울산광역시',
@@ -89,9 +112,6 @@ def getStoreId(Sido, intPageNo, Year, MinDate, MaxDate, Month):
 def getStoreInfo_all():
     with open('114_id_list.txt') as data:
         lines = data.read().splitlines()
-
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\부동산114_{}.txt'.format(today)
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("name|cat|addr|size|date|construc|tell|img\n")
 
@@ -171,8 +191,9 @@ def getStoreInfo(aptcode,type_g,sido,year,month):
     result.append({'name':name,'cat': cat, 'addr': addr, 'size': size, 'date': date, 'construc': construc, 'tell': tell,'img':img})
     return result
 
-# print(getStoreInfo('G01060032440006','C','서울특별시',2022,7))
-getIdAll()
-print('ID 리스트 수집 완료')
-getStoreInfo_all()
-print('수집 완료')
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

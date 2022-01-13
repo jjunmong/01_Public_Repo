@@ -1,24 +1,43 @@
 import time
-import codecs
 import requests
 import random
 import bs4
-import os
+import codecs
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\11_1_어린이집기본정보\\') == False : os.makedirs('수집결과\\11_1_어린이집기본정보\\')
+outfilename = '수집결과\\11_1_어린이집기본정보\\어린이집기본정보_{}.txt'.format(today)
+outfilename_true = '수집결과\\11_1_어린이집기본정보\\어린이집기본정보_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\11_1_어린이집기본정보\\어린이집기본정보_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집기본정보_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        dup_remove()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
-
     page = getSidoCode_list()
-
     for code in page:
         store_list = getStoreInfo(code)
         print(code, store_list)
         if store_list == [] :
             print(code, "호출결과가 없는 리스트로 반환.")
-            outfile_fail = codecs.open('전국어린이집정보_수집실패.txt', 'a')
+            outfile_fail = codecs.open('전국어린이집정보_수집실패.txt', 'w')
             fail_url = str(code) + '\n'
             outfile_fail.write(fail_url)
             outfile_fail.close()
@@ -30,24 +49,17 @@ def main():
             outfile.write(u'%s|' % store['craddr'])
             outfile.write(u'%s|' % store['crhome'])
             outfile.write(u'%s\n' % store['crcapat'])
-
         time.sleep(random.uniform(2, 3))
-
     outfile.close()
 
-
-def main2():
-
-    outfile = codecs.open('전국어린이집정보.txt', 'a', 'utf-8')
-
+    outfile = codecs.open(outfilename, 'a', 'utf-8')
     page = getcode()
-
     for code in page:
         store_list = getStoreInfo(code)
         print(code, store_list)
         if store_list == [] :
             print(code, "호출결과가 없는 리스트로 반환.")
-            outfile_fail = codecs.open('전국어린이집정보_수집실패2.txt', 'a')
+            outfile_fail = codecs.open('전국어린이집정보_수집실패2.txt', 'w')
             fail_url = str(code) + '\n'
             outfile_fail.write(fail_url)
             outfile_fail.close()
@@ -59,23 +71,17 @@ def main2():
             outfile.write(u'%s|' % store['craddr'])
             outfile.write(u'%s|' % store['crhome'])
             outfile.write(u'%s\n' % store['crcapat'])
-
         time.sleep(random.uniform(2, 3))
-
     outfile.close()
 
-def main3():
-
-    outfile = codecs.open('전국어린이집정보.txt', 'a', 'utf-8')
-
+    outfile = codecs.open(outfilename, 'a', 'utf-8')
     page = getcode2()
-
     for code in page:
         store_list = getStoreInfo(code)
         print(store_list)
         if store_list == [] :
             print(code, "호출결과가 없는 리스트로 반환.")
-            outfile_fail = codecs.open('전국어린이집정보_수집실패3.txt', 'a')
+            outfile_fail = codecs.open('전국어린이집정보_수집실패3.txt', 'w')
             fail_url = str(code) + '\n'
             outfile_fail.write(fail_url)
             outfile_fail.close()
@@ -87,11 +93,8 @@ def main3():
             outfile.write(u'%s|' % store['craddr'])
             outfile.write(u'%s|' % store['crhome'])
             outfile.write(u'%s\n' % store['crcapat'])
-
         time.sleep(random.uniform(2, 3))
-
     outfile.close()
-
 
 def getStoreInfo(sidoCode):
     url = "http://api.childcare.go.kr/mediate/rest/cpmsapi021/cpmsapi021/request"
@@ -141,7 +144,6 @@ def getStoreInfo(sidoCode):
             data.append({"stcode":stcode,"crname":crname,"crtel":crtel,"crfax":crfax,"craddr":craddr,"crhome":crhome,"crcapat":crcapat})
     return data
 
-
 def getSidoCode(sidoName):
     url = "http://api.childcare.go.kr/mediate/rest/cpmsapi020/cpmsapi020/request"
     querystring = {"key":"71c59f0ccc3b4b8da812e2db18ca9b56"}
@@ -180,8 +182,9 @@ def getcode2():
     return  code_list
 
 def dup_remove():
-    w = open('전국어린이집정보_중복제거.txt', 'w')
-    r = open('전국어린이집정보.txt', 'r',encoding='UTF8')
+    outfilename_dupRemove = '수집결과\\11_1_어린이집기본정보\\어린이집기본정보_중복제거.txt'
+    w = open(outfilename_dupRemove, 'w')
+    r = open(outfilename, 'r',encoding='UTF8')
     # 파일에서 읽은 라인들을 리스트로 읽어들임
     lines = r.readlines()
     # Set에 넣어서 중복 제거 후 다시 리스트 변환
@@ -194,12 +197,15 @@ def dup_remove():
     # 파일 닫기
     w.close()
     r.close()
-    os.remove('전국어린이집정보.txt')
     os.remove('전국어린이집정보_수집실패.txt')
     os.remove('전국어린이집정보_수집실패2.txt')
     os.remove('전국어린이집정보_수집실패3.txt')
+    os.remove(outfilename)
+    os.rename(outfilename_dupRemove, outfilename)
 
-main()
-main2()
-main3()
-dup_remove()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

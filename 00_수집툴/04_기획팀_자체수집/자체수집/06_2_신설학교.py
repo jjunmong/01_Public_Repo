@@ -1,86 +1,35 @@
+import json
 import time
 import codecs
 import requests
 import random
-import json
 from datetime import datetime
-#
-# def main():
-#
-#     outfile = codecs.open('신설예정학교정보.txt', 'w', 'utf-8')
-#     outfile.write("SD_EDU_OFFC_NM|SGG_NM|EDU_OFFC_NM|SCHL_NM|SCHL_GRAD_NM|OPEN_SCHD_YM|ADDRESS|CLASS_CNT|GNRL_CLASS_CNT|"
-#                   "SPCL_CLASS_CNT|KNDR_CLASS_CNT|WISEOPEN_CNT\n")
-#     page = 1
-#     while True :
-#         store_list = getinfo(page)
-#         if store_list == []: break;
-#         for store in store_list:
-#             outfile.write(u'%s|' % store['SD_EDU_OFFC_NM'])
-#             outfile.write(u'%s|' % store['SGG_NM'])
-#             outfile.write(u'%s|' % store['EDU_OFFC_NM'])
-#             outfile.write(u'%s|' % store['SCHL_NM'])
-#             outfile.write(u'%s|' % store['SCHL_GRAD_NM'])
-#             outfile.write(u'%s|' % store['OPEN_SCHD_YM'])
-#             outfile.write(u'%s|' % store['ADDRESS'])
-#             outfile.write(u'%s|' % store['CLASS_CNT'])
-#             outfile.write(u'%s|' % store['GNRL_CLASS_CNT'])
-#             outfile.write(u'%s|' % store['SPCL_CLASS_CNT'])
-#             outfile.write(u'%s|' % store['KNDR_CLASS_CNT'])
-#             outfile.write(u'%s\n' % store['WISEOPEN_CNT'])
-#         page += 1
-#         if page == 10: break
-#         time.sleep(random.uniform(0.3,0.6))
-#
-#     outfile.close()
-#
-#
-# def getinfo(intPageNo):
-#     url = 'http://www.eduinfo.go.kr/portal/service/openInfSColViewListAll.do?ibpage={}&onepagerow=100&colWidth=&infId=6XL' \
-#           '5JLKXZUNHK4GWJ87X7758606&infSeq=1&srvCd=S&SSheetNm=Scol2&fileDownType=&applyYn=N&gridItem=&tblId=&popColId=&' \
-#           'fsYn=N&gofDivCd=&myDataCd=2&SD_EDU_OFFC_DIV=&comboFiltNeed=N&SGG_NM=&wordsFiltNeed=N&SCHL_GRAD_CD=&comboFilt' \
-#           'Need=N&queryString=colWidth@!~~!@infId@!~6XL5JLKXZUNHK4GWJ87X7758606~!@infSeq@!~1~!@srvCd@!~S~!@SSheetNm@!~Sc' \
-#           'ol2~!@fileDownType@!~~!@applyYn@!~N~!@gridItem@!~~!@tblId@!~~!@popColId@!~~!@fsYn@!~N~!@gofDivCd@!~~!@myDataCd' \
-#           '@!~2~!@SD_EDU_OFFC_DIV@!~~!@comboFiltNeed@!~N~!@SGG_NM@!~~!@wordsFiltNeed@!~N~!@SCHL_GRAD_CD@!~~!@comboFiltNeed@!~N&iborderby='.format(intPageNo)
-#     jsonData = requests.get(url)
-#     print(url)
-#     josonData = jsonData.text
-#     josonString = json.loads(josonData)
-#     entityList = josonString['DATA']
-#     data = []
-#     for info in entityList:
-#         SD_EDU_OFFC_NM = info['SD_EDU_OFFC_NM']
-#         SGG_NM = info['SGG_NM']
-#         EDU_OFFC_NM = info['EDU_OFFC_NM']
-#         SCHL_NM = info['SCHL_NM']
-#         SCHL_GRAD_NM = info['SCHL_GRAD_NM']
-#         OPEN_SCHD_YM = info['OPEN_SCHD_YM']
-#         ADDRESS = info['ADDRESS']
-#         CLASS_CNT = info['CLASS_CNT']
-#         GNRL_CLASS_CNT = info['GNRL_CLASS_CNT']
-#         SPCL_CLASS_CNT = info['SPCL_CLASS_CNT']
-#         KNDR_CLASS_CNT = info['KNDR_CLASS_CNT']
-#         WISEOPEN_CNT = info['WISEOPEN_CNT']
-#         data.append(
-#             {"SD_EDU_OFFC_NM": SD_EDU_OFFC_NM, "SGG_NM": SGG_NM, "EDU_OFFC_NM": EDU_OFFC_NM, "SCHL_NM": SCHL_NM
-#                 , "SCHL_GRAD_NM": SCHL_GRAD_NM, "SCHL_GRAD_NM": SCHL_GRAD_NM, "OPEN_SCHD_YM": OPEN_SCHD_YM,
-#              "ADDRESS": ADDRESS, "CLASS_CNT": CLASS_CNT, "GNRL_CLASS_CNT": GNRL_CLASS_CNT, "SPCL_CLASS_CNT": SPCL_CLASS_CNT,
-#              "KNDR_CLASS_CNT": KNDR_CLASS_CNT, "WISEOPEN_CNT": WISEOPEN_CNT})
-#     return data
-#
-# def errExit(msg):
-#     sys.stderr.write(msg + '\n')
-#     sys.exit(0)
-#
-# if __name__ == '__main__':
-#     main()
+import traceback
+import os,sys
 
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\06_2_신설학교\\') == False : os.makedirs('수집결과\\06_2_신설학교\\')
+outfilename = '수집결과\\06_2_신설학교\\신설학교_{}.txt'.format(today)
+outfilename_true = '수집결과\\06_2_신설학교\\신설학교_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\06_2_신설학교\\신설학교_{}.log_실패.txt'.format(today)
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\신설학교_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("schlNm|classCnt|ditcNm|eduOffcNm|openSchdYm|pointX|pointY|realAddr|remk\n")
-
     Code_list = ['B10', 'C10', 'D10', 'E10', 'F10', 'G10', 'H10', 'I10', 'J10', 'K10', 'L10', 'M10', 'N10', 'O10',
                  'P10', 'Q10', 'R10', 'S10', 'T10', ]
 
@@ -98,7 +47,6 @@ def main():
             outfile.write(u'%s|' % store['realAddr'])
             outfile.write(u'%s\n' % store['remk'])
         time.sleep(random.uniform(0.3,0.6))
-
     outfile.close()
 
 def getinfo(regionCode):
@@ -145,7 +93,11 @@ def getinfo(regionCode):
         realAddr = info['realAddr']
         remk = info['remk']
         data.append({'schlNm':schlNm,'classCnt':classCnt,'ditcNm':ditcNm,'eduOffcNm':eduOffcNm,'openSchdYm':openSchdYm,'pointX':pointX,'pointY':pointY,'realAddr':realAddr,'remk':remk})
-
     return data
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

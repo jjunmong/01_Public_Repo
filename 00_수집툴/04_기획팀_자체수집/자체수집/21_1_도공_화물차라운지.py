@@ -2,10 +2,33 @@ import bs4
 import requests
 import codecs
 from datetime import datetime
+import codecs
+from datetime import datetime
+import traceback
+import os, sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\21_1_도공_화물차라운지\\') == False : os.makedirs('수집결과\\21_1_도공_화물차라운지\\')
+outfilename = '수집결과\\21_1_도공_화물차라운지\\도공_화물차라운지_{}.txt'.format(today)
+outfilename_true = '수집결과\\21_1_도공_화물차라운지\\도공_화물차라운지_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\21_1_도공_화물차라운지\\도공_화물차라운지_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\도공_화물차라운지_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     dict_keys1 = getStoreInfo('001')[1]
     dict_keys2 = str(dict_keys1).replace('dict_keys','').replace('[','').replace(']','').replace('(','').replace(')','').replace(',','|').replace("'","").replace(' ','')
@@ -86,4 +109,9 @@ def getStoreInfo(route_id):
         except : pass
     return data, dict_key
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

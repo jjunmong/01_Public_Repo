@@ -2,14 +2,38 @@ import time
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
-import os
 import getpass
 import zipfile
-import codecs
 import datetime
 import pandas as pd
+import codecs
+from datetime import datetime
+import traceback
+import os, sys
 
-def csv_down():
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+
+outfilename = '수집결과\\17_1_건축인허가\\건축인허가_{}.txt'.format(today)
+outfilename_true = '수집결과\\17_1_건축인허가\\건축인허가_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\17_1_건축인허가\\건축인허가_{}.log_실패.txt'.format(today)
+
+def main():
+    try:
+        Crawl_run()
+        file_edit()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     chromedriver_dir = r'C:\chromedriver.exe'
     driver = webdriver.Chrome(chromedriver_dir)
     driver.get('https://open.eais.go.kr/main/main.do')
@@ -115,12 +139,16 @@ def file_edit():
     df_fix['연면적'] = pd.to_numeric(df_fix['연면적'], downcast='integer')
     df_fix1 = df_fix[(df_fix['건물_명'].notnull()) & (df_fix['실제_착공_일'] > stand_day) & (df_fix['연면적'] > 1000)]
 
-    result_name = '수집결과\\건축인허가_'+today+'.csv'
+    result_name = '수집결과\\17_1_건축인허가\\건축인허가_'+today+'.csv'
     df_fix1.to_csv(result_name, encoding='cp949', sep=',')
 
     os.remove(zip_fullpath)
     os.remove('mart_kcy_01.txt')
     os.remove(file_name)
 
-csv_down()
-file_edit()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

@@ -1,19 +1,36 @@
 import time
-import codecs
 import requests
 import random
 import json
+import codecs
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\12_1_미니스톱\\') == False : os.makedirs('수집결과\\12_1_미니스톱\\')
+outfilename = '수집결과\\12_1_미니스톱\\미니스톱_{}.txt'.format(today)
+outfilename_true = '수집결과\\12_1_미니스톱\\미니스톱_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\12_1_미니스톱\\미니스톱_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\미니스톱_{}.txt'.format(today)
-
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("NAME|BRANCH|ADDR|TELL|XCORD|YCORD\n")
-
     sidoCode = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
-
     for getinfo in sidoCode:
         store_list = getStoirInfo(getinfo)
         for store in store_list:
@@ -23,9 +40,7 @@ def main():
             outfile.write(u'%s|' % store['tell'])
             outfile.write(u'%s|' % store['xcord'])
             outfile.write(u'%s\n' % store['ycord'])
-
         time.sleep(random.uniform(0.3,0.6))
-
     outfile.close()
 
 def getStoirInfo(sidoCode):
@@ -89,7 +104,12 @@ def getStoirInfo(sidoCode):
         result.append({"name":name,"branch":branch,"addr":addr,"tell":tell,"xcord":xcord,"ycord":ycord})
     return result
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()
 
 
 

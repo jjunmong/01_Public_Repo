@@ -1,18 +1,38 @@
+import bs4
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 import time
 import codecs
 import requests
 import random
-import bs4
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import os
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\03_1_S-OIL\\') == False : os.makedirs('수집결과\\03_1_S-OIL\\')
+outfilename = '수집결과\\03_1_S-OIL\\S-OIL_{}.txt'.format(today)
+outfilename_true = '수집결과\\03_1_S-OIL\\S-OIL_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\03_1_S-OIL\\S-OIL_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\S-OIL_{}.txt'.format(today)
-    outfile = codecs.open(outfilename, 'w', 'utf-8')
+    try:
+        Crawl_run()
+        dup_remove()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
+def Crawl_run():
+    outfile = codecs.open(outfilename, 'w', 'utf-8')
     code_list = getStore_List_all()
     for code in code_list:
         store_list = getStoreInfo(code)
@@ -26,9 +46,55 @@ def main():
             outfile.write(u'%s|' % store['ycord'])
             outfile.write(u'%s\n' % store['truck'])
         time.sleep(random.uniform(2, 3))
-
     outfile.close()
-    print('수집종료')
+    time.sleep(600)
+    outfile = codecs.open(outfilename, 'a', 'utf-8')
+    code_list = getStore_List_all2()
+    for code in code_list:
+        store_list = getStoreInfo(code)
+        print(code)
+        for store in store_list:
+            outfile.write(u'%s|' % store['code'])
+            outfile.write(u'%s|' % store['branch'])
+            outfile.write(u'%s|' % store['addr'])
+            outfile.write(u'%s|' % store['tell'])
+            outfile.write(u'%s|' % store['xcord'])
+            outfile.write(u'%s|' % store['ycord'])
+            outfile.write(u'%s\n' % store['truck'])
+        time.sleep(random.uniform(2, 3))
+    outfile.close()
+    time.sleep(600)
+    outfile = codecs.open(outfilename, 'a', 'utf-8')
+    code_list = getStore_List_all3()
+    for code in code_list:
+        store_list = getStoreInfo(code)
+        print(code)
+        for store in store_list:
+            outfile.write(u'%s|' % store['code'])
+            outfile.write(u'%s|' % store['branch'])
+            outfile.write(u'%s|' % store['addr'])
+            outfile.write(u'%s|' % store['tell'])
+            outfile.write(u'%s|' % store['xcord'])
+            outfile.write(u'%s|' % store['ycord'])
+            outfile.write(u'%s\n' % store['truck'])
+        time.sleep(random.uniform(2, 3))
+    outfile.close()
+    time.sleep(600)
+    outfile = codecs.open(outfilename, 'a', 'utf-8')
+    code_list = getStore_List_all4()
+    for code in code_list:
+        store_list = getStoreInfo(code)
+        print(code)
+        for store in store_list:
+            outfile.write(u'%s|' % store['code'])
+            outfile.write(u'%s|' % store['branch'])
+            outfile.write(u'%s|' % store['addr'])
+            outfile.write(u'%s|' % store['tell'])
+            outfile.write(u'%s|' % store['xcord'])
+            outfile.write(u'%s|' % store['ycord'])
+            outfile.write(u'%s\n' % store['truck'])
+        time.sleep(random.uniform(2, 3))
+    outfile.close()
 
 def getStore_List_all():
     chromedriver_dir = r'C:\chromedriver.exe'
@@ -54,29 +120,6 @@ def getStore_List_all():
             click_list = driver.find_element(By.XPATH,'//*[@id="container"]/ul[2]/li[11]/a/img')
             driver.execute_script("arguments[0].click();", click_list)
     return result
-
-
-def main2():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\S-OIL_{}.txt'.format(today)
-    outfile = codecs.open(outfilename, 'a', 'utf-8')
-
-    code_list = getStore_List_all2()
-    for code in code_list:
-        store_list = getStoreInfo(code)
-        print(code)
-        for store in store_list:
-            outfile.write(u'%s|' % store['code'])
-            outfile.write(u'%s|' % store['branch'])
-            outfile.write(u'%s|' % store['addr'])
-            outfile.write(u'%s|' % store['tell'])
-            outfile.write(u'%s|' % store['xcord'])
-            outfile.write(u'%s|' % store['ycord'])
-            outfile.write(u'%s\n' % store['truck'])
-        time.sleep(random.uniform(2, 3))
-
-    outfile.close()
-    print('수집종료')
 
 def getStore_List_all2():
     chromedriver_dir = r'C:\chromedriver.exe'
@@ -105,29 +148,6 @@ def getStore_List_all2():
         except : pass
     return result
 
-
-def main3():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\S-OIL_{}.txt'.format(today)
-    outfile = codecs.open(outfilename, 'a', 'utf-8')
-
-    code_list = getStore_List_all3()
-    for code in code_list:
-        store_list = getStoreInfo(code)
-        print(code)
-        for store in store_list:
-            outfile.write(u'%s|' % store['code'])
-            outfile.write(u'%s|' % store['branch'])
-            outfile.write(u'%s|' % store['addr'])
-            outfile.write(u'%s|' % store['tell'])
-            outfile.write(u'%s|' % store['xcord'])
-            outfile.write(u'%s|' % store['ycord'])
-            outfile.write(u'%s\n' % store['truck'])
-        time.sleep(random.uniform(2, 3))
-
-    outfile.close()
-    print('수집종료')
-
 def getStore_List_all3():
     chromedriver_dir = r'C:\chromedriver.exe'
     driver = webdriver.Chrome(chromedriver_dir)
@@ -154,29 +174,6 @@ def getStore_List_all3():
                 driver.execute_script("arguments[0].click();", click_list)
         except : pass
     return result
-
-
-def main4():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\S-OIL_{}.txt'.format(today)
-    outfile = codecs.open(outfilename, 'a', 'utf-8')
-
-    code_list = getStore_List_all4()
-    for code in code_list:
-        store_list = getStoreInfo(code)
-        print(code)
-        for store in store_list:
-            outfile.write(u'%s|' % store['code'])
-            outfile.write(u'%s|' % store['branch'])
-            outfile.write(u'%s|' % store['addr'])
-            outfile.write(u'%s|' % store['tell'])
-            outfile.write(u'%s|' % store['xcord'])
-            outfile.write(u'%s|' % store['ycord'])
-            outfile.write(u'%s\n' % store['truck'])
-        time.sleep(random.uniform(2, 3))
-
-    outfile.close()
-    print('수집종료')
 
 def getStore_List_all4():
     chromedriver_dir = r'C:\chromedriver.exe'
@@ -257,12 +254,8 @@ def getStoreInfo(code):
     return result
 
 def dup_remove():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\S-OIL_{}.txt'.format(today)
-
-    outfilename2 = '수집결과\\S-OIL_{}_중복제거.txt'.format(today)
-
-    w = open(outfilename2, 'w')
+    outfilename_dupRemove = '수집결과\\03_1_S-OIL\\S-OIL_중복제거.txt'
+    w = open(outfilename_dupRemove, 'w')
     r = open(outfilename, 'r',encoding='UTF8')
     # 파일에서 읽은 라인들을 리스트로 읽어들임
     lines = r.readlines()
@@ -277,24 +270,11 @@ def dup_remove():
     w.close()
     r.close()
     os.remove(outfilename)
-    os.rename(outfilename2,'수집결과\\S-OIL_{}.txt'.format(today))
+    os.rename(outfilename_dupRemove,outfilename)
 
-main()
-print('수집대기중.')
-time.sleep(600)
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
 
-print('수집을 재개합니다.')
-main2()
-print('수집대기중.')
-time.sleep(600)
-
-print('수집을 재개합니다.')
-main3()
-print('수집대기중.')
-time.sleep(600)
-
-print('수집을 재개합니다.')
-main4()
-print('수집이 완료 되었습니다.')
-dup_remove()
-print('수집종료')
+if __name__ == '__main__':
+    main()

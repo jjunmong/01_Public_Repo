@@ -1,13 +1,36 @@
 import codecs
+import os
 import requests
 import bs4
 from datetime import datetime
+import traceback
+import sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\01_1_오피넷\\') == False : os.makedirs('수집결과\\01_1_오피넷\\')
+outfilename = '수집결과\\01_1_오피넷\\오피넷_{}.txt'.format(today)
+outfilename_true = '수집결과\\01_1_오피넷\\오피넷_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\01_1_오피넷\\오피넷_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\오피넷_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
-    outfile.write("unino|poll|gpoll|name|oldaddr|newaddr|tel|gisxcord|gisycord|maint_yn|cvs_yn|wash_yn|self_yn|sel24_yn|lpg_yn|clo_yn|mdfy_dt\n")
+    outfile.write(
+        "unino|poll|gpoll|name|oldaddr|newaddr|tel|gisxcord|gisycord|maint_yn|cvs_yn|wash_yn|self_yn|sel24_yn|lpg_yn|clo_yn|mdfy_dt\n")
     store_list = getStoreInfo()
     for store in store_list:
         outfile.write(u'%s|' % store['unino'])
@@ -75,4 +98,10 @@ def getStoreInfo():
                      'gisxcord':gisxcord,'gisycord':gisycord,'maint_yn':maint_yn,'cvs_yn':cvs_yn,'wash_yn':wash_yn,
                      'self_yn':self_yn,'sel24_yn':sel24_yn,'lpg_yn':lpg_yn,'clo_yn':clo_yn,'mdfy_dt':mdfy_dt})
     return data
-main()
+
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

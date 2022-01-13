@@ -1,12 +1,34 @@
 import time
-import codecs
 import requests
 import random
 import bs4
+import codecs
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\11_4_어린이집집_폐지\\') == False : os.makedirs('수집결과\\11_4_어린이집집_폐지\\')
+outfilename = '수집결과\\11_4_어린이집집_폐지\\어린이집_폐지_{}.txt'.format(today)
+outfilename_true = '수집결과\\11_4_어린이집집_폐지\\어린이집_폐지_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\11_4_어린이집집_폐지\\어린이집_폐지_{}.log_실패.txt'.format(today)
+
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집_폐지_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("stcode|crname|crtel|crfax|craddr|crhome|crcapat|arcode|crstdate\n")
     url_list = getUrl()
@@ -24,10 +46,9 @@ def main():
             outfile.write(u'%s|' % store['crcapat'])
             outfile.write(u'%s|' % store['arcode'])
             outfile.write(u'%s\n' % store['crstdate'])
-
         time.sleep(random.uniform(0.9, 0.8))
-
     outfile.close()
+
 def getUrl():
     with open('월별_폐지_URL.txt') as data:
         lines = data.read().splitlines()
@@ -56,4 +77,9 @@ def getStoreInfo(url):
                      ,"crhome":crhome,"crcapat":crcapat,"arcode":arcode,"crstdate":crstdate})
     return data
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

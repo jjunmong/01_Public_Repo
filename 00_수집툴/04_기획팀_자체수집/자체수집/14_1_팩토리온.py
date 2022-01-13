@@ -5,6 +5,33 @@ from selenium import webdriver
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
 import time
+import codecs
+from datetime import datetime
+import traceback
+import os, sys
+import getpass
+import shutil
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\14_1_팩토리온\\') == False : os.makedirs('수집결과\\14_1_팩토리온\\')
+outfilename_true = '수집결과\\14_1_팩토리온\\고캠핑_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\14_1_팩토리온\\고캠핑_{}.log_실패.txt'.format(today)
+
+def main():
+    try:
+        Crawl_run()
+        file_move()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
 def getStoreInfo():
     url = 'https://www.factoryon.go.kr/bbs/frtblRecsroomBbsList.do'
@@ -37,7 +64,7 @@ def getStoreInfo():
     result = [data_max_fix1, data_max_fix2, data_max_fix3, data_max_fix4, data_max_fix5]
     return result
 
-def file_down():
+def Crawl_run():
     name_list = getStoreInfo()
     chromedriver_dir = r'C:\chromedriver.exe'
     driver = webdriver.Chrome(chromedriver_dir)
@@ -70,7 +97,49 @@ def file_down():
         driver.back()
         time.sleep(3)
 
-file_down()
+def file_move():
+    getuser = getpass.getuser()
+    origin_dir = r'C:\Users\{}\Downloads'.format(getuser)
+    current_dir = os.getcwd()
+    file_list = os.listdir(origin_dir)
+    for s in file_list:
+        if s.endswith('_전국공장등록현황.xlsx') == True :
+            file_name = s
+            origin_file = origin_dir + '\\' + file_name
+            copy_file = current_dir + '\\'+'수집결과\\14_1_팩토리온\\'+ file_name
+            shutil.copy(origin_file, copy_file)
+            os.remove(origin_file)
+        elif s.endswith('_전국_지식산업센터현황.xlsx') == True :
+            file_name = s
+            origin_file = origin_dir + '\\' + file_name
+            copy_file = current_dir + '\\'+'수집결과\\14_1_팩토리온\\'+ file_name
+            shutil.copy(origin_file, copy_file)
+            os.remove(origin_file)
+        elif s.endswith('_전국(개별,계획)입주업체현황.xlsx') == True :
+            file_name = s
+            origin_file = origin_dir + '\\' + file_name
+            copy_file = current_dir + '\\'+'수집결과\\14_1_팩토리온\\'+ file_name
+            shutil.copy(origin_file, copy_file)
+            os.remove(origin_file)
+        elif s.endswith('_산단내_신규입주계약_업체리스트.xlsx') == True :
+            file_name = s
+            origin_file = origin_dir + '\\' + file_name
+            copy_file = current_dir + '\\'+'수집결과\\14_1_팩토리온\\'+ file_name
+            shutil.copy(origin_file, copy_file)
+            os.remove(origin_file)
+        elif s.endswith('_산단공관할단지내_입주업체리스트.xlsx') == True :
+            file_name = s
+            origin_file = origin_dir + '\\' + file_name
+            copy_file = current_dir + '\\'+'수집결과\\14_1_팩토리온\\'+ file_name
+            shutil.copy(origin_file, copy_file)
+            os.remove(origin_file)
+
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()
 
 
 

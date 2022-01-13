@@ -1,14 +1,34 @@
+import bs4
 import time
 import codecs
 import requests
 import random
-import bs4
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\02_2_테슬라전기차\\') == False : os.makedirs('수집결과\\02_2_테슬라전기차\\')
+outfilename = '수집결과\\02_2_테슬라전기차\\02_2_테슬라전기차{}.txt'.format(today)
+outfilename_true = '수집결과\\02_2_테슬라전기차\\02_2_테슬라전기차{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\02_2_테슬라전기차\\02_2_테슬라전기차{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\테슬라전기차_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("BRANCH|ADDR|TELL|CHARGER\n")
 
@@ -25,7 +45,7 @@ def main():
     time.sleep(random.uniform(0.3,0.6))
     outfile.close()
 
-    outfile = codecs.open('테슬라전기차.txt', 'a', 'utf-8')
+    outfile = codecs.open(outfilename, 'a', 'utf-8')
 
     idx_list = getSuperchagersIdx2()
     for ss in idx_list:
@@ -88,6 +108,7 @@ def getSuperchagersInfo(name):
     }
     pageinfo = requests.get(url, headers = headers).text
     print(url)
+    result = []
     try:
         bsObj = bs4.BeautifulSoup(pageinfo,"html.parser")
         time.sleep(1)
@@ -102,9 +123,7 @@ def getSuperchagersInfo(name):
         pass
     else:
         result.append({"branch":branch,"addr":addr,"tell":tell,"charger":charger})
-
     return result
-
 
 def getSuperchagersIdx2():
     url = 'https://www.tesla.com/ko_KR/findus/list/chargers/South+Korea'
@@ -170,4 +189,9 @@ def getSuperchagersInfo2(name):
         result.append({"branch":branch,"addr":addr,"tell":tell,"charger":charger})
     return result
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

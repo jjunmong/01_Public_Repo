@@ -1,16 +1,34 @@
-# 05-04 params 정보 일부 변경이 있어서 호출 params 수정.
 import json
+import datetime
 import time
 import codecs
 import requests
 import random
-import datetime
 from datetime import datetime
+import traceback
+import os,sys
 
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\05_3_이마트정보(휴무일)\\') == False : os.makedirs('수집결과\\05_3_이마트정보(휴무일)\\')
+outfilename = '수집결과\\05_3_이마트정보(휴무일)\\이마트(휴무일)_{}.txt'.format(today)
+outfilename_true = '수집결과\\05_3_이마트정보(휴무일)\\이마트(휴무일)_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\05_3_이마트정보(휴무일)\\이마트(휴무일)_{}.log_실패.txt'.format(today)
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\이마트(휴무일)_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("NAME|ID|OLD_ADDR|NEW_ADDR|TELL|WORK_TIME|CLOSE_DATE1|CLOSE_DAY1|CLOSE_DATE2|CLOSE_DAY2|CLOSE_DATE3|CLOSE_DAY3"
                   "|XCORD|YCORD\n")
@@ -81,4 +99,9 @@ def getInfo(month, year):
                      ,'xcord':xcord,'ycord':ycord})
     return data
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

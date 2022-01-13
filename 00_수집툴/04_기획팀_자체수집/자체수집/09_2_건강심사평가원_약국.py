@@ -1,14 +1,35 @@
+import bs4
 import time
 import codecs
 import requests
 import random
-import bs4
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\09_2_약국\\') == False : os.makedirs('수집결과\\09_2_약국\\')
+outfilename = '수집결과\\09_2_약국\\약국_{}.txt'.format(today)
+outfilename_true = '수집결과\\09_2_약국\\약국_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\09_2_약국\\약국_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\약국_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        dup_remove()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     sido_code = ['110000','210000','220000','230000','240000','250000','260000','410000','310000','320000','330000','340000','350000','360000','370000','380000','390000']
     for sido in sido_code:
@@ -136,8 +157,9 @@ def getStoreInfo(sidoCode, intPageNo):
     return data
 
 def dup_remove():
-    w = open('심평원_약국_중복제거.txt', 'w')
-    r = open('심평원_약국.txt', 'r',encoding='UTF8')
+    outfilename_dupRemove = '수집결과\\09_2_약국\\약국_중복제거.txt'
+    w = open(outfilename_dupRemove, 'w')
+    r = open(outfilename, 'r',encoding='UTF8')
     # 파일에서 읽은 라인들을 리스트로 읽어들임
     lines = r.readlines()
     # Set에 넣어서 중복 제거 후 다시 리스트 변환
@@ -150,11 +172,12 @@ def dup_remove():
     # 파일 닫기
     w.close()
     r.close()
-    # os.remove('DAUM_TV맛집_간편수집결과.txt')
+    os.remove(outfilename)
+    os.rename(outfilename_dupRemove, outfilename)
 
-main()
-dup_remove()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
 
-# 2020-03-19  : 구분자 오류로 툴 수정 후 배포
-# 2020-04-08 : 중복 및 누락 분 발생으로 시도코드 삽입, 중복제거 프로세스 추가
-# 2020-09-10 : 누락 발생으로 시도코드 정비, 재 수집 결과 이상 없음.
+if __name__ == '__main__':
+    main()

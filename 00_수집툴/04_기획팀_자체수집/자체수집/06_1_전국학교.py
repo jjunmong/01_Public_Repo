@@ -4,22 +4,39 @@ import requests
 import random
 import json
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\06_1_전국학교\\') == False : os.makedirs('수집결과\\06_1_전국학교\\')
+outfilename = '수집결과\\06_1_전국학교\\전국학교_{}.txt'.format(today)
+outfilename_true = '수집결과\\06_1_전국학교\\전국학교_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\06_1_전국학교\\전국학교_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\전국학교_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("SD_EDU_OFFC_NM|SCHL_NM|SCHL_GRAD_NM|ADDRESS|RG_EDU_OFFC_NM|OPEN_DATE|SCHL_URL|SCHL_TEL|TOT_CLASS_CNT|TOT_STDT_CNT|TOT_TCHR_CNT|TOT_OFWR_CNT|WISEOPEN_CNT\n")
-
-    sidoCode = ['B10', 'C10', 'D10', 'E10', 'F10', 'G10', 'H10', 'I10', 'J10', 'K10', 'M10', 'N10', 'P10', 'Q10', 'R10',
-                'S10', 'T10']
+    sidoCode = ['B10', 'C10', 'D10', 'E10', 'F10', 'G10', 'H10', 'I10', 'J10', 'K10', 'M10', 'N10', 'P10', 'Q10', 'R10','S10', 'T10']
     for code in sidoCode:
         page = 1
         while True :
             store_list = getinfo(page,code)
             if store_list == [] : break;
-
             for store in store_list:
                 outfile.write(u'%s|' % store['SD_EDU_OFFC_NM'])
                 outfile.write(u'%s|' % store['SCHL_NM'])
@@ -35,11 +52,8 @@ def main():
                 outfile.write(u'%s|' % store['TOT_TCHR_CNT'])
                 outfile.write(u'%s|' % store['TOT_OFWR_CNT'])
                 outfile.write(u'%s\n' % store['WISEOPEN_CNT'])
-
             page += 1
-
             if page == 99 : break
-
             time.sleep(random.uniform(0.3,0.6))
 
     outfile.close()
@@ -48,33 +62,6 @@ def main():
 def getinfo(intPageNo, sidoCode):
     url = 'http://www.eduinfo.go.kr/portal/service/openInfSColViewListAll.do?ibpage={}&onepagerow=100&colWidth=&infId=RY4AY792FINLCGGD1DW37745620&infSeq=1&srvCd=S&SSheetNm=Scol0&fileDownType=&applyYn=N&gridItem=&tblId=&popColId=&fsYn=N&gofDivCd=&myDataCd=2&SD_EDU_OFFC_DIV={}&comboFiltNeed=Y&SGG_NM=&wordsFiltNeed=N&SCHL_GRAD_CD=&comboFiltNeed=N&queryString=colWidth@!~~!@infId@!~RY4AY792FINLCGGD1DW37745620~!@infSeq@!~1~!@srvCd@!~S~!@SSheetNm@!~Scol0~!@fileDownType@!~~!@applyYn@!~N~!@gridItem@!~~!@tblId@!~~!@popColId@!~~!@fsYn@!~N~!@gofDivCd@!~~!@myDataCd@!~2~!@SD_EDU_OFFC_DIV@!~{}~!@comboFiltNeed@!~Y~!@SGG_NM@!~~!@wordsFiltNeed@!~N~!@SCHL_GRAD_CD@!~~!@comboFiltNeed@!~N&iborderby='.format(
         intPageNo, sidoCode, sidoCode)
-    # url = 'http://www.eduinfo.go.kr/portal/service/openInfSColViewListAll.do'
-    data = {
-        # 'ibpage':'1',
-        # 'onepagerow':'50',
-        # 'colWidth':'',
-        # 'infId':'RY4AY792FINLCGGD1DW37745620',
-        # 'infSeq':'1',
-        # 'srvCd':'S',
-        # 'SSheetNm':'Scol0',
-        # 'fileDownType':'',
-        # 'applyYn':'N',
-        # 'gridItem':'',
-        # 'tblId':'',
-        # 'popColId':'',
-        # 'fsYn':'N',
-        # 'gofDivCd':'',
-        # 'myDataCd':'2',
-        # 'SD_EDU_OFFC_DIV':'C10',
-        # 'comboFiltNeed':'Y',
-        # 'SGG_NM':'',
-        # 'wordsFiltNeed':'N',
-        # 'SCHL_GRAD_CD':'',
-        # 'comboFiltNeed':'N',
-        # 'queryString': 'colWidth@!~~!@infId@!~RY4AY792FINLCGGD1DW37745620~!@infSeq@!~1~!@srvCd@!~S~!@SSheetNm@!~Scol0~!@fileDownType@!~~!@applyYn@!~N~!@gridItem@!~~!@tblId@!~~!@popColId@!~~!@fsYn@!~N~!@gofDivCd@!~~!@myDataCd@!~2~!@SD_EDU_OFFC_DIV@!~{}~!@comboFiltNeed@!~Y~!@SGG_NM@!~~!@wordsFiltNeed@!~N~!@SCHL_GRAD_CD@!~~!@comboFiltNeed@!~N'.format(sidoCode)
-        # 'iborderby':'',
-    }
-    # data['ibpage'] = intPageNo
     jsonData = requests.get(url)
     print(url)
     josonData = jsonData.text
@@ -82,7 +69,7 @@ def getinfo(intPageNo, sidoCode):
     entityList = josonString['DATA']
     data = []
     for info in entityList:
-        SD_EDU_OFFC_NM = info['SD_EDU_OFFC_NM']
+        SD_EDU_OFFC_NM = info['SㄴD_EDU_OFFC_NM']
         SCHL_NM = info['SCHL_NM']
         SCHL_GRAD_NM = info['SCHL_GRAD_NM']
         ADDRESS = info['ADDRESS']
@@ -105,4 +92,9 @@ def getinfo(intPageNo, sidoCode):
                 , "TOT_OFWR_CNT": TOT_OFWR_CNT, "WISEOPEN_CNT": WISEOPEN_CNT})
     return data
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

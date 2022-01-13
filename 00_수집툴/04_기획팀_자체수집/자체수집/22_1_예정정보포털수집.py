@@ -1,14 +1,36 @@
-import codecs
 import requests
 import json
 import time
 import random
+import codecs
 from datetime import datetime
+import traceback
+import os, sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\22_1_예정정보포털수집\\') == False : os.makedirs('수집결과\\22_1_예정정보포털수집\\')
+outfilename = '수집결과\\22_1_예정정보포털수집\\예정정보포털수집_{}.txt'.format(today)
+outfilename_true = '수집결과\\22_1_예정정보포털수집\\예정정보포털수집_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\22_1_예정정보포털수집\\예정정보포털수집_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\예정정보포털수집_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
+    outfile.write("input|id|name|oldaddr|newaddr|tell|cat|xcord|ycord|url\n")
     inputNames = getInputName()
 
     for input in inputNames:
@@ -16,7 +38,7 @@ def main():
         while True:
             if getStoreInfo(input, page) == [] : break
             result = getStoreInfo(input, page)
-            print(input,page)
+            print('네이버',input,page)
             for results in result:
                 outfile.write(u'%s|' % results['input'])
                 outfile.write(u'%s|' % results['id'])
@@ -35,7 +57,7 @@ def main():
         page = 1
         while True:
             result = getStoreInfo2(page, input)
-            print(input, page)
+            print('다음',input, page)
             if len(result) <15 :
                 for results in result:
                     outfile.write(u'%s|' % results['input'])
@@ -94,11 +116,6 @@ def getStoreInfo(inputName, page):
     try:
         data = json.loads(req)
         data_all = data['result']['place']['list']
-        try:
-            listcount = data['result']['place']['totalCount']
-        except:
-            listcount = ''
-        inputname = inputName
     except : pass
     else:
         if data_all == None : pass
@@ -122,7 +139,7 @@ def getStoreInfo(inputName, page):
             try : url = ss['homePage']
             except : url = ''
             if name.endswith('예정)')==True :
-                list.append({"input":inputName,"id":id,"name":name,"oldaddr":oldaddr,"newaddr":newaddr,"tell":tell,"cat":cat,"xcord":xcord,"ycord":ycord,"url":url})
+                list.append({"input":'네이버'+' '+inputName,"id":id,"name":name,"oldaddr":oldaddr,"newaddr":newaddr,"tell":tell,"cat":cat,"xcord":xcord,"ycord":ycord,"url":url})
             else : pass
     return list
 
@@ -166,9 +183,14 @@ def getStoreInfo2(intpageNo, searchName):
         xcord = info['lon']
         ycord = info['lat']
         if name.endswith('예정)') == True:
-            list.append({"input":searchName,"id":id,"name":name,"oldaddr":oldaddr,"newaddr":newaddr,"tell":tell,"cat":cat,"xcord":xcord,"ycord":ycord,"url":url})
+            result.append({"input":'다음'+' '+searchName,"id":id,"name":name,"oldaddr":oldaddr,"newaddr":newaddr,"tell":tell,"cat":cat,"xcord":xcord,"ycord":ycord,"url":url})
         else: pass
     return result
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()
 

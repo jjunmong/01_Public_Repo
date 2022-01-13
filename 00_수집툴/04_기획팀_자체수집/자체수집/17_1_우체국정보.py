@@ -1,19 +1,38 @@
 import time
-import codecs
 import requests
 import random
 import bs4
+import codecs
 from datetime import datetime
+import traceback
+import os, sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\17_1_우체국정보\\') == False : os.makedirs('수집결과\\17_1_우체국정보\\')
+outfilename = '수집결과\\17_1_우체국정보\\우체국정보_{}.txt'.format(today)
+outfilename_true = '수집결과\\17_1_우체국정보\\우체국정보_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\17_1_우체국정보\\우체국정보_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\우체국정보_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("postid|postdiv|postnm|postnmen|posttel|postfax|postaddr|postaddren|post365yn|posttime|postfinancetime"
                   "|postlat|postlon|postsubway|postoffiid|fundsaleyn\n")
-
     code_list = ['se','gi','bs','jj','jb','jn','kw','kb','cc']
-
     for code_num in code_list:
         page = 1
         while True:
@@ -39,7 +58,6 @@ def main():
             page += 1
             if page == 100: break
             time.sleep(random.uniform(0.3,0.6))
-
     outfile.close()
 
 def getinfo(intPageNo, code):
@@ -77,4 +95,9 @@ def getinfo(intPageNo, code):
              "fundsaleyn": fundsaleyn})
     return data
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

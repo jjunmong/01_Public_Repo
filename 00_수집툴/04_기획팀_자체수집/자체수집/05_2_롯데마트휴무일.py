@@ -4,10 +4,36 @@ import requests
 import random
 import bs4
 from datetime import datetime
+import bs4
+import time
+import codecs
+import requests
+import random
+from datetime import datetime
+import traceback
+import os,sys
 
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\05_2_롯데마트(휴무일)\\') == False : os.makedirs('수집결과\\05_2_롯데마트(휴무일)\\')
+outfilename = '수집결과\\05_2_롯데마트(휴무일)\\롯데마트(휴무일)_{}.txt'.format(today)
+outfilename_true = '수집결과\\05_2_롯데마트(휴무일)\\롯데마트(휴무일)_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\05_2_롯데마트(휴무일)\\롯데마트(휴무일)_{}.log_실패.txt'.format(today)
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\롯데마트(휴무일)_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("NAME|BRANCH|TELL|WORKTIME|CLOSEDATE|OLDADDR|NEWADDR\n")
 
@@ -43,4 +69,9 @@ def getinfo(intPageNo):
         else : data.append({"name":name,"branch":branch,"detail_info":detail_info,"addr":addr})
     return data
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

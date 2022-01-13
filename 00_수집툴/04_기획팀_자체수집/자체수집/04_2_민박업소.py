@@ -1,13 +1,34 @@
+import bs4
 import time
 import codecs
 import requests
 import random
-import bs4
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\04_2_민박업소\\') == False : os.makedirs('수집결과\\04_2_민박업소\\')
+outfilename = '수집결과\\04_2_민박업소\\민박업소_{}.txt'.format(today)
+outfilename_true = '수집결과\\04_2_민박업소\\민박업소_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\04_2_민박업소\\민박업소_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\민박업소_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("LIC_ID|LIC_DATE|NAME|ADDR|TELL\n")
 
@@ -53,40 +74,6 @@ def getStoreInfo_list(intPageNo):
             if col1.isdigit() == True : result.append({'col1':col1, 'no':intPageNo})
             else : pass
     return result
-
-# def getStoreInfo(col1, no):
-#     url = 'https://safestay.visitkorea.or.kr/usr/mbkinfo/map/mapSelectDetail.kto'
-#     data = {
-#         'currentMenuSn': '105',
-#         # 'pageIndex': '2',
-#         'pageUnit': '12',
-#         'searchGubun1': 'ALL',
-#         'searchGubun2': '',
-#         'searchGubun4': '',
-#         # 'lodgeSn': '',
-#         'totalSearchText': '',
-#     }
-#     data['lodgeSn'] = col1
-#     data['pageUnit'] = no
-#     pageString = requests.post(url = url, data = data).text
-#     bsObj = bs4.BeautifulSoup(pageString,"html.parser")
-#     result = []
-#     name = str(bsObj.select('#contents-wraper > section > div > div > table > tbody > tr:nth-child(1) > td.col2')).replace('[','').replace(']','')
-#     name = name.replace('<td class="col2" headers="lodgeNmTh">','').replace('</td>','').upper()
-#     cate = str(bsObj.select('#contents-wraper > section > div > div > table > tbody > tr:nth-child(1) > td.col4')).replace('[','').replace(']','')
-#     cate = cate.replace('<td class="col4" headers="lodgeTypeCdNmTh">', '').replace('</td>', '')
-#     addr = str(bsObj.select('#contents-wraper > section > div > div > table > tbody > tr:nth-child(2) > td')).replace('[','').replace(']','').replace('\r','').replace('\n','').replace('\t','').replace('\n','')
-#     addr = addr.replace('<td class="col2" colspan="3" headers="lodgeAddrTh">','').replace('</td>','')
-#     if addr.startswith('<span>') == True :
-#         addr = addr.split('>')[2]
-#     idx = str(bsObj.select('#contents-wraper > section > div > div > table > tbody > tr:nth-child(3) > td.col2')).replace('[','').replace(']','')
-#     idx = idx.replace('<td class="col2" headers="lodgePermitNoTh">', '').replace('</td>', '')
-#     date = str(bsObj.select('#contents-wraper > section > div > div > table > tbody > tr:nth-child(3) > td.col4')).replace('[','').replace(']','').replace('\r','').replace('\n','').replace('\t','')
-#     date = date.replace('<td class="col4" headers="lodgePermitDyTh">', '').replace('</td>', '')
-#     openinfo = str(bsObj.select('#contents-wraper > section > div > div > table > tbody > tr:nth-child(4) > td.col2')).replace('[','').replace(']','').replace('\r','').replace('\n','').replace('\t','')
-#     openinfo = openinfo.replace('<td class="col2" headers="lodgeStateCdNmTh">', '').replace('</td>', '').replace(' ','')
-#     result.append({'idx':idx,'name':name,'cate':cate,'addr':addr,'date':date,'openinfo':openinfo})
-#     return result
 
 def getStoreInfo(col1, no):
     url = 'https://safestay.visitkorea.or.kr/usr/mbkinfo/intro/introSelectDetail.kto'
@@ -141,4 +128,9 @@ def getStroeInfo_List_all():
         page+=1
     return result
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

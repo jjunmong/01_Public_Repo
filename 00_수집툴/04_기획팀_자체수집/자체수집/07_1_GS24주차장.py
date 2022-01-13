@@ -1,14 +1,35 @@
-import codecs
 import requests
 import json
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+import codecs
+import requests
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\07_1_GS24주차장\\') == False : os.makedirs('수집결과\\07_1_GS24주차장\\')
+outfilename = '수집결과\\07_1_GS24주차장\\GS24주차장_{}.txt'.format(today)
+outfilename_true = '수집결과\\07_1_GS24주차장\\GS24주차장_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\07_1_GS24주차장\\GS24주차장_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\GS24주차장_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("IDX|PARK_AREA_NAME|E_PARK_AREA_NAME|CAR_PARK_NUM|PERIOD_PARK_NUM|PARK_KIND|PARK_NUM|PARK_P_NUM|ZIP"
                   "|ADDRESS1|ADDRESS2|E_ADDRESS|WORK_TIME1|WORK_TIME2|WORK_TIME3|WORK_TIME4|WORK_TIME5|WORK_TIME6"
@@ -19,7 +40,6 @@ def main():
                   "|CARD_SITECODE|CARD_SITEKEY|CARD_SITENAME|CARD_COMPANY|TICKET_END_DATE|PERIOD_ETC|DC_ETC|PERIOD_TICKET6"
                   "|PERIOD_TICKET7|PERIOD_TICKET8|PERIOD_TICKET9|PERIOD_TICKET10|DC_TICKET6|DC_TICKET7|DC_TICKET8|DC_TICKET9"
                   "|DC_TICKET10|x|y|\n")
-
     store_list = getinfo()
     for ss in store_list:
         print(ss)
@@ -214,4 +234,9 @@ def getinfo():
                      "x":x, "y":y})
     return data
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

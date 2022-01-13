@@ -1,0 +1,4 @@
+tool_name|month|week|dayofweek|day|time
+06_3_폐교학교.exe||2주|월|0|01:00
+10_1_알리오플러스.exe|매월|||13|09:31
+23_1_경찰서.exe|매월||화|1|01:00

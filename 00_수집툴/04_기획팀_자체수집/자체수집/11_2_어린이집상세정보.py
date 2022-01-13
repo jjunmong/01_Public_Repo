@@ -1,18 +1,36 @@
 import time
-import codecs
 import requests
 import random
 import bs4
-import os
+import codecs
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\11_2_어린이집상세정보\\') == False : os.makedirs('수집결과\\11_2_어린이집상세정보\\')
+outfilename = '수집결과\\11_2_어린이집상세정보\\어린이집상세정보_{}.txt'.format(today)
+outfilename_true = '수집결과\\11_2_어린이집상세정보\\어린이집상세정보_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\11_2_어린이집상세정보\\어린이집상세정보_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집상세정보_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
-
     page = getSidoCode_list()
-
     # page = [11560,11620]
     for code in page:
         store_list = getStoreInfo(code)
@@ -49,19 +67,12 @@ def main():
             outfile.write(u'%s|' % store['crabldt'])
             outfile.write(u'%s|' % store['datastdrdt'])
             outfile.write(u'%s\n' % store['crspec'])
-
         time.sleep(random.uniform(0.9, 0.8))
-
     outfile.close()
 
 
-def main2():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집상세정보_{}.txt'.format(today)
     outfile = codecs.open(outfilename, 'a', 'utf-8')
-
     list = getcode2()
-
     for code in list:
         store_list = getStoreInfo(code)
         print(store_list)
@@ -97,28 +108,15 @@ def main2():
             outfile.write(u'%s|' % store['crabldt'])
             outfile.write(u'%s|' % store['datastdrdt'])
             outfile.write(u'%s\n' % store['crspec'])
-
         time.sleep(random.uniform(0.9, 0.8))
-
     outfile.close()
 
-def getcode2():
-    with open('어린이집별기본정보_수집실패.txt') as data:
-        lines = data.read().splitlines()
-    code_list = lines
-    return  code_list
-
-def main3():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집상세정보_{}.txt'.format(today)
     outfile = codecs.open(outfilename, 'a', 'utf-8')
-
     list = getcode3()
-
     for code in list:
         store_list = getStoreInfo(code)
         print(store_list)
-        if store_list == [] :
+        if store_list == []:
             print(code, "호출결과가 없는 리스트로 반환.")
             outfile_fail = codecs.open('어린이집별기본정보_수집실패3.txt', 'a')
             fail_url = str(code) + '\n'
@@ -150,28 +148,15 @@ def main3():
             outfile.write(u'%s|' % store['crabldt'])
             outfile.write(u'%s|' % store['datastdrdt'])
             outfile.write(u'%s\n' % store['crspec'])
-
         time.sleep(random.uniform(0.9, 0.8))
-
     outfile.close()
 
-def getcode3():
-    with open('어린이집별기본정보_수집실패2.txt') as data:
-        lines = data.read().splitlines()
-    code_list = lines
-    return  code_list
-
-def main4():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집상세정보_{}.txt'.format(today)
     outfile = codecs.open(outfilename, 'a', 'utf-8')
-
     list = getcode4()
-
     for code in list:
         store_list = getStoreInfo(code)
         print(store_list)
-        if store_list == [] :
+        if store_list == []:
             print(code, "호출결과가 없는 리스트로 반환.")
             outfile_fail = codecs.open('어린이집별기본정보_수집실패4.txt', 'a')
             fail_url = str(code) + '\n'
@@ -203,28 +188,15 @@ def main4():
             outfile.write(u'%s|' % store['crabldt'])
             outfile.write(u'%s|' % store['datastdrdt'])
             outfile.write(u'%s\n' % store['crspec'])
-
         time.sleep(random.uniform(0.9, 0.8))
-
     outfile.close()
 
-def getcode4():
-    with open('어린이집별기본정보_수집실패3.txt') as data:
-        lines = data.read().splitlines()
-    code_list = lines
-    return  code_list
-
-def main5():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집상세정보_{}.txt'.format(today)
     outfile = codecs.open(outfilename, 'a', 'utf-8')
-
     list = getcode5()
-
     for code in list:
         store_list = getStoreInfo(code)
         print(store_list)
-        if store_list == [] :
+        if store_list == []:
             print(code, "호출결과가 없는 리스트로 반환.")
             outfile_fail = codecs.open('어린이집별기본정보_수집실패5.txt', 'a')
             fail_url = str(code) + '\n'
@@ -256,28 +228,15 @@ def main5():
             outfile.write(u'%s|' % store['crabldt'])
             outfile.write(u'%s|' % store['datastdrdt'])
             outfile.write(u'%s\n' % store['crspec'])
-
         time.sleep(random.uniform(0.9, 0.8))
-
     outfile.close()
 
-def getcode5():
-    with open('어린이집별기본정보_수집실패4.txt') as data:
-        lines = data.read().splitlines()
-    code_list = lines
-    return  code_list
-
-def main6():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집상세정보_{}.txt'.format(today)
     outfile = codecs.open(outfilename, 'a', 'utf-8')
-
     list = getcode6()
-
     for code in list:
         store_list = getStoreInfo(code)
         print(store_list)
-        if store_list == [] :
+        if store_list == []:
             print(code, "호출결과가 없는 리스트로 반환.")
             outfile_fail = codecs.open('어린이집별기본정보_수집실패6.txt', 'a')
             fail_url = str(code) + '\n'
@@ -309,10 +268,32 @@ def main6():
             outfile.write(u'%s|' % store['crabldt'])
             outfile.write(u'%s|' % store['datastdrdt'])
             outfile.write(u'%s\n' % store['crspec'])
-
         time.sleep(random.uniform(0.9, 0.8))
-
     outfile.close()
+
+def getcode2():
+    with open('어린이집별기본정보_수집실패.txt') as data:
+        lines = data.read().splitlines()
+    code_list = lines
+    return  code_list
+
+def getcode3():
+    with open('어린이집별기본정보_수집실패2.txt') as data:
+        lines = data.read().splitlines()
+    code_list = lines
+    return  code_list
+
+def getcode4():
+    with open('어린이집별기본정보_수집실패3.txt') as data:
+        lines = data.read().splitlines()
+    code_list = lines
+    return  code_list
+
+def getcode5():
+    with open('어린이집별기본정보_수집실패4.txt') as data:
+        lines = data.read().splitlines()
+    code_list = lines
+    return  code_list
 
 def getcode6():
     with open('어린이집별기본정보_수집실패5.txt') as data:
@@ -448,7 +429,6 @@ def getStoreInfo(sidoCode):
                          "crabldt":crabldt,"datastdrdt":datastdrdt,"crspec":crspec})
     return data
 
-
 def getSidoCode(sidoName):
     url = "http://api.childcare.go.kr/mediate/rest/cpmsapi020/cpmsapi020/request"
     querystring = {"key":"71c59f0ccc3b4b8da812e2db18ca9b56"}
@@ -475,10 +455,7 @@ def getSidoCode_list():
     return result
 
 def dup_remove():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집상세정보_{}.txt'.format(today)
-    outfilename2 = '수집결과\\어린이집상세정보_{}_중복제거.txt'.format(today)
-
+    outfilename2 = '수집결과\\11_2_어린이집상세정보\\어린이집상세정보_중복제거.txt'
     w = open(outfilename2, 'w')
     r = open(outfilename, 'r',encoding='UTF8')
     # 파일에서 읽은 라인들을 리스트로 읽어들임
@@ -502,10 +479,10 @@ def dup_remove():
     os.remove('어린이집별기본정보_수집실패5.txt')
     os.remove('어린이집별기본정보_수집실패6.txt')
     os.rename(outfilename2, outfilename)
-main()
-main2()
-main3()
-main4()
-main5()
-main6()
-dup_remove()
+
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

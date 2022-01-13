@@ -1,13 +1,34 @@
-import time
-import codecs
 import requests
 import random
 import bs4
+import time
+import codecs
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\11_3_어린이집_신규\\') == False : os.makedirs('수집결과\\11_3_어린이집_신규\\')
+outfilename = '수집결과\\11_3_어린이집_신규\\어린이집_신규_{}.txt'.format(today)
+outfilename_true = '수집결과\\11_3_어린이집_신규\\어린이집_신규_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\11_3_어린이집_신규\\어린이집_신규_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\어린이집_신규_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("stcode|crname|crtel|crfax|craddr|crhome|crcapat|arcode|frstcnfmdt\n")
     url_list = getUrl()
@@ -57,4 +78,9 @@ def getStoreInfo(url):
                      ,"crhome":crhome,"crcapat":crcapat,"arcode":arcode,"frstcnfmdt":frstcnfmdt})
     return data
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

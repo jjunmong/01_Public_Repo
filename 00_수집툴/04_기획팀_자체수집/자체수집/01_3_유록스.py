@@ -2,6 +2,8 @@ import codecs
 import requests
 import json
 from datetime import datetime
+import traceback
+import os,sys
 
 sidolist = {
     '서울': {"강남구","강동구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","마포구","서대문구","서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구"},
@@ -24,9 +26,28 @@ sidolist = {
     '세종': {"금남구즉로","금남면","부강면","소정면","연기면","연동면","장군면","전동면","전의면","조치원읍"}
 }
 
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\01_3_유록스\\') == False: os.makedirs('수집결과\\01_3_유록스\\')
+outfilename = '수집결과\\01_3_유록스\\유록스_{}.txt'.format(today)
+outfilename_true = '수집결과\\01_3_유록스\\유록스_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\01_3_유록스\\유록스_{}.log_실패.txt'.format(today)
 def main():
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\유록스_{}.txt'.format(today)
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("ID|NAME|BRANCH|ADDRESS|TELL|EBD|PET|XCORD|YCORD|REGDATE|UPDATE\n")
 
@@ -82,4 +103,9 @@ def getStoreInfo(sidoname, gugunname):
             result.append({"id":id,"name":name,"branch":brand,"addr":addr,"tell":tell,"ebd":ebd,"pet":pet,"xcord":xcord,"ycord":ycord,"regdate":regdate,"update":update})
     return result
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()

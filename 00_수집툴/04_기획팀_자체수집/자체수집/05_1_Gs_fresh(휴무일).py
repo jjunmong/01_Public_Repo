@@ -1,13 +1,34 @@
-import requests
-import codecs
-import time
 import json
+import time
+import codecs
+import requests
 import random
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\05_1_GS_THE_FRESH(휴무일)\\') == False : os.makedirs('수집결과\\05_1_GS_THE_FRESH(휴무일)\\')
+outfilename = '수집결과\\05_1_GS_THE_FRESH(휴무일)\\GS_THE_FRESH(휴무일)_{}.txt'.format(today)
+outfilename_true = '수집결과\\05_1_GS_THE_FRESH(휴무일)\\GS_THE_FRESH(휴무일)_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\05_1_GS_THE_FRESH(휴무일)\\GS_THE_FRESH(휴무일)_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\GS_THE_FRESH(휴무일)_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
+
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("CODE|NAME|BRANCH|ADDR|TELL|XCORD|YCORD|CLOSEDATE1|CLOSEDATE2|CLOSEDATE3|CLOSEDATE4|TIME\n")
 
@@ -75,7 +96,6 @@ def getStoreInfo(pageNum):
             try:
                 time = timeSTH +':'+ timeSTM +'-'+ timeEDH +':'+ timeEDM
             except: time = ''
-
             result.append({"code":code,"name":name,"branch":branch,"addr":addr,"tell":tell,"xcord":xcord,"ycord":ycord,"closedate1":closedate1,"closedate2":closedate2,"closedate3":closedate3,"closedate4":closedate4,"time":time})
     return result
 
@@ -99,5 +119,10 @@ def pageCount():
     page_result = int(page_count / 3 + 1)
     return page_result
 
-main()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()
 

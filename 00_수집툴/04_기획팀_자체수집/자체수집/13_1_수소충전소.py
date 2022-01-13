@@ -1,13 +1,35 @@
-import codecs
 import requests
 import bs4
 import json
+import codecs
 from datetime import datetime
+import traceback
+import os,sys
+
+today = str(datetime.today()).split(' ')[0].replace('-', '')
+if os.path.exists('수집결과\\13_1_수소충전소\\') == False : os.makedirs('수집결과\\13_1_수소충전소\\')
+outfilename = '수집결과\\13_1_수소충전소\\한국수소산업연합회_{}.txt'.format(today)
+outfilename2 = '수집결과\\13_1_수소충전소\\수소융합얼라이언스추진단_{}.txt'.format(today)
+outfilename_true = '수집결과\\13_1_수소충전소\\한국수소산업연합회_{}.log_성공.txt'.format(today)
+outfilename_false = '수집결과\\13_1_수소충전소\\한국수소산업연합회_{}.log_실패.txt'.format(today)
 
 def main():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\한국수소산업연합회_{}.txt'.format(today)
+    try:
+        Crawl_run()
+        Crawl_run2()
+        outfile = codecs.open(outfilename_true, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '정상 수집 완료'
+        outfile.write(write_text)
+        outfile.close()
+    except:
+        if os.path.isfile(outfilename_true):
+            os.remove(outfilename_true)
+        outfile = codecs.open(outfilename_false, 'w', 'utf-8')
+        write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        outfile.write(write_text)
+        outfile.close()
 
+def Crawl_run():
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     dict_keys1 = getStoreInfo(1)[1]
     dict_keys2 = str(dict_keys1).replace('dict_keys','').replace('[','').replace(']','').replace('(','').replace(')','').replace(',','|').replace("'","").replace(' ','')
@@ -66,11 +88,8 @@ def getStoreInfo(intPageNo):
     return data, dict_key
 
 
-def main2():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
-    outfilename = '수집결과\\수소융합얼라이언스추진단_{}.txt'.format(today)
-
-    outfile = codecs.open(outfilename, 'w', 'utf-8')
+def Crawl_run2():
+    outfile = codecs.open(outfilename2, 'w', 'utf-8')
     dict_keys1 = getStoreInfo2()[1]
     dict_keys2 = str(dict_keys1).replace('dict_keys','').replace('[','').replace(']','').replace('(','').replace(')','').replace(',','|').replace("'","").replace(' ','')
     outfile.write("%s\n" % dict_keys2)
@@ -168,5 +187,9 @@ def getStoreInfo2():
         data.append(data_dict)
     return data, dict_key
 
-main()
-main2()
+def errExit(msg):
+    sys.stderr.write(msg + '\n')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    main()
