@@ -1,13 +1,837 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>		 <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>		 <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src = 'test.js'></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta property="og:site_name" content="아틀란 지도" />
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Atlan Map"/>
+	<meta property="og:image" content=""/>
+	<meta property="og:description" content="아틀란 지도 서비스"/>
+	<meta property="og:url" content="http://map.atlan.co.kr/"/>
+	<title>아틀란 지도</title>
+	<meta name="viewport" content="width=900, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="/favicon_2016.ico"/>
+	<link rel="stylesheet" type="text/css" href="/include/css/main.css" />
+	<link rel="stylesheet" href="/include/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="/include/css/map_route.css?v=1034" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css"></script>
+
+	<script	type="text/javascript" src="/include/js/jquery/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	<script src="/include/js/bootstrap-paginator.js"></script>
+	<script src="/include/js/common.js"></script>
+    <script src="/include/js/slide.js"></script>
+        
+	<!-- 아틀란맵 자바스크립트 v1.3 코어 -->
+	<script type="text/javascript" src="//apis.atlan.co.kr/maps/map.js?key=138548210307ff6e1f003c059f7e7c429ae1ab0dca"></script>
+	<!--script type="text/javascript" src="/include/js/map_api/20181108/atlanmap-all-desktop-ogc.js"></script-->
+
+
+	<script src="/include/js/plugins/Chart.js/chart.js"></script>	
+	<script src="/include/js/plugins/Chart.js/chartjs-plugin-datalabels.js"></script>
+	<script src="/include/js/route.js"></script>	
+	<script src="/include/js/altitude.route.js"></script>
+	<!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
+	<!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	<style>
+		.control-roadmap-out, .control-roadmap-selected {
+			background-image: url(http://map.ecn.cdn.ofs.kr:80/images_20160226/img/controls_ko.png) !important;
+		}
+		.q_num{padding-left:132px;color:#FFF;display:block;}
+	</style>
 </head>
+
 <body>
-    TEST
+
+<div id="wraper">
+
+	<nav id="menu_nav" role="tabpanel" cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left>
+		<h1 class="atlan_ci">
+			<a href="/"><img src="http://img.atlan.co.kr/_atlan_map/img/atlan_ci_top.png" alt="Atlan Map API" /></a>
+		</h1>
+		<!-- Nav tabs -->
+		<ul class="nav gnb-nav" role="tablist">
+			<li id ="fgnb_search">
+				<a href="/search/search.do" aria-controls="map" role="global-navi">
+				<svg viewBox="0 -8 35 50" class="svgsearch"><path class="cls-guide" d="M26.58,23.51A10.46,10.46,0,1,1,19.09,9.43" transform="translate(-5.38 -7.31)"/><rect class="cls-guide2" x="22.38" y="29.21" width="14.75" height="3.13" rx="1.56" ry="1.56" transform="translate(22.45 -19.3) rotate(41.45)"/><rect class="cls-guide2" x="13.38" y="5.69" width="13.25" height="1.88"/><rect class="cls-guide2" x="18.75" y="13" width="13.25" height="1.88" transform="translate(6.06 32) rotate(-90)"/></svg>
+				검색</a>
+			</li>
+			<li id="fgnb_map" class="home">
+				<a href="/map/route.do" aria-controls="map" role="global-navi">
+				<svg viewBox="-2 -3 25.87 37"><circle class="cls-home" cx="2.56" cy="2.48" r="1.98"/><path class="cls-home" d="M32.58,15.25a4.49,4.49,0,0,1-4.49,4.49" transform="translate(-7.21 -8.39)"/><path class="cls-home" d="M28.09,10.76a4.49,4.49,0,0,1,4.49,4.49" transform="translate(-7.21 -8.39)"/><line class="cls-home" x1="20.88" y1="2.36" x2="4.73" y2="2.36"/><line class="cls-home" x1="20.88" y1="11.35" x2="4.73" y2="11.35"/><path class="cls-home" d="M7.71,24.23a4.49,4.49,0,0,0,4.49,4.49" transform="translate(-7.21 -8.39)"/><path class="cls-home" d="M12.2,19.74a4.49,4.49,0,0,0-4.49,4.49" transform="translate(-7.21 -8.39)"/><line class="cls-home" x1="4.99" y1="20.33" x2="21.15" y2="20.33"/><polygon class="cls-home3" points="25.5 20.33 19.35 16.78 19.35 23.89 25.5 20.33"/></svg>
+				경로탐색</a>
+			</li>
+			<li id="fgnb_geogrid">
+				<a href="/geogrid/trip.do" aria-controls="trip" role="global-navi">
+				<svg viewBox="0 0 25.87 23.88" class="smallsvg sv-point">
+					<path class="cls-home" d="M32.58,15.25a4.49,4.49,0,0,1-4.49,4.49" transform="translate(-7.21 -8.39)"/>
+					<path class="cls-home" d="M28.09,10.76a4.49,4.49,0,0,1,4.49,4.49" transform="translate(-7.21 -8.39)"/>
+					<line class="cls-home" x1="20.88" y1="2.36" x2="4.73" y2="2.36"/>
+					<line class="cls-home" x1="17.13" y1="11.35" x2="4.73" y2="11.35"/>
+					<path class="cls-home" d="M7.71,24.23c0,2.48,2,4.48,5.21,4.53" transform="translate(-7.21 -8.39)"/>
+					<path class="cls-home" d="M12.2,19.74a4.49,4.49,0,0,0-4.49,4.49" transform="translate(-7.21 -8.39)"/>
+					<line class="cls-home" x1="9.78" y1="20.36" x2="21.15" y2="20.33"/>
+					<polygon class="cls-home3" points="25.5 20.33 19.35 16.78 19.35 23.89 25.5 20.33"/>
+					<circle class="cls-home" cx="15.05" cy="28.63" r="1.98" transform="translate(-23.04 10.63) rotate(-45)"/>
+					<circle class="cls-home" cx="9.76" cy="10.87" r="1.98" transform="translate(-12.03 1.69) rotate(-45)"/>
+					<circle class="cls-home" cx="26.31" cy="19.67" r="1.98" transform="translate(-13.41 15.97) rotate(-45)"/>
+				</svg>
+				다중경유지<br /> 경로탐색</a>
+			</li>
+			<li id="fgnb_lmd">
+				<a href="/lmd/lmd.do" aria-controls="lmd" role="global-navi">
+				<svg viewBox="0 0 33.3 37" style="enable-background:new 0 0 33.3 37;">
+					<polyline class="st0" points="24.7,24.5 32.1,26.6 32.1,6.7 24.7,4.5 17.2,6.7 9.9,4.5 9.9,14 "/>
+					<line class="st0" x1="24.6" y1="4.9" x2="24.6" y2="7.3"/>
+					<line class="st0" x1="24.6" y1="8.7" x2="24.6" y2="11"/>
+					<line class="st0" x1="17.2" y1="6.8" x2="17.2" y2="9.1"/>
+					<line class="st0" x1="17.2" y1="10.5" x2="17.2" y2="12.9"/>
+					<line class="st0" x1="24.6" y1="12.8" x2="24.6" y2="15"/>
+					<polygon class="st1" points="6,14.2 1.3,19.3 1.3,32.6 24.9,32.6 24.9,18.6 20.1,14.2 "/>
+					<line class="st2" x1="1.3" y1="19.9" x2="24.9" y2="19.9"/>
+					<rect x="12.2" y="14" class="st3" width="3.2" height="8.8"/>
+				</svg>배송지도</a>
+			</li>
+			<li id="fgnb_guide">
+				<a href="/guide/guide.do" aria-controls="guide" role="global-navi">
+				<svg viewBox="0 0 22.67 19.91" class="smallsvg"><path class="cls-guide2" d="M19.5,1.84A1.35,1.35,0,0,1,20.83,3.2v9.07a1.35,1.35,0,0,1-1.33,1.36H3.17a1.34,1.34,0,0,1-1.33-1.36V3.2A1.34,1.34,0,0,1,3.17,1.84H19.5M19.5,0H3.17A3.2,3.2,0,0,0,0,3.2v9.07a3.2,3.2,0,0,0,3.17,3.2H19.5a3.2,3.2,0,0,0,3.17-3.2V3.2A3.2,3.2,0,0,0,19.5,0Z"/><rect class="cls-guide2" x="4.59" y="17.77" width="13.63" height="2.14" rx="1.07" ry="1.07"/><polygon class="cls-guide2" points="14.4 18.38 8.27 18.38 9.19 14.7 13.48 14.7 14.4 18.38"/></svg>
+				API 안내</a>
+			</li>
+			<li id="fgnb_samples">
+				<a href="/samples/map/basicmap.do" aria-controls="sample" role="global-navi">
+				<svg viewBox="0 0 27.58 37"><polyline class="cls-sample1" points="14.83 12.15 19.17 13.98 27.08 10.09 27.08 25.53 19.25 29.86 9.17 24.88 0.5 28.94 0.5 14.03 3.65 12.47"/><line class="cls-sample1" x1="19.17" y1="13.95" x2="19.17" y2="14.89"/><line class="cls-sample2" x1="19.17" y1="16.08" x2="19.17" y2="28.3"/><line class="cls-sample1" x1="19.17" y1="28.89" x2="19.17" y2="29.83"/><line class="cls-sample1" x1="9.17" y1="20.3" x2="9.17" y2="21.24"/><line class="cls-sample3" x1="9.17" y1="22.01" x2="9.17" y2="23.72"/><line class="cls-sample1" x1="9.17" y1="24.11" x2="9.17" y2="25.05"/><path class="cls-sample1" d="M21.17,18.27a8,8,0,0,0,1.77-4.71,7.17,7.17,0,0,0-14.34,0,8.4,8.4,0,0,0,1.77,4.71l5.4,8Z" transform="translate(-6.58 -5.89)"/><circle class="cls-sample1" cx="9.06" cy="7.89" r="2.23"/></svg>
+				API 샘플</a>
+			</li>
+			<li id="fgnb_faq">
+				<a href="/faq/list.do" aria-controls="faq" role="global-navi">
+				<svg viewBox="-1 0 33 27" class="smallsvg faq">
+					<path class="cls-faq-1" d="M27.89,6.66H26.36a.19.19,0,0,0-.19.19v8a4.5,4.5,0,0,1-4.5,4.49H14.39a.19.19,0,0,0-.19.17l-.57,1.78a.18.18,0,0,0,.18.21h5.71c.17,0,.13.06.13.22s-.51,4-.51,4a.19.19,0,0,0,.33.15l3.85-4.31a.18.18,0,0,1,.14-.06h4.43a2.87,2.87,0,0,0,2.86-2.86V9.52A2.87,2.87,0,0,0,27.89,6.66Z" transform="translate(-0.13 -0.08)"/>
+				    <path class="cls-faq-2" d="M5.5,5.89h4V7H6.75V8.27H9.14v1H6.75v2.36H5.5Z" transform="translate(-0.13 -0.08)"/>
+				    <path class="cls-faq-2" d="M11.36,5.89h1.29l2.13,5.72h-1.3l-.43-1.28H10.91l-.45,1.28H9.19ZM11.24,9.4h1.48L12,7.3h0Z" transform="translate(-0.13 -0.08)"/>
+				    <path class="cls-faq-2" d="M20,12.14l-.81-.73a3.07,3.07,0,0,1-2.55.1,2.48,2.48,0,0,1-.89-.63,2.81,2.81,0,0,1-.56-1A3.66,3.66,0,0,1,15,8.77a3.79,3.79,0,0,1,.19-1.18,2.86,2.86,0,0,1,.56-1A2.39,2.39,0,0,1,16.67,6,3.09,3.09,0,0,1,19,6a2.39,2.39,0,0,1,.89.64,2.7,2.7,0,0,1,.56,1,3.52,3.52,0,0,1,.19,1.18,3.66,3.66,0,0,1-.19,1.16,2.91,2.91,0,0,1-.56,1l.72.65ZM18.39,9.49l.65.6a2.2,2.2,0,0,0,.35-1.32A2.94,2.94,0,0,0,19.3,8,1.65,1.65,0,0,0,19,7.41,1.27,1.27,0,0,0,18.55,7a1.66,1.66,0,0,0-1.42,0,1.27,1.27,0,0,0-.48.44,2,2,0,0,0-.27.62,2.94,2.94,0,0,0-.09.74,2.78,2.78,0,0,0,.09.72,2,2,0,0,0,.27.61,1.35,1.35,0,0,0,.49.43,1.51,1.51,0,0,0,.7.16l.32,0a.25.25,0,0,0,.18-.06l-.53-.49Z" transform="translate(-0.13 -0.08)"/>
+				    <path class="cls-faq-1" d="M21.51,1.28a2.32,2.32,0,0,1,2.31,2.31v11a2.31,2.31,0,0,1-2.31,2.3H12.88a1.2,1.2,0,0,0-1.14.82l-1.38,4-1.21-4A1.21,1.21,0,0,0,8,16.92H3.63a2.3,2.3,0,0,1-2.3-2.3v-11a2.31,2.31,0,0,1,2.3-2.31H21.51m0-1.2H3.63A3.51,3.51,0,0,0,.13,3.59v11a3.5,3.5,0,0,0,3.5,3.5H8l1.88,6.16a.65.65,0,0,0,.44.21.54.54,0,0,0,.48-.33l2.08-6h8.63A3.51,3.51,0,0,0,25,14.62v-11A3.52,3.52,0,0,0,21.51.08Z" transform="translate(-0.13 -0.08)"/>
+				</svg>
+				API FAQ</a>
+			</li>
+			<!--li id="fgnb_reference">
+				<a href="/reference/references.do" aria-controls="reference" role="global-navi">
+				<svg viewBox="-25 0 115 58"><polygon class="cls-refer" points="40.97 48.97 1 48.97 1 11.28 11.28 1 40.97 1 40.97 48.97"/><polyline class="cls-refer2" points="40.97 6.44 46.13 6.44 46.13 54.41 6.15 54.41 6.15 48.97"/><polygon class="cls-refer2" points="1 11.28 11.28 11.28 11.28 1 1 11.28"/><rect class="cls-2" x="11.56" y="17.56" width="21.41" height="5.71"/><line class="cls-refer2" x1="11.56" y1="31.98" x2="32.98" y2="31.98"/><line class="cls-2" x1="11.56" y1="39.23" x2="32.98" y2="39.23"/></svg>
+				참조</a>
+			</li-->
+			<li class="contact">
+				<a href="#messages" aria-controls="messages" role="global-navi" id="partner">
+				<svg viewBox="-27 0 100 45"><path class="cls-ask" d="M472.39,261.1a1,1,0,0,1-.67-0.93V259a1,1,0,0,1,.53-0.88l22.39-11.8a1,1,0,0,1,.46-0.12,1.72,1.72,0,0,1,.66.12l22.32,11.92a1,1,0,0,1,.53.87v1.17a1,1,0,0,1-1,1l-22.36-.06h-0.19l-22.34-.05a0.84,0.84,0,0,1-.33-0.07m22.79-12.83-20.7,10.91,20.4,0.06a0.7,0.7,0,0,1,.19,0l0.19,0,20.56,0.06Z" transform="translate(-471.6 -246.21)"/><path class="cls-ask" d="M472.27,286a0.87,0.87,0,0,1-.18-0.09,1,1,0,0,1-.48-0.84l0.07-24.9a1,1,0,0,1,1.49-.84l22.43,13.08a1,1,0,0,1,.48.88,1,1,0,0,1-.52.86L473.05,286a1,1,0,0,1-.78.06m1.39-24.09-0.07,21.52,19.47-10.22Z" transform="translate(-471.6 -246.21)"/><path class="cls-ask" d="M517.2,287.31a0.57,0.57,0,0,1-.17-0.08l-22.44-13.08a1,1,0,0,1,0-1.71l22.51-13a1.07,1.07,0,0,1,1,0,1,1,0,0,1,.49.86l-0.07,26.06a1,1,0,0,1-.5.85,1,1,0,0,1-.82.07m-20.12-14,19.46,11.36L516.6,262Z" transform="translate(-471.6 -246.21)"/><path class="cls-ask" d="M472.27,287.19a1,1,0,0,1-.67-0.94v-1.17a1,1,0,0,1,.53-0.88l22.51-11.81a1,1,0,0,1,1,0L518,285.52a1,1,0,0,1,.47.61,1,1,0,0,1-.19.86,0.92,0.92,0,0,1-.78.39l-44.94-.13a0.88,0.88,0,0,1-.32-0.05m22.8-12.77-20.69,10.86,39.5,0.1Z" transform="translate(-471.6 -246.21)"/></svg>
+				사업문의</a>
+				<div class="partner_mail"><!-- 파트너 메일 -->
+					<h5>파트너사 분들의 소중한 제안을 기다리고 있습니다.</h5>
+					<ul>
+						<li><span class="enTitle">구매 문의</span><a href="mailto:mappers-biz@mappers.kr">mappers-biz@mappers.kr</a><a class="q_num">02-2146-3171</a></li>
+						<li><span class="enTitle">PR 마케팅 문의</span><a href="mailto:atlanmkt@mappers.kr">atlanmkt@mappers.kr</a></li>
+						<li><span class="enTitle">앱 제휴 문의</span><a href="mailto:atlansmart@mappers.kr">atlansmart@mappers.kr</a></li>
+					</ul>
+				</div><!-- 파트너 메일 -->
+			</li>
+		</ul>
+	</nav>
+
+	<div id="contents">
+		<!-- Tab panels -->
+		<div class="submenu" id="sidebar-wraper">
+			<!-- 지도 메뉴 영역 -->
+<h3 class="submenu-title">경로 탐색</h3>
+<div role="sub-navi"class="tab-pane active route">	
+	<!-- 옵션 선택 start -->
+	<div class="route-select m-t-large" id="route-option">
+
+		<div class="routoption-box" id="select-routeoption"><!-- routoption-box -->
+			<div class="route-cate">
+				<button type="button" class="routebtn" id="smallcar-label">승용, 승합</button>
+				<button type="button" class="routebtn" id="bike-label">바이크</button>
+				<button type="button" class="routebtn" id="truck-label">화물차</button>
+				<button type="button" class="routebtn last" id="bus-label">버스</button>
+			</div>
+			<div id="set-options" class="setting-wrap"><!-- 설정옵션들 전체 -->
+				<div class="tab-panel">
+					<ul class="path-area" id="path-option">
+						<li><h4>경로옵션</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="best" type="radio" name="select-option" value="best" checked="checked"><label for="best" class="radio-label">최적길</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="cheap" type="radio" name="select-option" value="cheap"><label for="cheap" class="radio-label">최저요금</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="shorttime" type="radio" name="select-option" value="shorttime"><label for="shorttime" class="radio-label">최소시간</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="highway" type="radio" name="select-option" value="highway"><label for="highway" class="radio-label">고속도로우선</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="shortdistance" type="radio" name="select-option" value="shortdistance"><label for="shortdistance" class="radio-label">최단길</label>
+							</div>
+							<div class="col-xs-6">
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div role="tabpanel" class="tab-panel" id="truck-options"><!-- 트럭옵션 -->
+		    		<!-- div class="more-btn-section">
+						<a href="#" class="morebtn" id="more-option-truck"><img src="http://img.atlan.co.kr/_atlan_map/img/spread_off.png" alt="설정 더 보기" /></a>
+					</div -->
+					<ul class="path-area" id="truck-option">
+						<li><h4>경로옵션</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="truck32" type="radio" name="truckRpOpt" value="truck32" checked="checked"><label for="truck32" class="radio-label">추천경로1</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="truck64" type="radio" name="truckRpOpt" value="truck64"><label for="truck64" class="radio-label">추천경로2</label>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="path-area" id="truck-carType">
+						<li><h4>차종 설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="carType-1" type="radio" name="truck-carType-option" value="0"><label for="carType-1" class="radio-label"> 1종 (소형 화물차) </label>
+							</div>
+							<div class="col-xs-6">
+								<input id="carType-2" type="radio" name="truck-carType-option" value="1"><label for="carType-2" class="radio-label"> 2종 (중형 화물차) </label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="carType-3" type="radio" name="truck-carType-option" value="2"><label for="carType-3" class="radio-label"> 3종 (2축 대형)</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="carType-4" type="radio" name="truck-carType-option" value="3" checked="checked"><label for="carType-4" class="radio-label"> 4종 (3축 대형) </label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="carType-5" type="radio" name="truck-carType-option" value="4"><label for="carType-5" class="radio-label"> 5종 (4축 특수) </label>
+							</div>
+						</li>						
+					</ul>
+					
+					<ul class="path-area" id="truck-height">
+						<li><h4>높이 설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="height-nolimit" type="radio" name="truck-height-option" value="0"><label for="height-nolimit" class="radio-label">제한없음</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="two-five" type="radio" name="truck-height-option" value="25"><label for="two-five" class="radio-label">2.5m 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="three" type="radio" name="truck-height-option" value="30"><label for="three" class="radio-label">3m 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="three-two" type="radio" name="truck-height-option" value="32"><label for="three-two" class="radio-label">3.2m 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="three-four" type="radio" name="truck-height-option" value="34"><label for="three-four" class="radio-label">3.4m 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="three-six" type="radio" name="truck-height-option" value="36"><label for="three-six" class="radio-label">3.6m 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="three-eight" type="radio" name="truck-height-option" value="38"><label for="three-eight" class="radio-label">3.8m 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="four" type="radio" name="truck-height-option" value="40" checked="checked"><label for="four" class="radio-label">4m 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="four-two" type="radio" name="truck-height-option" value="42"><label for="four-two" class="radio-label">4.2m 이하</label>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="path-area" id="truck-weight">
+						<li><h4>총중량 설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="weight-nolimit" type="radio" name="truck-weight-option" value="0" checked="checked"><label for="weight-nolimit" class="radio-label">제한없음</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="twenyton" type="radio" name="truck-weight-option" value="20"><label for="twenyton" class="radio-label">20t 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="twenyfiveton" type="radio" name="truck-weight-option" value="25"><label for="twenyfiveton" class="radio-label">25t 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="thirtyton" type="radio" name="truck-weight-option" value="30"><label for="thirtyton" class="radio-label">30t 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="thirtyfiveton" type="radio" name="truck-weight-option" value="35"><label for="thirtyfiveton" class="radio-label">35t 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="fourtyton" type="radio" name="truck-weight-option" value="40" checked="checked"><label for="fourtyton" class="radio-label">40t 이하</label>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="path-area" id="truck-narrow">
+						<li><h4>좁은길 회피  설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="path-nolimit" type="radio" name="truck-narrow-option" value="0"><label for="path-nolimit" class="radio-label">제한없음</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="onelane" type="radio" name="truck-narrow-option" value="1" checked="checked"><label for="onelane" class="radio-label">왕복 1차선 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="twolane" type="radio" name="truck-narrow-option" value="2"><label for="twolane" class="radio-label">왕복 2차선 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="threelane" type="radio" name="truck-narrow-option" value="3"><label for="threelane" class="radio-label">왕복 3차선 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="fourlane" type="radio" name="truck-narrow-option" value="4"><label for="fourlane" class="radio-label">왕복 4차선 이하</label>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="path-area" id="truck-uturn">
+						<li><h4>유턴 회피 설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="uturn-nolimit" type="radio" name="truck-uturn-option" value="0"><label for="uturn-nolimit" class="radio-label">제한없음</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="uturn-fourlane" type="radio" name="truck-uturn-option" value="4" checked="checked"><label for="uturn-fourlane" class="radio-label">왕복 4차선 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="uturn-sixlane" type="radio" name="truck-uturn-option" value="6"><label for="uturn-sixlane" class="radio-label">왕복 6차선 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="uturn-eightlane" type="radio" name="truck-uturn-option" value="8"><label for="uturn-eightlane" class="radio-label">왕복 8차선 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="uturn-tenlane" type="radio" name="truck-uturn-option" value="10"><label for="uturn-tenlane" class="radio-label">왕복 10차선 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="uturn-twelvelane" type="radio" name="truck-uturn-option" value="12"><label for="uturn-twelvelane" class="radio-label">왕복 12차선 이하</label>
+							</div>
+						</li>
+					</ul>
+
+				</div><!-- //트럭옵션 -->
+
+			    <div role="tabpanel" class="tab-panel" id="bus-options"><!-- 버스옵션 -->
+		    		<!-- div class="more-btn-section">
+						<a href="#" class="morebtn" id="more-option-bus"><img src="http://img.atlan.co.kr/_atlan_map/img/spread_off.png" alt="설정 더 보기" /></a>
+					</div -->
+					<ul class="path-area" id="bus-option">
+						<li><h4>경로옵션</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus32" type="radio" name="busRpOpt" value="bus32" checked="checked"><label for="bus32" class="radio-label">추천경로1</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus64" type="radio" name="busRpOpt" value="bus64"><label for="bus64" class="radio-label">추천경로2</label>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="path-area" id="bus-carType">
+						<li><h4>차종 설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-carType-1" type="radio" name="bus-carType-option" value="0"><label for="bus-carType-1" class="radio-label"> 1종 (소형 승합차) </label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-carType-2" type="radio" name="bus-carType-option" value="1"><label for="bus-carType-2" class="radio-label"> 2종 (중형 승합차) </label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-carType-3" type="radio" name="bus-carType-option" value="2" checked="checked"><label for="bus-carType-3" class="radio-label"> 3종 (버스)</label>
+							</div>
+						</li>						
+					</ul>
+
+					<ul class="path-area" id="bus-height">
+						<li><h4>높이 설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-height-nolimit" type="radio" name="bus-height-option" value="0"><label for="bus-height-nolimit" class="radio-label">제한없음</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-two-five" type="radio" name="bus-height-option" value="25"><label for="bus-two-five" class="radio-label">2.5m 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-three" type="radio" name="bus-height-option" value="30"><label for="bus-three" class="radio-label">3m 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-three-two" type="radio" name="bus-height-option" value="32"><label for="bus-three-two" class="radio-label">3.2m 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-three-four" type="radio" name="bus-height-option" value="34"><label for="bus-three-four" class="radio-label">3.4m 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-three-six" type="radio" name="bus-height-option" value="36" checked="checked"><label for="bus-three-six" class="radio-label">3.6m 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-three-eight" type="radio" name="bus-height-option" value="38"><label for="bus-three-eight" class="radio-label">3.8m 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-four" type="radio" name="bus-height-option" value="40"><label for="bus-four" class="radio-label">4m 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-four-two" type="radio" name="bus-height-option" value="42"><label for="bus-four-two" class="radio-label">4.2m 이하</label>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="path-area" id="bus-weight">
+						<li><h4>총중량  설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-weight-nolimit" type="radio" name="bus-weight-option" value="0"><label for="bus-weight-nolimit" class="radio-label">제한없음</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-twenyton" type="radio" name="bus-weight-option" value="200" checked="checked"><label for="bus-twenyton" class="radio-label">20t 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-twenyfiveton" type="radio" name="bus-weight-option" value="250"><label for="bus-twenyfiveton" class="radio-label">25t 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-thirtyton" type="radio" name="bus-weight-option" value="300"><label for="bus-thirtyton" class="radio-label">30t 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-thirtyfiveton" type="radio" name="bus-weight-option" value="350"><label for="bus-thirtyfiveton" class="radio-label">35t 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-fourtyton" type="radio" name="bus-weight-option" value="400"><label for="bus-fourtyton" class="radio-label">40t 이하</label>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="path-area" id="bus-narrow">
+						<li><h4>좁은길 회피  설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-path-nolimit" type="radio" name="bus-narrow-option" value="0"><label for="bus-path-nolimit" class="radio-label">제한없음</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-onelane" type="radio" name="bus-narrow-option" value="1" checked="checked"><label for="bus-onelane" class="radio-label">왕복 1차선 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-twolane" type="radio" name="bus-narrow-option" value="2"><label for="bus-twolane" class="radio-label">왕복 2차선 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-threelane" type="radio" name="bus-narrow-option" value="3"><label for="bus-threelane" class="radio-label">왕복 3차선 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-fourlane" type="radio" name="bus-narrow-option" value="4"><label for="bus-fourlane" class="radio-label">왕복 4차선 이하</label>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="path-area" id="bus-uturn">
+						<li><h4>유턴 회피  설정</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-uturn-nolimit" type="radio" name="bus-uturn-option" value="0"><label for="bus-uturn-nolimit" class="radio-label">제한없음</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-uturn-fourlane" type="radio" name="bus-uturn-option" value="4" checked="checked"><label for="bus-uturn-fourlane" class="radio-label">왕복 4차선 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-uturn-sixlane" type="radio" name="bus-uturn-option" value="6"><label for="bus-uturn-sixlane" class="radio-label">왕복 6차선 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-uturn-eightlane" type="radio" name="bus-uturn-option" value="8"><label for="bus-uturn-eightlane" class="radio-label">왕복 8차선 이하</label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="bus-tenlane" type="radio" name="bus-uturn-option" value="10"><label for="bus-tenlane" class="radio-label">왕복 10차선 이하</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="bus-twelvelane" type="radio" name="bus-uturn-option" value="12"><label for="bus-twelvelane" class="radio-label">왕복 12차선 이하</label>
+							</div>
+						</li>
+					</ul>
+
+			    </div><!-- //버스옵션 -->
+				
+				<div class="tab-panel">
+					<ul class="path-area" id="hipass-options">
+						<li><h4>하이패스 옵션</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="nouse-hipass" type="radio" name="select-hipass" value="0" checked="checked"><label for="nouse-hipass" class="radio-label">미사용</label>
+							</div>
+							<div class="col-xs-6">
+								<input id="General-hipass" type="radio" name="select-hipass" value="1"><label for="General-hipass" class="radio-label">일반 하이패스 </label>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-6">
+								<input id="EV-hipass" type="radio" name="select-hipass" value="2"><label for="EV-hipass" class="radio-label">전기차 하이패스 </label>
+							</div>
+						</li>
+					</ul>
+				</div><!-- 하이패스 옵션 -->
+				
+				<div class="tab-panel">
+					<ul class="path-area " id="ev-options">
+						<li><h4>전기차 옵션</h4></li>
+						<li>
+							<div class="col-xs-6">
+								<input id="evOption" type="checkbox" name="select-evOption" value="0"><label for="evOption" class="radio-label">전기차</label>
+							</div>
+						</li>
+					</ul>
+				</div><!-- 전기차 옵션 -->
+				
+				<div class="tab-panel">
+					<ul class="path-area listbottom" id="real-traffic">
+						<li><h4>실시간 교통정보</h4></li>
+						<li>
+							<div class="col-xs-4">
+								<input id="use" type="radio" name="select-traffic" value="use" checked="checked"><label for="use" class="radio-label">적용</label>
+							</div>
+							<div class="col-xs-4">
+								<input id="nouse" type="radio" name="select-traffic" value="nouse"><label for="nouse" class="radio-label">미적용</label>
+							</div>
+							<!--div class="col-xs-4">
+								<input id="nouse2" type="radio" name="select-traffic" value="nouse2"><label for="nouse2" class="radio-label">미적용2</label>
+							</div-->
+						</li>
+					</ul>
+				</div>
+			</div><!-- // 설정옵션들 전체 -->
+
+		</div><!-- // routoption-box -->
+
+		
+
+	</div>
+	<!-- 옵션 선택 end -->
+	<div id="divSearch" class="out_url line_event m-l m-b-midium">
+		<div class="form-inline"><!-- 검색필드 -->
+			<div class="form-group">
+				<label for="keyword" class="routesearch-label">출발지</label>
+				<input type="search" class="form-control form-search" id="keywordOrigin" placeholder="출발지를 입력하세요" value="">
+			</div>
+			<button type="button" value="검색" id="btnSearchOrigin" class="btn btn-light">검색</button>
+		</div>
+		<div class="form-inline m-t-small waypointset" id="waypoint1"><!-- 경유지필드1 -->
+			<div class="form-group">
+				<label for="keyword3" class="routesearch-label">경유지</label>
+				<input type="search" class="form-control form-search" id="keywordWaypoint1" placeholder="경유지를 입력하세요" value="">
+			</div>
+			<button type="button" id="btnSearchWaypoint1" value="검색" class="btn btn-light">검색</button>
+			<button type="button" value="" class="btn wayminus" id="wayminus1"></button>
+		</div>
+		<!-- 경유지필드1 -->
+		<div class="form-inline m-t-small waypointset" id="waypoint2">
+			<div class="form-group">
+				<label for="keyword4" class="routesearch-label">경유지</label>
+				<input type="search" class="form-control form-search" id="keywordWaypoint2" placeholder="경유지를 입력하세요" value="">
+			</div>
+			<button type="button" id="btnSearchWaypoint2" value="검색" class="btn btn-light">검색</button>
+			<button type="button" value="" class="btn wayminus" id="wayminus2"></button>
+		</div>
+		<!-- 경유지필드3 -->
+		<div class="form-inline m-t-small waypointset" id="waypoint3">
+			<div class="form-group">
+				<label for="keyword5" class="routesearch-label">경유지</label>
+				<input type="search" class="form-control form-search" id="keywordWaypoint3" placeholder="경유지를 입력하세요" value="">
+			</div>
+			<button type="button" id="btnSearchWaypoint3" value="검색" class="btn btn-light">검색</button>
+			<button type="button" value="" class="btn wayminus" id="wayminus3"></button>
+		</div>
+		<div class="form-inline m-t-small"><!-- 도착지검색필드 -->
+			<div class="form-group">
+				<label for="keyword2" class="routesearch-label">도착지</label>
+				<input type="search" class="form-control form-search" id="keywordDestination" placeholder="도착지를 입력하세요" value="">
+			</div>
+			<button type="button" id="btnSearchDestination" value="검색" class="btn btn-light">검색</button>
+		</div>
+		<div class="form-inline m-t-small"><!-- 차량 진행 각도 -->
+			<div class="form-group">
+				<label for="dirAngle" class="routesearch-label">차량 진행 각도</label>
+				<input type="search" class="form-control form-search" id="dirAngle" placeholder="정북기준 0~359도" value="">
+			</div>
+		</div>
+		<div class="form-inline m-t-small"><!-- 차량 진행 속도 -->
+			<div class="form-group">
+				<label for="carSpeed" class="routesearch-label">차량 진행 속도</label>
+				<input type="search" class="form-control form-search" id="carSpeed" placeholder="진행속도 (km/h)" value="">
+			</div>
+		</div>
+		<div class="form-inline m-t-small p-l-mini">
+			<input id="goalType" type="checkbox" name="select-traffic" value="goalType"><label for="goalType" class="radio-label">도착지가 고속도로 위에 있음</label>
+		</div>
+		<div class="form-inline m-t-small p-l-mini">
+			<input id="goalDir" type="checkbox" name="select-traffic" value="goalDir"><label for="goalDir" class="radio-label">목적지 방향성 미적용</label>
+		</div>
+	</div>
+
+	<div class="route-btnbox ">
+			<button type="button" value="" id="wayplusbtn" class="btn wayplus">경유지 추가</button> <button type="button" value="경로탐색" id="btnSearchRoute" class="btn btnroute" onclick="">경로탐색</button>
+		</div>
+
+	<div class="result-wrap m-t-large" id="searchResultArea"><!-- 출발지, 경유지, 도착지 검색결과 리스트 -->
+		<div class="result_top m-t-large" id="searchResultSummary" style="display:none"><!-- result_top start -->
+			<div class="result_txt">
+				<h5 class="srt_tit"><strong id="searchKeyStr">'서울시청'</strong> 검색결과 <span class="num_txt"><em id="searchResultCnt">1</em>건</span></h5>
+			</div>
+			<div class="sort-area"><!-- 정렬 기준 선택 -->
+				<input id="recom" type="radio" name="select-sort" value="4" checked="checked">
+				<label for="recom" class="radio-label">추천순</label>
+				<input id="distance" type="radio" name="select-sort" value="1">
+				<label for="distance" class="radio-label">거리순</label>
+			</div>
+		</div>
+		<div class="search_list" id="divSearchResult" style="display:none;"></div>
+		<div class="page-area" ><!-- page start -->
+			<div id="pagination" style="display:none;"></div>
+		</div><!-- page end -->
+	</div><!-- // 출발지, 경유지, 도착지 검색결과 리스트 -->
+
+	<!-- 경로탐색 결과 영역 start -->
+	<div class="result-wrap m-t-large" id="routeResultArea">
+		<div class="path-result-top"><!-- result_top start -->
+			<div class="path-result-txt m-t-large">
+				<h5 class="path-tit" id="pathSummary"><strong>'잠실종합운동장'</strong> <span class="path-arrow">→</span> <strong>'롯데월드'</strong></h5>
+				<!--
+				<p class="m-t-small m-l-small"><input id="check1" type="checkbox" name="check" value="check1" checked><label for="check1" class="checkbox-label"> 실시간 교통정보 반영</label></p>
+				-->
+			</div>
+		</div><!-- result_top end -->
+		
+		<div class="summary_info">
+			<div class="path-total m-t-small">
+				<!--span class="path-icon m-l-large" >정보</span-->
+				&nbsp;&nbsp;&nbsp;
+				 총거리 : <span class="num_txt"><em><strong id="distanceTxt">0km</strong></em></span> | 소요시간 : <span class="num_txt"><strong id="durationTxt">00분</strong></span>	
+				</br>&nbsp;&nbsp;&nbsp;
+				 통행료 : <span class="num_txt"><em><strong id="tollTxt">0원 </strong></em></span>
+			</div>
+			<div class="routeSummary">
+				<div id="routeSummary"></div>
+			</div>
+		</div>
+		
+		<div class="path-total m-t-small">
+			<!--span class="path-icon m-l-large" >정보</span-->
+			<div class="routeInfo">
+				<ol id="routeTxt"></ol>
+			</div>		 
+		</div>
+		<!--
+		<div class="path-compact-info m-t-small">
+			<p class="m-l-large">
+				<span>석촌호수로(0.2km)</span> <span class="path-arrow">→</span> <span>올림픽로(0.6km)</span> <span class="path-arrow">→</span> <span>잠실로(0.7km)</span> <span class="path-arrow">→</span> <span>오금로(1.2km)</span>
+			</p>
+			<p class="costinfo m-t-large m-l-large"><span>통행료 없음</span> | <span id="fuelcostTxt">주유비 약 0원</span></p>
+		</div>
+		-->
+
+		<div class="path-result m-t-large" style="display:none"><!-- result_list start -->
+			<h3 class="sr-only">검색결과 리스트</h3>
+			<ul class="place-list">
+				<li class="pathpoint select" data-id="map001" route-index="0"><!-- route-start start -->
+					<div class="route-set">
+						<div class="icon-col"><img src="http://img.atlan.co.kr/_atlan_map/img/marker_start.png" alt="출발지점마커"></div>
+						<div class="badge-col"><span class="path-badge">1</span></div>
+						<div class="title-col">잠실종합운동장출발</div>
+					</div>
+				</li><!-- route-start end -->
+				<li class="pathpoint" data-id="map001" route-index="1"><!-- route2 start -->
+					<div class="route-set">
+						<div class="icon-col"></div>
+						<div class="badge-col"><span class="path-badge">2</span></div>
+						<div class="title-col">송파구청 방면으로 우회전 후 1.2km 이동</div>
+					</div>
+				</li><!-- route2 end -->
+				<li class="pathpoint" data-id="map001" route-index="2"><!-- route3 start -->
+					<div class="route-set">
+						<div class="icon-col"><img src="http://img.atlan.co.kr/_atlan_map/img/marker_via.png" alt="경유지점마커"></div>
+						<div class="badge-col"><span class="path-badge">3</span></div>
+						<div class="title-col">백제고분로 45길 우회전 후 53m 이동</div>
+					</div>
+				</li><!-- route3 end -->
+				<li class="pathpoint" data-id="map001" route-index="3"><!-- route4 start -->
+					<div class="route-set">
+						<div class="icon-col"></div>
+						<div class="badge-col"><span class="path-badge">4</span></div>
+						<div class="title-col">잠실로를 따라 400m 이동</div>
+					</div>
+				</li><!-- route4 end -->
+				<li class="pathpoint" data-id="map001" route-index="4"><!-- route5 start -->
+					<div class="route-set">
+						<div class="icon-col"><img src="http://img.atlan.co.kr/_atlan_map/img/marker_end.png" alt="도착지점마커"></div>
+						<div class="badge-col"><span class="path-badge">5</span></div>
+						<div class="title-col">롯데월드도착</div>
+					</div>
+				</li><!-- route5 end -->
+			</ul>
+
+		</div><!-- result_list end -->
+
+	</div>
+	<!-- 경로탐색 결과 영역 end -->
+</div>		</div>
+		<div id="slide">
+			<button class="slide-btn" id="sidebarToggle">◀</button>
+		</div>
+	<div id="map_div" class="atlanmap">
+		<div id="loading" class="loading-area"><img src="http://img.atlan.co.kr/_atlan_map/img/loading/loading.png" alt="loading이미지"/></div>
+		<div class="maptop"><span id="dongName"></span> 
+			<h3 class="sr-only">날씨</h3>
+			<img src="http://img.atlan.co.kr/_atlan_map/img/weather/wf_20_g.png" alt="날씨이미지" id="weather-icon"> <span class="degree"><em id="weather_ta"></em><span class="degree-unit">°c</span></span>
+		</div>
+		<div class="limit_info_desc hidden">
+			<p class="limitment">
+				정식 화물차API 인증키만 실제 높이/중량 제한값이 표기됩니다.<br>
+				(현재 보이는 화면에서는 임의의 제한값이 표기되고 있습니다.)<br>
+			</p>
+			<div class="heightinfo mt5">
+				<p>고도 최저 <span id="minAltitude"></span>, 최고 <span id="maxAltitude"></span><br><br></p>
+				<canvas id="myChart" height="100"></canvas>
+			</div>			
+		</div>
+	</div>
+	<div id="contextMenu">
+		<div  class="rightoption">
+			<dl class="basic-box">
+				<h4 class="destination" id="dongJibun"> </h4>
+				<dd class="addr"><span class="ad-label">지번</span> <span id="fullAddr"> </span></dd>
+				<dd class="addr"><span class="ad-label">도로명</span> <span id="NAddrStr"> </span></dd>
+			</dl>
+			<div class="addr-footer">
+				<p class="btn-set">
+					<a class="btn-style move-start" href="#" tabindex="-1" data-adcr="to_start" id="origin">출발지</a>
+					<a class="btn-style move-waypoint" href="#" tabindex="-1" data-adcr="to_waypoint1" id="waypoint">경유지</a>		
+					<!--		
+					<a class="btn-style move-waypoint" href="#" data-adcr="to_waypoint2">경유2</a>
+					<a class="btn-style move-waypoint" href="#" data-adcr="to_waypoint3">경유3</a>
+					-->
+				<a class="btn-style move-end" href="#" tabindex="-1" data-adcr="to_start" id="destination">도착지</a>
+				</p>
+			</div>
+		</div>		
+	</div>
+	
+	</div>
+	<div id="lawpop" class="lawpopwrap" style="display:none"><!-- // 법적공지 팝업 -->
+		<div class="popbox">
+			<div id="closebtn"><a href="#"><img src="http://img.atlan.co.kr/_atlan_map/img/close_img.png" alt="법적공지 닫기 버튼" /></a></div>
+			<h3>법적 공지</h3>
+			<div>
+				<p class="st-parah">대한측량협회 심사필 제2008-133호(2008.05.27)</p>
+				<p class="st-parah">대한측량협회 심사필 제2011-056호(2011.08.29)</p>
+				<p class="st-parah">대한측량협회 심사필 제2012-082호(2012.11.16)</p>
+				<p class="st-parah">대한측량협회 심사필 제2013-016호(2013.04.05)</p>
+				<p class="st-parah">대한측량협회 심사필 제2015-0037호(2015.05.06)</p>
+			</div>
+			<div>
+				<p>1. 지도는 공간정보의 구축 및 관리 등에 관한 법률 제14조, 제15조, 제16조, 제19조, 제20조, 제21조에 의거
+				   국토교통부장관의 사전 심사 및 승인 없이 복제, 본 지도를 이용한 다른 지도의 간행과 국외 반출을 금지하고 있습니다.</p>
+
+				<p>2. 위 사항의 위반자는 공간정보의 구축 및 관리 등에 관한 법률 제108조, 제109조에 의거 1년 또는 2년 이하의
+				   징역이나 1천만원 또는 2천만원 이하의 벌금에 처합니다.</p>
+
+				 <p class="caution">※  지도는 복제하거나 국외 반출을 철저히 금하고 있으니 유념하시기 바랍니다.</p>
+			</div>
+		</div>
+	</div><!-- // 법적공지 팝업 -->
+	<footer id="footer">
+		<section class="copyright">
+			<ul>
+				<!--li><a href="#">이용약관</a></li>
+				<li><a href="#">Atlan Map API</a></li-->
+				<li><small class="mappers">&copy; MAPPERS Corp.</small></li>
+				<li><a href="#" id="lawbtn">법적공지</a></li>
+				<li><a href="/en-US/index.do" target="_blank">English</a></li>
+				<li><a href="/login/logout.do">로그아웃</a></li>
+			</ul>
+		</section>
+	</footer>
+
+</div>
+	<script src="/include/js/ui.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			showZoomLabel();
+		});
+	</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		if($("#fgnb_map"))
+		$("#fgnb_map").addClass("active");
+	});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4430501-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>

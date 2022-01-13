@@ -14,8 +14,10 @@ import subprocess
 from qt_material import apply_stylesheet, QtStyleTools
 import time
 import schedule
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 import traceback
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.jobstores.base import JobLookupError
 
 DEFAULT_STYLE = """
 QProgressBar{
@@ -40,6 +42,11 @@ border : 2px solid turquoise;
 today_day = date.today().day
 today_month = date.today().month
 today_year = date.today().year
+
+dateDict = {0: '월', 1:'화', 2:'수', 3:'목', 4:'금', 5:'토', 6:'일'}
+date = date.today()
+datetime_date = datetime.strptime(str(date), '%Y-%m-%d')
+today_date = dateDict[date.weekday()]
 
 class Ui_Collect_Manager(object):
     def setupUi(self, Collect_Manager):
@@ -319,6 +326,24 @@ class Ui_Collect_Manager(object):
 
     def getRepeatList(self):#예약 실행 버튼 클릭 시 crawl_schedule_config.txt 에서 값을 읽어와서 예약 실행 수행.
         try:
+            def getDate(y, m, d):
+                '''y: year(4 digits)
+                 m: month(2 digits)
+                 d: day(2 digits'''
+                s = f'{y:04d}-{m:02d}-{d:02d}'
+                return datetime.strptime(s, '%Y-%m-%d')
+
+            def getWeekNo(y, m, d):
+                target = getDate(y, m, d)
+                firstday = target.replace(day=1)
+                if firstday.weekday() == 6:
+                    origin = firstday
+                elif firstday.weekday() < 3:
+                    origin = firstday - timedelta(days=firstday.weekday() + 1)
+                else:
+                    origin = firstday + timedelta(days=6 - firstday.weekday())
+                return (target - origin).days // 7 + 1
+
             def exportRunList():#exe 리스트에 맞는 config값을 더해서 리스트로 반환.
                 with open('exe_list.txt', 'r', encoding='cp949') as exe_data:
                     exe_name = exe_data.read().splitlines()
@@ -341,20 +366,36 @@ class Ui_Collect_Manager(object):
                 subprocess.Popen(exe)
 
             def reserveCrawl(month, week, dayOfweek, day_info, time, exe):  # param 값을 받아서 예약 실행.
-                print('월 : '+month, '주 : '+week, '요일 : '+dayOfweek, '일 : '+day_info, '시간 : '+time, today_day)
-                time = '{}'.format(time)
-                try:
 
-                    if month == '매월' and int(day_info) == int(today_day):
-                        schedule.every().day.at(time).do(run_crawl,exe)
-                    if week == '매주':
-                        if dayOfweek == '월':  schedule.every().monday.at(time).do(run_crawl,exe)
-                        if dayOfweek == '화':  schedule.every().tuesday.at(time).do(run_crawl,exe)
-                        if dayOfweek == '수':  schedule.every().wednesday.at(time).do(run_crawl,exe)
-                        if dayOfweek == '목':  schedule.every().thursday.at(time).do(run_crawl,exe)
-                        if dayOfweek == '금':  schedule.every().friday.at(time).do(run_crawl,exe)
-                        if dayOfweek == '토':  schedule.every().saturday.at(time).do(run_crawl,exe)
-                        if dayOfweek == '일':  schedule.every().sunday.at(time).do(run_crawl,exe)
+                print('월 : '+month, '주 : '+week, '요일 : '+dayOfweek, '일 : '+day_info, '시간 : '+time, today_day)
+                weekNum = getWeekNo(today_year, today_month, today_day)
+                time_info = '{}'.format(time)
+                hh = int(time_info.split(':')[0])
+                mm = int(time_info.split(':')[1])
+                run_time = str(today_year)+'-'+str(today_month)+'-'+str(today_day)+' '+str(hh)+':'+str(mm)+':'+'00'
+                try:
+                    sched = BackgroundScheduler()
+                    sched.start()
+                    if month == '매월' and int(day_info) == int(today_day): schedule.every().day.at(time_info).do(run_crawl,exe)
+
+                    if week == '매주' and dayOfweek == '월': schedule.every().monday.at(time_info).do(run_crawl,exe)
+                    if week == '매주' and dayOfweek == '화': schedule.every().tuesday.at(time_info).do(run_crawl,exe)
+                    if week == '매주' and dayOfweek == '수': schedule.every().wednesday.at(time_info).do(run_crawl,exe)
+                    if week == '매주' and dayOfweek == '목': schedule.every().thursday.at(time_info).do(run_crawl,exe)
+                    if week == '매주' and dayOfweek == '금': schedule.every().friday.at(time_info).do(run_crawl,exe)
+                    if week == '매주' and dayOfweek == '토': schedule.every().saturday.at(time_info).do(run_crawl,exe)
+                    if week == '매주' and dayOfweek == '일': schedule.every().sunday.at(time_info).do(run_crawl,exe)
+
+                    if week == '격주' and dayOfweek == today_date: sched.add_job(run_crawl(exe), "interval", days="7", start_date=run_time)
+
+                    if week == '1/3주' and weekNum in (1,3) and dayOfweek == today_date: sched.add_job(run_crawl(exe), "date", run_date=run_time)
+                    if week == '2/4주' and weekNum in (2,4) and dayOfweek == today_date: sched.add_job(run_crawl(exe), "date", run_date=run_time)
+
+                    if week == '1주' and weekNum == 1 and dayOfweek == today_date: sched.add_job(run_crawl(exe), "date", run_date=run_time)
+                    if week == '2주' and weekNum == 2 and dayOfweek == today_date: sched.add_job(run_crawl(exe), "date", run_date=run_time)
+                    if week == '3주' and weekNum == 3 and dayOfweek == today_date: sched.add_job(run_crawl(exe), "date", run_date=run_time)
+                    if week == '4주' and weekNum == 4 and dayOfweek == today_date: sched.add_job(run_crawl(exe), "date", run_date=run_time)
+
                     else:
                         pass
                 except:

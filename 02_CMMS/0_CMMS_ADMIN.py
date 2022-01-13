@@ -202,7 +202,7 @@ class Ui_Mainwindow(object):
         _translate = QtCore.QCoreApplication.translate
         Mainwindow.setWindowTitle(_translate("Mainwindow", "CMMS_LIST"))
         self.query_Button.setText(_translate("Mainwindow", "조 회"))
-        self.exportList.setText(_translate("Mainwindow", "LIST추출"))
+        self.exportList.setText(_translate("Mainwindow", "LIST추출/Update"))
         self.explanation_detail.setText(_translate("Mainwindow", "주요기능안내"))
         self.explanation.setText(_translate("Mainwindow", "select * from cmms.cmms_list where del_flag = '0' and 이후 쿼리입력. ex)type = '해당없음' / 마지막 ; 생략"))
         self.explanation2.setText(_translate("Mainwindow","table 의 column 명은 현재 표 칼럼의 두번째 줄의 영문명을 사용."))
@@ -578,7 +578,7 @@ class Ui_Mainwindow(object):
             self.tableWidget.setColumnHidden(ss,False)
 
     def OpenLink(self, item): # url 칼럼을 더블클릭하면 url, 폴더
-        if item.column() == 20:
+        if item.column() == 22:
             for ss in self.tableWidget.selectedItems():
                 if str(ss.text()).startswith('http'): webbrowser.open(str(ss.text()))
                 else :
