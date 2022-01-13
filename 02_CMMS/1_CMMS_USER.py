@@ -20,6 +20,7 @@ import io
 import re
 import time
 from shapely import wkt
+import traceback
 
 class Login(QDialog):
     def __init__(self, parent=None):
@@ -210,6 +211,10 @@ class Ui_Mainwindow(object):
         self.column_delete.setText(_translate("Mainwindow", "선택 칼럼 숨기기"))
         self.column_delete_cancel.setText(_translate("Mainwindow", "칼럼 숨기기 취소"))
 
+    def errorLog(self,error: str):
+        current_time = time.strftime("%Y.%m.%d/%H:%M:%S", time.localtime(time.time()))
+        return (f"[{current_time}] - {error}\n")
+
     def show_new_window(self):#기능 설명 팝업창
         if self.w is None:
             self.w = AnotherWindow()
@@ -291,7 +296,7 @@ class Ui_Mainwindow(object):
                 elif j == 18:
                     t = str(t).replace('\\\\','\\')
                     self.tableWidget.setItem(i, j, QTableWidgetItem(t))
-                elif j == 4 and t < today: # 지연 대상들 빨간색
+                elif j == 4 and a < 0:  # 지연 대상들 빨간색
                     self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
                     self.tableWidget.item(i, j).setBackground(QtGui.QColor(255, 102, 102))
                 elif j == 4 and a < 11 : # 임박 10일 대상들 노란색
@@ -449,7 +454,7 @@ class Ui_Mainwindow(object):
                     elif j == 18:
                         t = str(t).replace('\\\\', '\\')
                         self.tableWidget.setItem(i, j, QTableWidgetItem(t))
-                    elif j == 4 and t < today:  # 지연 대상들 빨간색
+                    elif j == 4 and a < 0:  # 지연 대상들 빨간색
                         self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
                         self.tableWidget.item(i, j).setBackground(QtGui.QColor(255, 102, 102))
                     elif j == 4 and a < 11:  # 임박 10일 대상들 노란색
@@ -501,58 +506,61 @@ class Ui_Mainwindow(object):
             self.updateData()
         else : pass
 
-    def updateData(self): # 수정후 엔터 입력시 이벤트에 연결 할 DB 업데이트 문
-        t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-        t_port = "5432"  # default postgres port
-        t_dbname = "postgres"
-        t_user = "postgres"
-        t_pw = "rjator"
-        self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,
-                                     options="-c search_path=cmms")
-        select_item = self.tableWidget.currentItem()
-        row = select_item.row()
-        column = select_item.column()
+    def updateData(self): # 수정후 스페이스 입력시 이벤트에 연결 할 DB 업데이트 문
         try:
-            column_name = ''
+            t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
+            t_port = "5432"  # default postgres port
+            t_dbname = "postgres"
+            t_user = "postgres"
+            t_pw = "rjator"
+            self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,
+                                         options="-c search_path=cmms")
+            select_item = self.tableWidget.currentItem()
+            row = select_item.row()
+            column = select_item.column()
             try:
-                content = self.tableWidget.item(row, column).text()
-            except : content =''
-            if column == 12: column_name = 'poi_cat'
-            if column == 13:
-                column_name = 'poi_date'
-                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                # if content == '--' : content = 'NULL'
-            if column == 14: column_name = 'net_cat'
-            if column == 15:
-                column_name = 'net_date'
-                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                # if content == '--': content = 'NULL'
-            if column == 16: column_name = 'map_cat'
-            if column == 17:
-                column_name = 'map_date'
-                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                # if content == '--': content = 'NULL'
-            nid = self.tableWidget.item(row, 0).text()
-            if content == 'NULL' :
-                query = "update cmms_list set %s=%s where nid=%s;" % (str(column_name), content, int(nid))
-            else:
-                query = "update cmms_list set %s='%s' where nid=%s;" % (str(column_name), content, int(nid))
-            self.cursor = self.conn.cursor()
-            self.cursor.execute(query)
-            self.conn.commit()
-            self.db_connect().close()
-            self.tableWidget.update()
-            print(content , ' DB update 완료')
-        except:
-            QMessageBox.warning(self.tableWidget, '실패', '편집 가능한 칼럼이 아니거나 입력 형식을 확인하세요.')
-            self.tableWidget.update()
-        if self.tableWidget.item(row, 12).text() == '완료' and self.tableWidget.item(row, 13).text() == '':
-            QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
-        if self.tableWidget.item(row, 14).text() == '완료' and self.tableWidget.item(row, 15).text() == '':
-            QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
-        if self.tableWidget.item(row, 16).text() == '완료' and self.tableWidget.item(row, 17).text() == '':
-            QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
-
+                column_name = ''
+                try:
+                    content = self.tableWidget.item(row, column).text()
+                except : content =''
+                if column == 12: column_name = 'poi_cat'
+                if column == 13:
+                    column_name = 'poi_date'
+                    # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                    # if content == '--' : content = 'NULL'
+                if column == 14: column_name = 'net_cat'
+                if column == 15:
+                    column_name = 'net_date'
+                    # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                    # if content == '--': content = 'NULL'
+                if column == 16: column_name = 'map_cat'
+                if column == 17:
+                    column_name = 'map_date'
+                    # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                    # if content == '--': content = 'NULL'
+                nid = self.tableWidget.item(row, 0).text()
+                if content == 'NULL' :
+                    query = "update cmms_list set %s=%s where nid=%s;" % (str(column_name), content, int(nid))
+                else:
+                    query = "update cmms_list set %s='%s' where nid=%s;" % (str(column_name), content, int(nid))
+                self.cursor = self.conn.cursor()
+                self.cursor.execute(query)
+                self.conn.commit()
+                self.db_connect().close()
+                self.tableWidget.update()
+                print(content , ' DB update 완료')
+            except:
+                QMessageBox.warning(self.tableWidget, '실패', '편집 가능한 칼럼이 아니거나 입력 형식을 확인하세요.')
+                self.tableWidget.update()
+            if self.tableWidget.item(row, 12).text() == '완료' and self.tableWidget.item(row, 13).text() == '':
+                QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
+            if self.tableWidget.item(row, 14).text() == '완료' and self.tableWidget.item(row, 15).text() == '':
+                QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
+            if self.tableWidget.item(row, 16).text() == '완료' and self.tableWidget.item(row, 17).text() == '':
+                QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
+        except :
+            err = traceback.format_exc()
+            QMessageBox.warning(Mainwindow,'Error',self.errorLog(str(err)))
     # def cellClickCopy(self):
     #     select_item = self.tableWidget.currentItem()
     #     row = select_item.row()
@@ -715,6 +723,7 @@ class Ui_Mainwindow(object):
         if self.exportOption.currentText() == '업데이트내역서':
             query = "limit_date between '2022-00-00' and '2022-00-00'"
             self.query_line.setText(query)
+        else: pass
 
     def update_txt_export(self):
         try:
@@ -766,5 +775,3 @@ if __name__ == "__main__":
         ui.setupUi(Mainwindow)
         Mainwindow.show()
         sys.exit(app.exec_())
-
-

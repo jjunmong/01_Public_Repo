@@ -20,6 +20,9 @@ import io
 import re
 import time
 from shapely import wkt
+import traceback
+from DB_daily_update import oracle_export
+from DB_daily_update import postgresql_backup_update
 
 class Login(QDialog):
     def __init__(self, parent=None):
@@ -68,6 +71,7 @@ class AnotherWindow(QWidget):
         4. 리스트 추출 = 추출 하고자 하는 리스트를 선택 란에서 선택 후 추출 버튼 클릭.  \n
         5. SHP 추출 = 조회 기능을 통해 원하는 리스트를 조회 한 뒤 SHP 버튼 클릭  \n
         (1000개 미만의 row만 가능)  \n
+        6. 선택 창에서 DB동기화 선택 후 LIST 추출 클릭 시 Oracle DB 동기화(admin 버전만 가능)
         # 하늘색 영역 이외에는 수정해도 DB에 저장 되지 않음.  
         """)
         layout.addWidget(self.label)
@@ -78,6 +82,8 @@ class Ui_Mainwindow(object):
         self.w = None
         Mainwindow.setObjectName("Mainwindow")
         Mainwindow.resize(847, 797)
+        Mainwindow.setWindowTitle('Icon')
+        Mainwindow.setWindowIcon(QIcon('logo_6533.png'))
         self.centralwidget = QtWidgets.QWidget(Mainwindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -93,10 +99,6 @@ class Ui_Mainwindow(object):
         self.count_label.setText("")
         self.count_label.setObjectName("count_label")
         self.gridLayout.addWidget(self.count_label, 2, 0, 1, 1)
-
-        Mainwindow.setWindowTitle('Icon')
-        Mainwindow.setWindowIcon(QIcon('logo_6533.png'))
-
         self.exportOption = QtWidgets.QComboBox(self.centralwidget)
         self.exportOption.setObjectName("exportOption")
         self.gridLayout.addWidget(self.exportOption, 0, 3, 1, 1)
@@ -105,15 +107,13 @@ class Ui_Mainwindow(object):
         self.exportOption.addItem('모니터링리스트')
         self.exportOption.addItem('전체리스트')
         self.exportOption.addItem('업데이트내역서')
-
+        self.exportOption.addItem('DB동기화')
         self.exportList = QtWidgets.QPushButton(self.centralwidget)
         self.exportList.setObjectName("exportList")
         self.gridLayout.addWidget(self.exportList, 0, 4, 1, 1)
-
         self.explanation_detail = QtWidgets.QPushButton(self.centralwidget)
         self.explanation_detail.setObjectName("exportOption")
         self.gridLayout.addWidget(self.explanation_detail, 0, 2, 1, 1)
-
         self.explanation = QtWidgets.QLabel(self.centralwidget)
         self.explanation.setObjectName("explanation")
         self.gridLayout.addWidget(self.explanation, 1, 0, 1, 1)
@@ -122,8 +122,7 @@ class Ui_Mainwindow(object):
         self.gridLayout.addWidget(self.explanation2, 2, 0, 1, 1)
         self.Clear = QtWidgets.QPushButton(self.centralwidget)
         self.Clear.setObjectName("Clear")
-        self.gridLayout.addWidget(self.Clear, 1, 4, 2, 1)
-
+        self.gridLayout.addWidget(self.Clear, 1, 4, 2, 2)
         self.SHP_EXPORT = QtWidgets.QPushButton(self.centralwidget)
         self.SHP_EXPORT.setObjectName("DB접속")
         self.gridLayout.addWidget(self.SHP_EXPORT, 1, 3, 2, 1)
@@ -213,6 +212,10 @@ class Ui_Mainwindow(object):
         self.column_delete.setText(_translate("Mainwindow", "선택 칼럼 숨기기"))
         self.column_delete_cancel.setText(_translate("Mainwindow", "칼럼 숨기기 취소"))
 
+    def errorLog(self,error: str):
+        current_time = time.strftime("%Y.%m.%d/%H:%M:%S", time.localtime(time.time()))
+        return (f"[{current_time}] - {error}\n")
+
     def show_new_window(self):#기능 설명 팝업창
         if self.w is None:
             self.w = AnotherWindow()
@@ -251,75 +254,77 @@ class Ui_Mainwindow(object):
 
     #DB 접속 버튼으로 초기 화면 불러옴
     def list_view(self):
-        today = datetime.date.today()
-        coulmn_list = self.coulmn_list()
-        coulmn_list2 = coulmn_list.replace("'","").replace('\\n','')
-        replace_rule = {'nid': 'NID\nNID', 'type': '유형\nTYPE', 'text': '제목\nTEXT', 'lcode': 'LCODE\nLCODE',
-                        'limit_date': '구축시한\nLIMIT_DATE', 'complete_date': '준공일\nCOMPLETE_DATE',
-                        'height_limit': '높이제한\nHEIGHT_LIMIT', 'weight_limit': '중량제한\nWEIGHT_LIMIT',
-                        'time_id': '시간제\nTIME_ID', 'road_work': '도로공사종류\nROAD_WORK',
-                        'result': '실사결과\nRESULT', 'request_date': '실사일정\nREQUEST_DATE', 'poi_cat': 'POI상태\nPOI_CAT',
-                        'poi_date': 'POI구축일\nPOI_DATE', 'net_cat': 'NET상태\nNET_CAT', 'net_date': 'NET구축일\nNET_DATE',
-                        'map_cat': 'MAP상태\nMAP_CAT', 'map_date': 'MAP구축일\nMAP_DATE',
-                        'data_check': '데이터확인\nDATA_CHECK',
-                        'service_check': '서비스확인\nSERVICE_CHECK', 'url': 'URL\nURL',
-                        'create_date': '최초생성일\nCREATE_DATE', 'update_date': '최종수정일\nUPDATE_DATE'}
-        header_list = self.replace_all(coulmn_list, replace_rule).replace(' ','').replace("'","").replace('\\n', '')
-        header_list = header_list.split(',')
-        self.tableWidget.setHorizontalHeaderLabels(header_list)
-        self.cursor = self.db_connect().cursor()
-        query = ("select {} from cmms_list where del_flag = '0' order by limit_date").format(coulmn_list2)
-        print(query)
-        self.cursor.execute(query)
-        rows = self.cursor.fetchall()
-        i = 0
-        for elem in rows:
-            self.tableWidget.setRowCount(self.tableWidget.rowCount() + 1)
-            j = 0
-            for t in elem:
-                try: a = int(str(t - today).split(' ')[0])
-                except : a = 0
-                if t == None: t = ''
-                if j == 0 :
-                    # 해당 필드 숫자 형식으로 바꾸기 위함.
-                    item = QTableWidgetItem()
-                    item.setData(QtCore.Qt.DisplayRole, t)
-                    self.tableWidget.setItem(i, j, QTableWidgetItem(item))
-                elif j in (12,13,14,15,16,17):
-                    item = QTableWidgetItem()
-                    item.setFlags( QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEditable | QtCore.Qt.ItemIsEnabled )
-                    item.setData(QtCore.Qt.DisplayRole, t)
-                    item.setBackground(QtGui.QColor(129,216,208))
-                    self.tableWidget.setItem(i, j, QTableWidgetItem(item))
-                elif j == 22:
-                    t = str(t).replace('\\\\','\\')
-                    self.tableWidget.setItem(i, j, QTableWidgetItem(t))
-                elif j in (18, 20) :
-                    chkBoxItem = QTableWidgetItem()
-                    if t == 'Yes':
-                        chkBoxItem.setTextAlignment(QtCore.Qt.AlignCenter)
-                        chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
-                        chkBoxItem.setCheckState(QtCore.Qt.Checked)
-
-                        self.tableWidget.setItem(i, j, QTableWidgetItem(chkBoxItem))
+        try:
+            today = datetime.date.today()
+            coulmn_list = self.coulmn_list()
+            coulmn_list2 = coulmn_list.replace("'","").replace('\\n','')
+            replace_rule = {'nid': 'NID\nNID', 'type': '유형\nTYPE', 'text': '제목\nTEXT', 'lcode': 'LCODE\nLCODE',
+                            'limit_date': '구축시한\nLIMIT_DATE', 'complete_date': '준공일\nCOMPLETE_DATE',
+                            'height_limit': '높이제한\nHEIGHT_LIMIT', 'weight_limit': '중량제한\nWEIGHT_LIMIT',
+                            'time_id': '시간제\nTIME_ID', 'road_work': '도로공사종류\nROAD_WORK',
+                            'result': '실사결과\nRESULT', 'request_date': '실사일정\nREQUEST_DATE', 'poi_cat': 'POI상태\nPOI_CAT',
+                            'poi_date': 'POI구축일\nPOI_DATE', 'net_cat': 'NET상태\nNET_CAT', 'net_date': 'NET구축일\nNET_DATE',
+                            'map_cat': 'MAP상태\nMAP_CAT', 'map_date': 'MAP구축일\nMAP_DATE',
+                            'data_check': '데이터확인\nDATA_CHECK',
+                            'service_check': '서비스확인\nSERVICE_CHECK', 'url': 'URL\nURL',
+                            'create_date': '최초생성일\nCREATE_DATE', 'update_date': '최종수정일\nUPDATE_DATE'}
+            header_list = self.replace_all(coulmn_list, replace_rule).replace(' ','').replace("'","").replace('\\n', '')
+            header_list = header_list.split(',')
+            self.tableWidget.setHorizontalHeaderLabels(header_list)
+            self.cursor = self.db_connect().cursor()
+            query = ("select {} from cmms_list where del_flag = '0' order by limit_date").format(coulmn_list2)
+            print(query)
+            self.cursor.execute(query)
+            rows = self.cursor.fetchall()
+            i = 0
+            for elem in rows:
+                self.tableWidget.setRowCount(self.tableWidget.rowCount() + 1)
+                j = 0
+                for t in elem:
+                    try: a = int(str(t - today).split(' ')[0])
+                    except : a = 0
+                    if t == None: t = ''
+                    if j == 0 :
+                        # 해당 필드 숫자 형식으로 바꾸기 위함.
+                        item = QTableWidgetItem()
+                        item.setData(QtCore.Qt.DisplayRole, t)
+                        self.tableWidget.setItem(i, j, QTableWidgetItem(item))
+                    elif j in (12,13,14,15,16,17):
+                        item = QTableWidgetItem()
+                        item.setFlags( QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEditable | QtCore.Qt.ItemIsEnabled )
+                        item.setData(QtCore.Qt.DisplayRole, t)
+                        item.setBackground(QtGui.QColor(129,216,208))
+                        self.tableWidget.setItem(i, j, QTableWidgetItem(item))
+                    elif j == 22:
+                        t = str(t).replace('\\\\','\\')
+                        self.tableWidget.setItem(i, j, QTableWidgetItem(t))
+                    elif j in (18, 20) :
+                        chkBoxItem = QTableWidgetItem()
+                        if t == 'Yes':
+                            chkBoxItem.setTextAlignment(QtCore.Qt.AlignCenter)
+                            chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
+                            chkBoxItem.setCheckState(QtCore.Qt.Checked)
+                            self.tableWidget.setItem(i, j, QTableWidgetItem(chkBoxItem))
+                        else:
+                            chkBoxItem.setTextAlignment(QtCore.Qt.AlignCenter)
+                            chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
+                            chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
+                            self.tableWidget.setItem(i, j, QTableWidgetItem(chkBoxItem))
+                    elif j == 4 and a < 0 : # 지연 대상들 빨간색
+                        self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
+                        self.tableWidget.item(i, j).setBackground(QtGui.QColor(255, 102, 102))
+                    elif j == 4 and a < 11 : # 임박 10일 대상들 노란색
+                        self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
+                        self.tableWidget.item(i, j).setBackground(QtGui.QColor(255, 204, 102))
                     else:
-                        chkBoxItem.setTextAlignment(QtCore.Qt.AlignCenter)
-                        chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
-                        chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
-
-                        self.tableWidget.setItem(i, j, QTableWidgetItem(chkBoxItem))
-                elif j == 4 and t < today : # 지연 대상들 빨간색
-                    self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
-                    self.tableWidget.item(i, j).setBackground(QtGui.QColor(255, 102, 102))
-                elif j == 4 and a < 11 : # 임박 10일 대상들 노란색
-                    self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
-                    self.tableWidget.item(i, j).setBackground(QtGui.QColor(255, 204, 102))
-                else:
-                    self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
-                j += 1
-            i += 1
-        self.statusbar.showMessage('count : '+str(len(rows)))#상태 창에 전체 카운트 출력
-        self.db_connect().close()
+                        self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
+                    j += 1
+                i += 1
+            self.statusbar.showMessage('count : '+str(len(rows)))#상태 창에 전체 카운트 출력
+            self.db_connect().close()
+        except:
+            err = traceback.format_exc()
+            QMessageBox.warning(Mainwindow,'Error',self.errorLog(str(err)))
 
     def checkchanged(self, item):# 체크박스 체인지 할때의 실행.
         column = item.column()
@@ -408,45 +413,49 @@ class Ui_Mainwindow(object):
             self.tableWidget.setRowHidden(key, not columnsShow[key])
 
     def columnfilterclicked(self, index):
-        self.menu = QtWidgets.QMenu()
-        self.menu.setStyleSheet('QMenu { menu-scrollable: true; }')
-        self.col = index
+        try:
+            self.menu = QtWidgets.QMenu()
+            self.menu.setStyleSheet('QMenu { menu-scrollable: true; }')
+            self.col = index
 
-        data_unique = []
-        self.checkBoxs = []
+            data_unique = []
+            self.checkBoxs = []
 
-        checkBox = QtWidgets.QCheckBox("Select all", self.menu)
-        checkableAction = QtWidgets.QWidgetAction(self.menu)
-        checkableAction.setDefaultWidget(checkBox)
-        self.menu.addAction(checkableAction)
-        checkBox.setChecked(True)
-        checkBox.stateChanged.connect(self.slotSelect)
+            checkBox = QtWidgets.QCheckBox("Select all", self.menu)
+            checkableAction = QtWidgets.QWidgetAction(self.menu)
+            checkableAction.setDefaultWidget(checkBox)
+            self.menu.addAction(checkableAction)
+            checkBox.setChecked(True)
+            checkBox.stateChanged.connect(self.slotSelect)
 
-        for i in range(self.tableWidget.rowCount()):
-            if not self.tableWidget.isRowHidden(i):
-                item = self.tableWidget.item(i, index)
-                if item.text() not in data_unique:
-                    data_unique.append(item.text())
-                    checkBox = QtWidgets.QCheckBox(item.text(), self.menu)
-                    checkBox.setChecked(True)
-                    checkableAction = QtWidgets.QWidgetAction(self.menu)
-                    checkableAction.setDefaultWidget(checkBox)
-                    self.menu.addAction(checkableAction)
-                    self.checkBoxs.append(checkBox)
+            for i in range(self.tableWidget.rowCount()):
+                if not self.tableWidget.isRowHidden(i):
+                    item = self.tableWidget.item(i, index)
+                    if item.text() not in data_unique:
+                        data_unique.append(item.text())
+                        checkBox = QtWidgets.QCheckBox(item.text(), self.menu)
+                        checkBox.setChecked(True)
+                        checkableAction = QtWidgets.QWidgetAction(self.menu)
+                        checkableAction.setDefaultWidget(checkBox)
+                        self.menu.addAction(checkableAction)
+                        self.checkBoxs.append(checkBox)
 
-        btn = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.Ok | QtWidgets.QDialogButtonBox.Cancel,
-                                         QtCore.Qt.Horizontal, self.menu)
-        btn.accepted.connect(self.menuClose)
-        btn.rejected.connect(self.menu.close)
-        checkableAction = QtWidgets.QWidgetAction(self.menu)
-        checkableAction.setDefaultWidget(btn)
-        self.menu.addAction(checkableAction)
+            btn = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.Ok | QtWidgets.QDialogButtonBox.Cancel,
+                                             QtCore.Qt.Horizontal, self.menu)
+            btn.accepted.connect(self.menuClose)
+            btn.rejected.connect(self.menu.close)
+            checkableAction = QtWidgets.QWidgetAction(self.menu)
+            checkableAction.setDefaultWidget(btn)
+            self.menu.addAction(checkableAction)
 
-        headerPos = self.tableWidget.mapToGlobal(self.tableWidgetHeader.pos())
+            headerPos = self.tableWidget.mapToGlobal(self.tableWidgetHeader.pos())
 
-        posY = headerPos.y() + self.tableWidgetHeader.height()
-        posX = headerPos.x() + self.tableWidgetHeader.sectionPosition(index)
-        self.menu.exec_(QtCore.QPoint(posX, posY))
+            posY = headerPos.y() + self.tableWidgetHeader.height()
+            posX = headerPos.x() + self.tableWidgetHeader.sectionPosition(index)
+            self.menu.exec_(QtCore.QPoint(posX, posY))
+        except:
+            err = traceback.format_exc()
+            QMessageBox.warning(Mainwindow,'Error',self.errorLog(str(err)))
 
     def copySelection(self): # 드래그 셀렉션 카피
         selection = self.tableWidget.selectedIndexes()
@@ -536,7 +545,7 @@ class Ui_Mainwindow(object):
                             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
                             chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
                             self.tableWidget.setItem(i, j, QTableWidgetItem(chkBoxItem))
-                    elif j == 4 and t < today:  # 지연 대상들 빨간색
+                    elif j == 4 and a < 0:  # 지연 대상들 빨간색
                         self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
                         self.tableWidget.item(i, j).setBackground(QtGui.QColor(255, 102, 102))
                     elif j == 4 and a < 11:  # 임박 10일 대상들 노란색
@@ -588,60 +597,63 @@ class Ui_Mainwindow(object):
             self.updateData()
         else : pass
 
-    def updateData(self): # 수정후 엔터 입력시 이벤트에 연결 할 DB 업데이트 문
-        t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-        t_port = "5432"  # default postgres port
-        t_dbname = "postgres"
-        t_user = "postgres"
-        t_pw = "rjator"
-        self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,
-                                     options="-c search_path=cmms")
-        select_item = self.tableWidget.currentItem()
-        row = select_item.row()
-        column = select_item.column()
+    def updateData(self): # 수정후 스페이스 입력시 이벤트에 연결 할 DB 업데이트 문
         try:
-            column_name = ''
+            t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
+            t_port = "5432"  # default postgres port
+            t_dbname = "postgres"
+            t_user = "postgres"
+            t_pw = "rjator"
+            self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,
+                                         options="-c search_path=cmms")
+            select_item = self.tableWidget.currentItem()
+            row = select_item.row()
+            column = select_item.column()
             try:
-                content = self.tableWidget.item(row, column).text()
-            except : content =''
-            if column == 12: column_name = 'poi_cat'
-            if column == 13:
-                column_name = 'poi_date'
-                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                # if content == '--' : content = 'NULL'
-            if column == 14: column_name = 'net_cat'
-            if column == 15:
-                column_name = 'net_date'
-                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                # if content == '--': content = 'NULL'
-            if column == 16: column_name = 'map_cat'
-            if column == 17:
-                column_name = 'map_date'
-                # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
-                # if content == '--': content = 'NULL'
-            if column == 18: column_name = 'data_check'
-            if column == 20: column_name = 'service_check'
-            nid = self.tableWidget.item(row, 0).text()
-            if content == 'NULL' :
-                query = "update cmms_list set %s=%s where nid=%s;" % (str(column_name), content, int(nid))
-            else:
-                query = "update cmms_list set %s='%s' where nid=%s;" % (str(column_name), content, int(nid))
-            self.cursor = self.conn.cursor()
-            self.cursor.execute(query)
-            self.conn.commit()
-            self.db_connect().close()
-            self.tableWidget.update()
-            print(content , ' DB update 완료')
-        except:
-            QMessageBox.warning(self.tableWidget, '실패', '편집 가능한 칼럼이 아니거나 입력 형식을 확인하세요.')
-            self.tableWidget.update()
-        if self.tableWidget.item(row, 12).text() == '완료' and self.tableWidget.item(row, 13).text() == '':
-            QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
-        if self.tableWidget.item(row, 14).text() == '완료' and self.tableWidget.item(row, 15).text() == '':
-            QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
-        if self.tableWidget.item(row, 16).text() == '완료' and self.tableWidget.item(row, 17).text() == '':
-            QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
-
+                column_name = ''
+                try:
+                    content = self.tableWidget.item(row, column).text()
+                except : content =''
+                if column == 12: column_name = 'poi_cat'
+                if column == 13:
+                    column_name = 'poi_date'
+                    # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                    # if content == '--' : content = 'NULL'
+                if column == 14: column_name = 'net_cat'
+                if column == 15:
+                    column_name = 'net_date'
+                    # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                    # if content == '--': content = 'NULL'
+                if column == 16: column_name = 'map_cat'
+                if column == 17:
+                    column_name = 'map_date'
+                    # content = str(content[0:4] + '-' + content[4:6] + '-' + content[6:8])
+                    # if content == '--': content = 'NULL'
+                if column == 18: column_name = 'data_check'
+                if column == 20: column_name = 'service_check'
+                nid = self.tableWidget.item(row, 0).text()
+                if content == 'NULL' :
+                    query = "update cmms_list set %s=%s where nid=%s;" % (str(column_name), content, int(nid))
+                else:
+                    query = "update cmms_list set %s='%s' where nid=%s;" % (str(column_name), content, int(nid))
+                self.cursor = self.conn.cursor()
+                self.cursor.execute(query)
+                self.conn.commit()
+                self.db_connect().close()
+                self.tableWidget.update()
+                print(content , ' DB update 완료')
+            except:
+                QMessageBox.warning(self.tableWidget, '실패', '편집 가능한 칼럼이 아니거나 입력 형식을 확인하세요.')
+                self.tableWidget.update()
+            if self.tableWidget.item(row, 12).text() == '완료' and self.tableWidget.item(row, 13).text() == '':
+                QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
+            if self.tableWidget.item(row, 14).text() == '완료' and self.tableWidget.item(row, 15).text() == '':
+                QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
+            if self.tableWidget.item(row, 16).text() == '완료' and self.tableWidget.item(row, 17).text() == '':
+                QMessageBox.warning(self.tableWidget, '확인', '완료 날짜를 반드시 기입해야 합니다.')
+        except :
+            err = traceback.format_exc()
+            QMessageBox.warning(Mainwindow,'Error',self.errorLog(str(err)))
     # def cellClickCopy(self):
     #     select_item = self.tableWidget.currentItem()
     #     row = select_item.row()
@@ -732,6 +744,10 @@ class Ui_Mainwindow(object):
             self.EntireList()
         elif self.exportOption.currentText() == '업데이트내역서':
             self.update_txt_export()
+        elif self.exportOption.currentText()=='DB동기화':
+            oracle_export()
+            postgresql_backup_update()
+            print('DB 동기화 완료')
         else: QMessageBox.warning(self.tableWidget, '알림', '추출 하고자 하는 리스트를 선택 후 LIST 추출 버튼을 클릭 해 주세요')
 
     def shp_export(self):  ##shp 뽑기 위한 함수 모음.
@@ -804,6 +820,7 @@ class Ui_Mainwindow(object):
         if self.exportOption.currentText() == '업데이트내역서':
             query = "limit_date between '2022-00-00' and '2022-00-00'"
             self.query_line.setText(query)
+        else : pass
 
     def update_txt_export(self):
         try:
@@ -855,6 +872,3 @@ if __name__ == "__main__":
         ui.setupUi(Mainwindow)
         Mainwindow.show()
         sys.exit(app.exec_())
-
-
-
