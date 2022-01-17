@@ -675,8 +675,8 @@ class Ui_Mainwindow(object):
             self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,options="-c search_path=cmms")
             csv_file = open("도로개통정보.csv", "w",encoding='utf-8')
             writer = csv.writer(csv_file, lineterminator="\n", delimiter='|', quoting=csv.QUOTE_NONE, escapechar='\\')
-            csv_file.write("TEXT|NID|TYPE|ROAD_WORK|TIME_ID|COMPLETE_DATE|LIMIT_DATE|NET_DATE\n")
-            query = "select text, nid, type, road_work,time_id, complete_date,limit_date,net_date from cmms_list where type not in ('아파트','시설') and del_flag ='0' order by complete_date"
+            csv_file.write("TEXT|NID|TYPE|ROAD_WORK|TIME_ID|COMPLETE_DATE|LIMIT_DATE|NET_DATE|NET_CAT\n")
+            query = "select text, nid, type, road_work,time_id, complete_date,limit_date,net_date,net_cat from cmms_list where type not in ('아파트','시설') and del_flag ='0' order by complete_date"
             self.cursor = self.conn.cursor()
             self.cursor.execute(query)
             row = self.cursor.fetchall()

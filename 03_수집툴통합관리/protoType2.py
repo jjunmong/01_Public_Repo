@@ -195,7 +195,7 @@ class Ui_Collect_Manager(object):
             os.remove('exe_list.txt')
         sys.exit(0)
 
-    def errorLog(self,error: str):
+    def errorLog(self,error: str): # 에러 발생 시 에러 메시지 리턴
         current_time = time.strftime("%Y.%m.%d/%H:%M:%S", time.localtime(time.time()))
         return (f"[{current_time}] - {error}\n")
 
@@ -266,7 +266,9 @@ class Ui_Collect_Manager(object):
             month = schedule_value.split('|')[1]
             week = schedule_value.split('|')[2]
             datOfWeek = schedule_value.split('|')[3]
-            day = int(schedule_value.split('|')[4])
+            try:
+                day = int(schedule_value.split('|')[4])
+            except: day = 0
             time = schedule_value.split('|')[5]
             H = int(time.split(':')[0])
             M = int(time.split(':')[1])
@@ -322,6 +324,7 @@ class Ui_Collect_Manager(object):
 
         while True:
             schedule.run_pending()
+
             QtWidgets.QApplication.processEvents()
 
     def getRepeatList(self):#예약 실행 버튼 클릭 시 crawl_schedule_config.txt 에서 값을 읽어와서 예약 실행 수행.
@@ -364,9 +367,9 @@ class Ui_Collect_Manager(object):
 
             def run_crawl(exe):
                 subprocess.Popen(exe)
+                self.textBrowser.append(str(date.today()) + ' | ' + exe + "수집 완료")
 
             def reserveCrawl(month, week, dayOfweek, day_info, time, exe):  # param 값을 받아서 예약 실행.
-
                 print('월 : '+month, '주 : '+week, '요일 : '+dayOfweek, '일 : '+day_info, '시간 : '+time, today_day)
                 weekNum = getWeekNo(today_year, today_month, today_day)
                 time_info = '{}'.format(time)
@@ -412,7 +415,7 @@ class Ui_Collect_Manager(object):
                     dayOfweek = str(i[4])
                     day_info = i[5]
                     time = str(i[6])
-                    self.textBrowser.append(str(date.today())+' | '+exe + "수집")
+                    self.textBrowser.append(str(date.today())+' | '+exe + "수집 대기 중...")
                     reserveCrawl(month, week, dayOfweek, day_info, time, exe)
                     QtWidgets.QApplication.processEvents()
             return runRepeatCrawl()
