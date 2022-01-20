@@ -24,6 +24,7 @@ def main():
             os.remove(outfilename_true)
         outfile = codecs.open(outfilename_false, 'w', 'utf-8')
         write_text = str(datetime.today()) + '|' + '수집 실패' + '|' + str(traceback.format_exc())
+        print(traceback.format_exc())
         outfile.write(write_text)
         outfile.close()
 

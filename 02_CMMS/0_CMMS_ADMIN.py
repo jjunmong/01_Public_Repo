@@ -252,6 +252,16 @@ class Ui_Mainwindow(object):
             text = text.replace(i, j)
         return text
 
+    def getUpdateDate(self):
+        self.cursor = self.db_connect().cursor()
+        query = "select to_char(cmms_update_date,'YYYY-MM-DD HH24:MI:SS') from cmms_list order by cmms_update_date desc limit 1;"
+        self.cursor = self.db_connect().cursor()
+        self.cursor.execute(query)
+        row = self.cursor.fetchone()
+        row = str(row).replace('(','').replace(',)','')
+        return row
+
+
     #DB 접속 버튼으로 초기 화면 불러옴
     def list_view(self):
         try:
@@ -320,7 +330,8 @@ class Ui_Mainwindow(object):
                         self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
                     j += 1
                 i += 1
-            self.statusbar.showMessage('count : '+str(len(rows)))#상태 창에 전체 카운트 출력
+
+            self.statusbar.showMessage('count : '+str(len(rows)) + ' / '+'최근 업데이트 날짜 : '+ str(self.getUpdateDate()))#상태 창에 전체 카운트 출력
             self.db_connect().close()
         except:
             err = traceback.format_exc()
@@ -555,7 +566,7 @@ class Ui_Mainwindow(object):
                         self.tableWidget.setItem(i, j, QTableWidgetItem(str(t).strip()))
                     j += 1
                 i += 1
-            self.statusbar.showMessage('count : ' + str(len(rows)))# 상태 창에 전체 카운트 출력
+            self.statusbar.showMessage('count : ' + str(len(rows))+ ' / ' +'최근 업데이트 날짜 : '+ str(self.getUpdateDate()))# 상태 창에 전체 카운트 출력
             self.db_connect().close()
             self.tableWidget.setSortingEnabled(True)
             QMessageBox.information(self.tableWidget, "확인", "조회 완료")
