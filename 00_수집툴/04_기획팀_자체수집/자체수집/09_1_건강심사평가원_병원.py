@@ -35,13 +35,7 @@ def Crawl_run():
     while True :
         store_list = getStoreInfo(page)
         print(page)
-        if getStoreInfo(page) == [] :
-            print(page, "해당 코드의 페이지 호출을 실패하여 실패 리스트로 반환합니다.")
-            outfile = codecs.open('건강심사평가원_병원_수집실패.txt', 'a')
-            fail_url = str(page) + '\n'
-            outfile.write(fail_url)
-            outfile.close()
-            pass
+        if getStoreInfo(page) == [] :break
         for store in store_list:
             outfile.write(u'%s|' % store['yadNm'])
             outfile.write(u'%s|' % store['addr'])
@@ -63,7 +57,6 @@ def Crawl_run():
             outfile.write(u'%s|' % store['YPos'])
             outfile.write(u'%s\n' % store['ykiho'])
         page += 1
-        if page == 100+1 : break
         time.sleep(random.uniform(0.3,0.6))
     outfile.close()
 

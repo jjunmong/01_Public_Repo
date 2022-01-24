@@ -97,6 +97,9 @@ def Crawl_run():
         driver.back()
         time.sleep(3)
 
+    time.sleep(5)
+    driver.close()
+
 def file_move():
     getuser = getpass.getuser()
     origin_dir = r'C:\Users\{}\Downloads'.format(getuser)

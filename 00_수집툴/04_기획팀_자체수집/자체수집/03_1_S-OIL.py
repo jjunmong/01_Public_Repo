@@ -119,6 +119,7 @@ def getStore_List_all():
         except :
             click_list = driver.find_element(By.XPATH,'//*[@id="container"]/ul[2]/li[11]/a/img')
             driver.execute_script("arguments[0].click();", click_list)
+    driver.close()
     return result
 
 def getStore_List_all2():
@@ -146,6 +147,7 @@ def getStore_List_all2():
                 click_list = driver.find_element(By.XPATH,'//*[@id="container"]/ul[2]/li[11]/a/img')
                 driver.execute_script("arguments[0].click();", click_list)
         except : pass
+    driver.close()
     return result
 
 def getStore_List_all3():
@@ -173,6 +175,7 @@ def getStore_List_all3():
                 click_list = driver.find_element(By.XPATH,'//*[@id="container"]/ul[2]/li[11]/a/img')
                 driver.execute_script("arguments[0].click();", click_list)
         except : pass
+    driver.close()
     return result
 
 def getStore_List_all4():
@@ -205,6 +208,7 @@ def getStore_List_all4():
                     click_list = driver.find_element(By.XPATH,'//*[@id="container"]/ul[2]/li[12]/a/img')
                     driver.execute_script("arguments[0].click();", click_list)
         except : pass
+    driver.close()
     return result
 
 def getStoreInfo(code):

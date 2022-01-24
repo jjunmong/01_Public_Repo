@@ -47,7 +47,6 @@ def main():
         outfile.close()
 
 def Crawl_run():
-    today = str(datetime.today()).split(' ')[0].replace('-','')
     outfile = codecs.open(outfilename, 'w', 'utf-8')
     outfile.write("ID|NAME|BRANCH|ADDRESS|TELL|EBD|PET|XCORD|YCORD|REGDATE|UPDATE\n")
 

@@ -97,6 +97,7 @@ def Crawl_run():
     driver.execute_script("arguments[0].click();", down_click2)
 
     time.sleep(480)
+    driver.close()
 
 def file_edit():
     getuser = getpass.getuser()

@@ -57,7 +57,6 @@ def Crawl_run():
                 outfile.write(u'%s|' % store['YPos'])
                 outfile.write(u'%s\n' % store['ykiho'])
             page += 1
-            if page == 100 : break
             time.sleep(random.uniform(0.3, 0.9))
     outfile.close()
 
@@ -78,6 +77,7 @@ def getStoreInfo(sidoCode, intPageNo):
         outfile.close()
     soup = bs4.BeautifulSoup(response,'lxml')
     list = soup.find_all('item')
+    list_len = len(list)
     data = []
     for info in range(len(list)):
         try:

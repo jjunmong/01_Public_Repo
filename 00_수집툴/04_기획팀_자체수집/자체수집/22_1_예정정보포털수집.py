@@ -20,6 +20,7 @@ def main():
         write_text = str(datetime.today()) + '|' + '정상 수집 완료'
         outfile.write(write_text)
         outfile.close()
+
     except:
         if os.path.isfile(outfilename_true):
             os.remove(outfilename_true)
