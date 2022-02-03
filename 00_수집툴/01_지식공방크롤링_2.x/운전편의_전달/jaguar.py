@@ -86,7 +86,7 @@ def getStores(intPageNo):
     tree = html.fromstring(response)
 
     entity_list = tree.xpath('//table[@class="dealer"]//tr')
-
+    print(entity_list)
     store_list = []
     for i in range(len(entity_list)):
         info_list = entity_list[i].xpath('.//td')

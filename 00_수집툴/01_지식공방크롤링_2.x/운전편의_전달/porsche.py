@@ -92,15 +92,13 @@ def getStores(sido_name, sido_coord):
         print('Error calling the API');     return None
 
     code = result.getcode()
-    if code != 200:
-        print('HTTP request error (status %d)' % code);     return None
+
 
     response = result.read()
     #print(response)
     tree = html.fromstring(response)
 
     entity_list = tree.xpath('//location')
-
     store_list = []
     for i in range(len(entity_list)):
         store_info = {}

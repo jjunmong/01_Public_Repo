@@ -16,8 +16,6 @@ import time
 import schedule
 from datetime import datetime, date, timedelta
 import traceback
-from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.jobstores.base import JobLookupError
 
 DEFAULT_STYLE = """
 QProgressBar{
@@ -205,6 +203,7 @@ class Ui_Collect_Manager(object):
 
             file_name = QtWidgets.QFileDialog.getOpenFileNames()
             for file in file_name[0]:
+                print(file)
                 self.listWidget.addItem(file)
                 with open('exe_list.txt', 'a') as f:
                     f.write(file + '\n')
@@ -317,15 +316,23 @@ class Ui_Collect_Manager(object):
             err = traceback.format_exc()
             QMessageBox.warning(Collect_Manager,'Error',self.errorLog(str(err)))
 
-    def cliclkReserveStart(self):
-        schedule.every().day.at('00:01').do(self.getRepeatList)
-        self.textBrowser.append(str(date.today())+' | '+'다음 수집 대기 중')
+    def cancleJob(self): # 에약된 작업 종료
+        self.textBrowser.append('예약 작업 취소')
+        print(datetime_date,' 예약된 작업 취소')
+        return schedule.clear()
 
+    def cliclkReserveStart(self): # 예약 실행 버튼 눌렀을 때 실행 되는 함수
+        self.textBrowser.append(str(date.today()) + ' | ' + '다음 수집 대기 중')
+        # schedule.every().day.at('00:05').do(self.getRepeatList)
+        # schedule.every().day.at('23:55').do(self.cancleJob)
+        schedule.every(20).seconds.do(self.cancleJob)
         while True:
             schedule.run_pending()
             QtWidgets.QApplication.processEvents()
+            schedule.every(10).seconds.do(self.getRepeatList)
 
     def getRepeatList(self):#예약 실행 버튼 클릭 시 crawl_schedule_config.txt 에서 값을 읽어와서 예약 실행 수행.
+        print('예약 작업 수행')
         try:
             def getDate(y, m, d):
                 '''y: year(4 digits)
@@ -365,38 +372,31 @@ class Ui_Collect_Manager(object):
 
             def run_crawl(exe):
                 subprocess.Popen(exe)
-                self.textBrowser.append(str(date.today()) + ' | ' + exe + "수집 완료")
+                self.textBrowser.append(str(date.today()) + ' | ' + exe + "수집 실행")
 
-            def reserveCrawl(month, week, dayOfweek, day_info, time, exe):  # param 값을 받아서 예약 실행.
-                print('수집툴 : '+exe+' / '+'월 : '+month, '주 : '+week, '요일 : '+dayOfweek, '일 : '+day_info, '시간 : '+time, today_day)
+            def reserveCrawl(month, week, dayOfweek, day_info, times, exe):  # param 값을 받아서 예약 실행.
+                print('수집툴 : '+exe+' / '+'월 : '+month, '주 : '+week, '요일 : '+dayOfweek, '일 : '+day_info, '시간 : '+times, today_day)
                 weekNum = int(getWeekNo(today_year, today_month, today_day))
-                time_info = '{}'.format(time)
-                hh = int(time_info.split(':')[0])
-                mm = int(time_info.split(':')[1])
-                run_time = str(today_year)+'-'+str(today_month)+'-'+str(today_day)+' '+str(hh)+':'+str(mm)+':'+'00'
+                time_info = '{}'.format(times)
+                todojob = schedule.every().day.at(time_info).do(run_crawl,exe)
                 try:
-                    sched = BackgroundScheduler(timezone='Asia/Seoul')
-                    sched.start()
-                    if month == '매월' and int(day_info) == int(today_day): schedule.every().day.at(time_info).do(run_crawl,exe),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-
-                    elif week == '매주' and dayOfweek == '월': schedule.every().monday.at(time_info).do(run_crawl,exe),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '매주' and dayOfweek == '화': schedule.every().tuesday.at(time_info).do(run_crawl,exe),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '매주' and dayOfweek == '수': schedule.every().wednesday.at(time_info).do(run_crawl,exe),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '매주' and dayOfweek == '목': schedule.every().thursday.at(time_info).do(run_crawl,exe),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '매주' and dayOfweek == '금': schedule.every().friday.at(time_info).do(run_crawl,exe),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '매주' and dayOfweek == '토': schedule.every().saturday.at(time_info).do(run_crawl,exe),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '매주' and dayOfweek == '일': schedule.every().sunday.at(time_info).do(run_crawl,exe),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-
-                    elif week == '1/3주' and weekNum in (1,3) and dayOfweek == today_date: sched.add_job(run_crawl, "date", run_date=run_time,args=(exe,)),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '2/4주' and weekNum in (2,4) and dayOfweek == today_date: sched.add_job(run_crawl, "date", run_date=run_time,args=(exe,)),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-
-                    elif week == '1주' and weekNum == 1 and dayOfweek == today_date: sched.add_job(run_crawl, "date", run_date=run_time,args=(exe,)),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '2주' and weekNum == 2 and dayOfweek == today_date: sched.add_job(run_crawl, "date", run_date=run_time,args=(exe,)),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '3주' and weekNum == 3 and dayOfweek == today_date: sched.add_job(run_crawl, "date", run_date=run_time,args=(exe,)),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-                    elif week == '4주' and weekNum == 4 and dayOfweek == today_date: sched.add_job(run_crawl, "date", run_date=run_time,args=(exe,)),self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'수집 예약 완료')
-
-                    else:
-                        pass
+                    if month == '매월' and int(day_info) == int(today_day):
+                        todojob,self.textBrowser.append(exe + ' | '+str(date.today())+' | '+'매월/'+ today_date +'/수집 예약 완료')
+                    elif week == '매주' and dayOfweek == today_date:
+                        todojob, self.textBrowser.append(exe + ' | ' + str(date.today()) + ' | ' + '매주/' + today_date + '/수집 예약 완료')
+                    elif week == '1/3주' and weekNum in (1, 3) and dayOfweek == today_date:
+                        todojob, self.textBrowser.append(exe + ' | ' + str(date.today()) + ' | ' + '1/3주 수집 예약 완료')
+                    elif week == '2/4주' and weekNum in (2, 4) and dayOfweek == today_date:
+                        todojob, self.textBrowser.append(exe + ' | ' + str(date.today()) + ' | ' + '2/4주 수집 예약 완료')
+                    elif week == '1주' and weekNum == 1 and dayOfweek == today_date:
+                        todojob, self.textBrowser.append(exe + ' | ' + str(date.today()) + ' | ' + '1주차 수집 예약 완료')
+                    elif week == '2주' and weekNum == 2 and dayOfweek == today_date:
+                        todojob, self.textBrowser.append(exe + ' | ' + str(date.today()) + ' | ' + '2주차 수집 예약 완료')
+                    elif week == '3주' and weekNum == 3 and dayOfweek == today_date:
+                        todojob, self.textBrowser.append(exe + ' | ' + str(date.today()) + ' | ' + '3주차 수집 예약 완료')
+                    elif week == '4주' and weekNum == 4 and dayOfweek == today_date:
+                        todojob, self.textBrowser.append(exe + ' | ' + str(date.today()) + ' | ' + '4주차 수집 예약 완료')
+                    else: pass
                 except:
                     err = traceback.format_exc()
                     QMessageBox.warning(Collect_Manager, 'Error', self.errorLog(str(err)))

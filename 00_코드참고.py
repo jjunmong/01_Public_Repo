@@ -150,9 +150,9 @@ result = []
 def remove_dupe_dicts(l):
   return [dict(t) for t in {tuple(d.items()) for d in l}]
 
-results = [dict(t) for t in {tuple(d.items()) for d in result}]
+results = [dict(t) for t in {tuple(d.items()) for d in result}] # dict 중복제거
 
-results = list(set(result))
+results = list(set(result)) #단일 리스트 중복 제거
 
 results = set()
 new_results = []

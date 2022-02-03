@@ -9,5 +9,4 @@
 포르쉐센터|인천|032-450-3000|Incheon 686, Inju-daero, Namdong-gu|Stuttgart/Sports/Cars/Ltd.|126.71315|37.4491119
 포르쉐센터|Suwon|+82312140911|Yongin  20,  Joonbu-daero, Kiheung-gu|Deutsch/Auto|127.071037|37.2674
 포르쉐센터|Suwon/Satellite/Showroom|+823151740911|Suwon-si 308-5, Gwonseon-ro|수원/도이치오토월드/포르쉐/쇼룸|126.986794|37.25935
-포르쉐센터|부산|051-744-6911|Busan 277, Haeun-daero, Haeundae-gu|Stuttgart/Sports/Cars/Ltd|129.1311|35.1759148
-포르쉐센터|Changwon|55-251-0911|Changwon 157, Bongyang-ro, Masanhoe51348 Changwon-si, Gyeongsangnam-dowon-gu, ||128.604355|35.2184944
+포르쉐센터|대구|053-768-0911|Daegu 84, Dongdaegu-ro, Suseonggu,|Autostadt/Inc.|128.624634|35.8375778

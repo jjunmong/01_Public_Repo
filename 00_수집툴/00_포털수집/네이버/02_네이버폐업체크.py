@@ -1,16 +1,22 @@
 import codecs
 import requests
 import json
-import sys
+import sys, os
 
-def main():
-
+if os.path.isfile('네이버폐업확인결과.txt') == False :
     outfile = codecs.open('네이버폐업확인결과.txt', 'w', 'utf-8')
     outfile.write("INPUTNAME|ID|NAME|OLDADDR|NEWADDR|TELL|CAT|XCORD|YCORD|URL\n")
-    inputNames = getInputName()
+    outfile.close()
 
+def main():
+    inputNames = getInputName()
     for input in inputNames:
-        result = getStoreInfo(input)
+        outfile = codecs.open('네이버폐업확인결과.txt', 'a', 'utf-8')
+        print(getStoreInfo(input)[0],getStoreInfo(input)[1])
+        if getStoreInfo(input)[1] == 503:
+            print('요청한 페이지를 찾을 수 없어 수집을 종료 합니다.')
+            break
+        result = getStoreInfo(input)[0]
         print(input)
         for results in result:
             outfile.write(u'%s|' % results['input'])
@@ -21,8 +27,8 @@ def main():
             outfile.write(u'%s|' % results['tell'])
             outfile.write(u'%s|' % results['cat'])
             outfile.write(u'%s\n' % results['url'])
+        outfile.close()
         # time.sleep(random.uniform(2,3))
-    outfile.close()
 
 def getInputName():
     with open('폐업check리스트.txt') as data:
@@ -31,6 +37,7 @@ def getInputName():
     return inputName
 
 def getStoreInfo(inputName):
+    list = []
     url ="https://map.naver.com/v5/api/search?caller=pcweb&query={}&type=all&searchCoord=127.10515475393677;37.50626&page=1&displayCount=300&isPlaceRecommendationReplace=true&lang=ko".format(inputName)
     headers = {
         'accept': 'application/json, text/plain, */*',
@@ -49,12 +56,14 @@ def getStoreInfo(inputName):
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36',
     }
-    req = requests.get(url, headers = headers).text
-    list = []
+    req = requests.get(url, headers = headers)
+    response_check = req.status_code
+    # print(response_check)
+    req = req.text
     try:
         data = json.loads(req)
         data_all = data['result']['place']['list'][0]
-        print(data_all)
+        # print(data_all)
     except :
         list.append({"input": inputName, "id": '찾을수없음', "name": '', "oldaddr": '', "newaddr": '', "tell": '',
                      "cat": '', "xcord": '', "ycord": '', "url": ''})
@@ -77,16 +86,8 @@ def getStoreInfo(inputName):
         except :ycord = ''
         try : url = data_all['homePage']
         except : url = ''
-        try : car_ent =  data_all['entranceCoords']['car']
-        except : car_ent = ''
-        try: walk_ent = data_all['entranceCoords']['walk']
-        except : walk_ent = ''
-        try: menu = data_all['menuInfo']
-        except: menu = ''
-        try :time = data_all['bizhourInfo']
-        except : time = ''
         list.append({"input":inputName,"id":id,"name":name,"oldaddr":oldaddr,"newaddr":newaddr,"tell":tell,"cat":cat,"xcord":xcord,"ycord":ycord,"url":url})
-    return list
+    return list,  response_check
 
 def errExit(msg):
     sys.stderr.write(msg + '\n')

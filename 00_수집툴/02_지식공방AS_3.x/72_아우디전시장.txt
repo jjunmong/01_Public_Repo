@@ -1,0 +1,124 @@
+name|vendorId|url|phone|chainName|addr|latitude|longitude
+아우디 남산|10238|http://www.teianmotors.com|02-797-1468|Teian Motors|서울 중구 동호로 211|37.556672|127.009078
+아우디 한강대로|11602|http://www.teianmotors.com|02-790-1468|Teian Motors|서울 용산구 한강대로 21길 7|37.526348|126.964712
+아우디 서비스 성수|10201|http://www.gojin.com|02-3425-0033|Gojin Motors|서울 성동구 성수일로6길 10|37.545218|127.05086
+아우디 도산대로|10216|http://www.gojin.com|02-516-2468|Gojin Motors|서울 강남구 도산대로 306|37.521433|127.034878
+아우디 미아|11610|http://www.gojin.com|02-540-3900|Gojin Motors|서울 강북구 도봉로 94|37.61744|127.03008
+아우디 서비스 논현|11607|http://www.gojin.com|02-540-3900|Gojin Motors|서울 강남구 언주로 133길 14|37.51639|127.03402
+아우디 서비스 영등포|10203|http://www.teianmotors.com|02-2672-1468|Teian Motors|서울 영등포구 영신로 224|37.52731|126.90365
+아우디 동대문|10293|http://www.gojin.com|02-2247-2460|Gojin Motors|서울 성동구 천호대로 454|37.5604|127.06922
+아우디 방배|11604|http://www.teianmotors.com|02-523-1468|Teian Motors|서울 서초구 방배로 231|37.493725|126.98964
+아우디 서비스 익스프레스 삼성|21602|http://www.gojin.com|02-563-0450|Gojin Motors|서울 강남구 삼성로 541|37.5099|127.05445
+아우디 서초|10220|http://www.webonmotors.co.kr|02-3488-7770|Webon Motors|서울 서초구 반포대로12길 3|37.48481|127.01141
+아우디 서비스 익스프레스 서초|21605|http://www.webonmotors.co.kr|02-3486-8255|Webon Motors|서울 서초구 효령로 246|37.48368|127.01093
+아우디 도곡로|11601|http://www.teianmotors.com|02-564-1468|Teian Motors|서울 강남구 도곡로 121|37.49031|127.03354
+아우디 센터 대치|21604|http://www.kolonauto.com|02-2009-0790|Kolon Auto|서울 강남구 영동대로 318|37.5029824|127.0669767
+아우디 목동|10258|http://www.teianmotors.com|02-2676-1468|Teian Motors|서울 양천구 신목로 53|37.5203643|126.8724575
+아우디 서비스 서초|10241|http://www.webonmotors.co.kr|02-597-8255|Webon Motors|서울 서초구 남부순환로342길 94|37.47639|127.02799
+아우디 서비스 개포|21603|http://www.teianmotors.com|02-573-1463|Teian Motors|서울 강남구 논현로 18길 9|37.47784|127.04556
+아우디 잠실|21607|http://www.kolonauto.com|02-3430-9100|Kolon Auto|서울 송파구 올림픽로 336|37.515383|127.107419
+아우디 송파대로|21601|http://kolonauto.com|02-3434-9100|Kolon Auto|서울 송파구 충민로2길 8|37.479332|127.126162
+아우디 일산|13188|http://www.teianmotors.com|031-905-1468|Teian Motors|경기 고양 일산 동구 중앙로 1019|37.641311|126.789685
+아우디 안양 전시장|22608|http://www.webonmotors.co.kr|031-422-0000|Webon Motors|경기도 안양 경기도 안양시 동안구 벌말로 87(관양동) 87|37.39618|126.96857
+아우디 서비스 강동|22607|http://www.kolonauto.com|031-793-0200|Kolon Auto|경기도 하남시 미사강변중앙로 33|37.550342|127.192475
+아우디 분당 센터|13174|http://www.webonmotors.co.kr|031-715-8255|Webon Motors|경기 성남 분당구 새마을로 31|37.38382|127.13426
+아우디 판교|13110|http://www.webonmotors.co.kr|031-712-7777|Webon Motors|경기 성남 분당구 대왕판교로 183|37.359972|127.101439
+아우디 인천|22603|http://www.teianmotors.com|032-455-1468|Teian Motors|인천 남동구 인주대로 679|37.44969|126.7125
+아우디 서비스 일산|13129|http://www.teianmotors.com|031-905-1468|Teian Motors|경기 고양 일산 서구 송파로 131|37.695053|126.713584
+아우디 서비스 주안|13272|http://www.teianmotors.com|032-455-1468|Teian Motors|인천 남구 인주대로 434번길 3|37.450766|126.685049
+아우디 서비스 용인|22604|http://www.webonmotors.co.kr|031-896-8255|Webon Motors|경기 용인 기흥구 용구대로 2469번길 145|37.319246|127.10444
+아우디 서비스 인천|13211|http://www.teianmotors.com|032-433-1463|Teian Motors|인천 논현고잔로 128번길 66|37.391813|126.715022
+아우디 수원|12605|http://www.gojin.com|031-241-0033|Gojin Motors|경기 수원 영통구 중부대로 412|37.27015|127.06022
+아우디 서비스 수원|13105|http://www.gojin.com|031-241-0033|Gojin Motors|경기 수원 기흥구 중부대로 194|37.27132|127.08856
+아우디 송도|22606|http://www.teianmotors.com|032-832-1466|Teian Motors|인천 연수구 센트럴로 232|37.39577|126.63894
+아우디 동탄|22605|http://www.webonmotors.co.kr|031-263-0000|Webon Motors|화성시 동탄순환대로 763|37.208843|127.100537
+아우디 서비스 강동|22607|http://www.kolonauto.com|031-793-0200|Kolon Auto|경기도 하남시 미사강변중앙로 33|37.550342|127.192475
+아우디 분당 센터|13174|http://www.webonmotors.co.kr|031-715-8255|Webon Motors|경기 성남 분당구 새마을로 31|37.38382|127.13426
+아우디 송파대로|21601|http://kolonauto.com|02-3434-9100|Kolon Auto|서울 송파구 충민로2길 8|37.479332|127.126162
+아우디 판교|13110|http://www.webonmotors.co.kr|031-712-7777|Webon Motors|경기 성남 분당구 대왕판교로 183|37.359972|127.101439
+아우디 잠실|21607|http://www.kolonauto.com|02-3430-9100|Kolon Auto|서울 송파구 올림픽로 336|37.515383|127.107419
+아우디 서비스 용인|22604|http://www.webonmotors.co.kr|031-896-8255|Webon Motors|경기 용인 기흥구 용구대로 2469번길 145|37.319246|127.10444
+아우디 센터 대치|21604|http://www.kolonauto.com|02-2009-0790|Kolon Auto|서울 강남구 영동대로 318|37.5029824|127.0669767
+아우디 서비스 수원|13105|http://www.gojin.com|031-241-0033|Gojin Motors|경기 수원 기흥구 중부대로 194|37.27132|127.08856
+아우디 서비스 익스프레스 삼성|21602|http://www.gojin.com|02-563-0450|Gojin Motors|서울 강남구 삼성로 541|37.5099|127.05445
+아우디 서비스 개포|21603|http://www.teianmotors.com|02-573-1463|Teian Motors|서울 강남구 논현로 18길 9|37.47784|127.04556
+아우디 원주|13603|http://www.theaudi.co.kr|033-764-8787|Hanseo Motors|강원 원주 치악로 1316|37.3052634|127.9783242
+아우디 동대문|10293|http://www.gojin.com|02-2247-2460|Gojin Motors|서울 성동구 천호대로 454|37.5604|127.06922
+아우디 서비스 원주|13346|http://www.theaudi.co.kr|033-764-8787|Hanseo Motors|강원 원주 치악로 1221-7|37.29843|127.983532
+아우디 동탄|22605|http://www.webonmotors.co.kr|031-263-0000|Webon Motors|화성시 동탄순환대로 763|37.208843|127.100537
+아우디 수원|12605|http://www.gojin.com|031-241-0033|Gojin Motors|경기 수원 영통구 중부대로 412|37.27015|127.06022
+아우디 도곡로|11601|http://www.teianmotors.com|02-564-1468|Teian Motors|서울 강남구 도곡로 121|37.49031|127.03354
+아우디 서비스 성수|10201|http://www.gojin.com|02-3425-0033|Gojin Motors|서울 성동구 성수일로6길 10|37.545218|127.05086
+아우디 서비스 서초|10241|http://www.webonmotors.co.kr|02-597-8255|Webon Motors|서울 서초구 남부순환로342길 94|37.47639|127.02799
+아우디 서비스 논현|11607|http://www.gojin.com|02-540-3900|Gojin Motors|서울 강남구 언주로 133길 14|37.51639|127.03402
+아우디 도산대로|10216|http://www.gojin.com|02-516-2468|Gojin Motors|서울 강남구 도산대로 306|37.521433|127.034878
+아우디 서초|10220|http://www.webonmotors.co.kr|02-3488-7770|Webon Motors|서울 서초구 반포대로12길 3|37.48481|127.01141
+아우디 서비스 익스프레스 서초|21605|http://www.webonmotors.co.kr|02-3486-8255|Webon Motors|서울 서초구 효령로 246|37.48368|127.01093
+아우디 방배|11604|http://www.teianmotors.com|02-523-1468|Teian Motors|서울 서초구 방배로 231|37.493725|126.98964
+아우디 남산|10238|http://www.teianmotors.com|02-797-1468|Teian Motors|서울 중구 동호로 211|37.556672|127.009078
+아우디 안양 전시장|22608|http://www.webonmotors.co.kr|031-422-0000|Webon Motors|경기도 안양 경기도 안양시 동안구 벌말로 87(관양동) 87|37.39618|126.96857
+아우디 미아|11610|http://www.gojin.com|02-540-3900|Gojin Motors|서울 강북구 도봉로 94|37.61744|127.03008
+아우디 한강대로|11602|http://www.teianmotors.com|02-790-1468|Teian Motors|서울 용산구 한강대로 21길 7|37.526348|126.964712
+아우디 서비스 영등포|10203|http://www.teianmotors.com|02-2672-1468|Teian Motors|서울 영등포구 영신로 224|37.52731|126.90365
+아우디 서비스 춘천|23601|http://www.theaudi.co.kr|033-254-8787|Hanseo Motors|강원 춘천 동면 춘천순환로 503|37.884129|127.762219
+아우디 목동|10258|http://www.teianmotors.com|02-2676-1468|Teian Motors|서울 양천구 신목로 53|37.5203643|126.8724575
+아우디 서비스 춘천|23601|http://www.theaudi.co.kr|033-254-8787|Hanseo Motors|강원 춘천 동면 춘천순환로 503|37.884129|127.762219
+아우디 원주|13603|http://www.theaudi.co.kr|033-764-8787|Hanseo Motors|강원 원주 치악로 1316|37.3052634|127.9783242
+아우디 청주|14398|http://www.gojin.com|043-265-7799|Gojin Motors|충북 청주 서원구 2 순환로 1803|36.59431|127.47768
+아우디 천안|14197|http://www.gojin.com|041-564-3111|Gojin Motors|충남 천안 동남구 만남로 64|36.81904|127.15942
+아우디 서비스 대전|14267|http://www.gojin.com|042-863-8787|Gojin Motors|대전 신탄진로 341|36.41033|127.42429
+아우디 대전|24601|http://www.gojin.com|042-863-8787|Gojin Motors|대전 대덕구 한밭대로 1108|36.3582871|127.4214989
+아우디 천안|14197|http://www.gojin.com|041-564-3111|Gojin Motors|충남 천안 동남구 만남로 64|36.81904|127.15942
+아우디 서비스 대전|14267|http://www.gojin.com|042-863-8787|Gojin Motors|대전 신탄진로 341|36.41033|127.42429
+아우디 대전|24601|http://www.gojin.com|042-863-8787|Gojin Motors|대전 대덕구 한밭대로 1108|36.3582871|127.4214989
+아우디 전주|16605|http://www.audi.co.kr|063-915-0000|Joongsan Motors|전북 전주 완산구 쑥고개로 372|35.80343|127.10561
+아우디 서비스 전주|16363|http://www.jjsmotors.co.kr|063-290-0000|Joongsan Motors|전북 전주 완주군 이서면 콩쥐팥쥐로 964|35.819702|127.004785
+아우디 서비스 광주|16232|http://www.gojin.com|062-524-5959|Gojin Motors|광주 남구 송암로 24가길 18|35.109993|126.879961
+아우디 광주|16277|http://www.gojin.com|062-525-6777|Gojin Motors|광주 서구 무진대로 955|35.16163|126.88504
+아우디 순천|16199|http://www.gojin.com|061-746-7733|Gojin Motors|전남 순천 왕지5길 4|34.97185|127.5226
+아우디 목포|26601|http://www.gojin.com|061-284-1677|Gojin Motors|전남 목포 평화로 87|34.79737|126.43413
+아우디 인천|22603|http://www.teianmotors.com|032-455-1468|Teian Motors|인천 남동구 인주대로 679|37.44969|126.7125
+아우디 서비스 주안|13272|http://www.teianmotors.com|032-455-1468|Teian Motors|인천 남구 인주대로 434번길 3|37.450766|126.685049
+아우디 서비스 인천|13211|http://www.teianmotors.com|032-433-1463|Teian Motors|인천 논현고잔로 128번길 66|37.391813|126.715022
+아우디 송도|22606|http://www.teianmotors.com|032-832-1466|Teian Motors|인천 연수구 센트럴로 232|37.39577|126.63894
+아우디 목동|10258|http://www.teianmotors.com|02-2676-1468|Teian Motors|서울 양천구 신목로 53|37.5203643|126.8724575
+아우디 서비스 영등포|10203|http://www.teianmotors.com|02-2672-1468|Teian Motors|서울 영등포구 영신로 224|37.52731|126.90365
+아우디 일산|13188|http://www.teianmotors.com|031-905-1468|Teian Motors|경기 고양 일산 동구 중앙로 1019|37.641311|126.789685
+아우디 한강대로|11602|http://www.teianmotors.com|02-790-1468|Teian Motors|서울 용산구 한강대로 21길 7|37.526348|126.964712
+아우디 안양 전시장|22608|http://www.webonmotors.co.kr|031-422-0000|Webon Motors|경기도 안양 경기도 안양시 동안구 벌말로 87(관양동) 87|37.39618|126.96857
+아우디 방배|11604|http://www.teianmotors.com|02-523-1468|Teian Motors|서울 서초구 방배로 231|37.493725|126.98964
+아우디 서비스 일산|13129|http://www.teianmotors.com|031-905-1468|Teian Motors|경기 고양 일산 서구 송파로 131|37.695053|126.713584
+아우디 서비스 익스프레스 서초|21605|http://www.webonmotors.co.kr|02-3486-8255|Webon Motors|서울 서초구 효령로 246|37.48368|127.01093
+아우디 서초|10220|http://www.webonmotors.co.kr|02-3488-7770|Webon Motors|서울 서초구 반포대로12길 3|37.48481|127.01141
+아우디 서비스 서초|10241|http://www.webonmotors.co.kr|02-597-8255|Webon Motors|서울 서초구 남부순환로342길 94|37.47639|127.02799
+아우디 남산|10238|http://www.teianmotors.com|02-797-1468|Teian Motors|서울 중구 동호로 211|37.556672|127.009078
+아우디 도곡로|11601|http://www.teianmotors.com|02-564-1468|Teian Motors|서울 강남구 도곡로 121|37.49031|127.03354
+아우디 서비스 논현|11607|http://www.gojin.com|02-540-3900|Gojin Motors|서울 강남구 언주로 133길 14|37.51639|127.03402
+아우디 도산대로|10216|http://www.gojin.com|02-516-2468|Gojin Motors|서울 강남구 도산대로 306|37.521433|127.034878
+아우디 서비스 개포|21603|http://www.teianmotors.com|02-573-1463|Teian Motors|서울 강남구 논현로 18길 9|37.47784|127.04556
+아우디 서비스 익스프레스 삼성|21602|http://www.gojin.com|02-563-0450|Gojin Motors|서울 강남구 삼성로 541|37.5099|127.05445
+아우디 서비스 성수|10201|http://www.gojin.com|02-3425-0033|Gojin Motors|서울 성동구 성수일로6길 10|37.545218|127.05086
+아우디 센터 대치|21604|http://www.kolonauto.com|02-2009-0790|Kolon Auto|서울 강남구 영동대로 318|37.5029824|127.0669767
+아우디 미아|11610|http://www.gojin.com|02-540-3900|Gojin Motors|서울 강북구 도봉로 94|37.61744|127.03008
+아우디 동대문|10293|http://www.gojin.com|02-2247-2460|Gojin Motors|서울 성동구 천호대로 454|37.5604|127.06922
+아우디 잠실|21607|http://www.kolonauto.com|02-3430-9100|Kolon Auto|서울 송파구 올림픽로 336|37.515383|127.107419
+아우디 판교|13110|http://www.webonmotors.co.kr|031-712-7777|Webon Motors|경기 성남 분당구 대왕판교로 183|37.359972|127.101439
+아우디 송파대로|21601|http://kolonauto.com|02-3434-9100|Kolon Auto|서울 송파구 충민로2길 8|37.479332|127.126162
+아우디 수원|12605|http://www.gojin.com|031-241-0033|Gojin Motors|경기 수원 영통구 중부대로 412|37.27015|127.06022
+아우디 서비스 용인|22604|http://www.webonmotors.co.kr|031-896-8255|Webon Motors|경기 용인 기흥구 용구대로 2469번길 145|37.319246|127.10444
+아우디 분당 센터|13174|http://www.webonmotors.co.kr|031-715-8255|Webon Motors|경기 성남 분당구 새마을로 31|37.38382|127.13426
+아우디 서비스 수원|13105|http://www.gojin.com|031-241-0033|Gojin Motors|경기 수원 기흥구 중부대로 194|37.27132|127.08856
+아우디 서비스 강동|22607|http://www.kolonauto.com|031-793-0200|Kolon Auto|경기도 하남시 미사강변중앙로 33|37.550342|127.192475
+아우디 동탄|22605|http://www.webonmotors.co.kr|031-263-0000|Webon Motors|화성시 동탄순환대로 763|37.208843|127.100537
+아우디 대전|24601|http://www.gojin.com|042-863-8787|Gojin Motors|대전 대덕구 한밭대로 1108|36.3582871|127.4214989
+아우디 서비스 대전|14267|http://www.gojin.com|042-863-8787|Gojin Motors|대전 신탄진로 341|36.41033|127.42429
+아우디 청주|14398|http://www.gojin.com|043-265-7799|Gojin Motors|충북 청주 서원구 2 순환로 1803|36.59431|127.47768
+아우디 천안|14197|http://www.gojin.com|041-564-3111|Gojin Motors|충남 천안 동남구 만남로 64|36.81904|127.15942
+아우디 광주|16277|http://www.gojin.com|062-525-6777|Gojin Motors|광주 서구 무진대로 955|35.16163|126.88504
+아우디 서비스 광주|16232|http://www.gojin.com|062-524-5959|Gojin Motors|광주 남구 송암로 24가길 18|35.109993|126.879961
+아우디 목포|26601|http://www.gojin.com|061-284-1677|Gojin Motors|전남 목포 평화로 87|34.79737|126.43413
+아우디 서비스 대전|14267|http://www.gojin.com|042-863-8787|Gojin Motors|대전 신탄진로 341|36.41033|127.42429
+아우디 대전|24601|http://www.gojin.com|042-863-8787|Gojin Motors|대전 대덕구 한밭대로 1108|36.3582871|127.4214989
+아우디 청주|14398|http://www.gojin.com|043-265-7799|Gojin Motors|충북 청주 서원구 2 순환로 1803|36.59431|127.47768
+아우디 천안|14197|http://www.gojin.com|041-564-3111|Gojin Motors|충남 천안 동남구 만남로 64|36.81904|127.15942
+아우디 제주|16602|http://www.ucaro.co.kr|064-711-4664|Ucaro Automobile|제주 연삼로 111|33.493386|126.504367

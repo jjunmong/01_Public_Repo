@@ -144,7 +144,7 @@ def getStores(sido_name, intPageNo):
 def convert_full_to_half_char(ch):
     codeval = ord(ch)
     if 0xFF00 <= codeval <= 0xFF5E:
-        ascii = codeval - 0xFF00 + 0x20;
+        ascii = codeval - 0xFF00 + 0x20
         return unichr(ascii)
     else:
         return ch

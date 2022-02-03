@@ -83,7 +83,7 @@ def main():
     outfile.close()
 
 def getStores(sido_name, intPageNo):
-    url = 'http://kiupbank.tritops.co.kr'
+    url = 'https://kiupbank.ttmap.co.kr/'
     api = '/list.jsp'
 
     data = {

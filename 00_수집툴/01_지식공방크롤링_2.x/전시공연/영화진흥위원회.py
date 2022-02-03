@@ -141,7 +141,6 @@ def getStores(intPageNo):
     }
     data['pageIndex'] = intPageNo
     params = urllib.urlencode(data)
-    print(params)
     #
     # hdr = {
     #     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',

@@ -118,7 +118,7 @@ def getStores(intPageNo):
         print('HTTP request error (status %d)' % code);     return None
 
     response = result.read()
-    response = unicode(response, 'euc-kr')
+    response = unicode(response, 'utf-8')
     #print(response)
     tree = html.fromstring(response)
     #tree = html.fromstring('<?xml version="1.0" encoding="utf-8"?>' + response)

@@ -171,6 +171,8 @@ def getStores(areaName1, areaName2):
     response = response.replace('StoreImage4 :', '"StoreImage4":')
     response = response.replace('StoreImage5 :', '"StoreImage5":')
     response = response.replace('StoreImage6 :', '"StoreImage6":')
+    # 2022년 펫 추가
+    response = response.replace('StorePet :', '"StorePet":')
 
     print(response)
     #tree = html.fromstring(response)
