@@ -1,9 +1,0 @@
-python ..\..\general_pp.py adidas_utf8.txt ..\..\final\91005_아디다스.txt ansi noop
-python ..\..\general_pp.py alpha_utf8.txt ..\..\final\90903_알파문구.txt ansi noop
-python ..\..\general_pp.py bandinlunis_utf8.txt ..\..\final\90805_반디앤루니스.txt ansi noop
-//python ..\..\general_pp.py daiso_utf8.txt ..\..\final\90.txt ansi noop
-python ..\..\general_pp.py kyobobooks_utf8.txt ..\..\final\90803_교보문고.txt ansi noop
-python ..\..\general_pp.py market_big_utf8.txt ..\..\final\90301_대형전문재래시장.txt ansi noop
-python ..\..\general_pp.py market_other_utf8.txt ..\..\final\90302_지역재래시장.txt ansi noop
-python ..\..\general_pp.py market_special_utf8.txt ..\..\final\90303_전문도매시장.txt ansi noop
-python ..\..\general_pp.py ypbooks_utf8.txt ..\..\final\90804_영풍문고.txt ansi noop

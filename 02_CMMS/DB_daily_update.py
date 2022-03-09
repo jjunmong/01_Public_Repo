@@ -24,7 +24,7 @@ def oracle_export():
     try:
         LOCATION = r"C:\ora64\instantclient_21_3"
         os.environ["PATH"] = LOCATION + ";" + os.environ["PATH"]
-        db = cx_Oracle.connect('contentsteam', 'zjsxpscm', '192.168.10.30:1521/imdb', encoding='UTF-8',
+        db = cx_Oracle.connect(encoding='UTF-8',
                                nencoding='UTF-8')
         cursor = db.cursor()
         csv_file = open("workList.csv", "w")

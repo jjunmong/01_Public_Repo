@@ -1,1 +1,0 @@
-python withme.py >> log.txt

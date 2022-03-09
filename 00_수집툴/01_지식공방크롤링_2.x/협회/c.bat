@@ -1,1 +1,0 @@
-python 비영리법인_문체부.py > log.txt

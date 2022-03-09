@@ -239,11 +239,11 @@ class Ui_Mainwindow(object):
 
     #1. DB 접속 함수.
     def db_connect(self):
-        t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-        t_port = "5432"  # default postgres port
-        t_dbname = "postgres"
-        t_user = "postgres"
-        t_pw = "rjator"
+        t_host = ""  # either "localhost", a domain name, or an IP address.
+        t_port = # default postgres port
+        t_dbname = 
+        t_user = 
+        t_pw = 
         self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw, options="-c search_path=cmms")
         return self.conn
 
@@ -342,11 +342,11 @@ class Ui_Mainwindow(object):
         try:
             if item.checkState() == QtCore.Qt.Checked:
                 if column in (18,20) :
-                    t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-                    t_port = "5432"  # default postgres port
-                    t_dbname = "postgres"
-                    t_user = "postgres"
-                    t_pw = "rjator"
+                    t_host = ""  # either "localhost", a domain name, or an IP address.
+                    t_port = # default postgres port
+                    t_dbname = 
+                    t_user = 
+                    t_pw = 
                     self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,options="-c search_path=cmms")
                     column = item.column()
                     row = item.row()
@@ -367,11 +367,11 @@ class Ui_Mainwindow(object):
             elif item.checkState() == QtCore.Qt.Unchecked:
                 if column in (18, 20):
                     print('"%s" Unchecked' % item.text())
-                    t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-                    t_port = "5432"  # default postgres port
-                    t_dbname = "postgres"
-                    t_user = "postgres"
-                    t_pw = "rjator"
+                    t_host = # either "localhost", a domain name, or an IP address.
+                    t_port = # default postgres port
+                    t_dbname = 
+                    t_user = 
+                    t_pw = 
                     self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,options="-c search_path=cmms")
                     column = item.column()
                     row = item.row()
@@ -610,11 +610,11 @@ class Ui_Mainwindow(object):
 
     def updateData(self): # 수정후 스페이스 입력시 이벤트에 연결 할 DB 업데이트 문
         try:
-            t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-            t_port = "5432"  # default postgres port
-            t_dbname = "postgres"
-            t_user = "postgres"
-            t_pw = "rjator"
+            t_host = # either "localhost", a domain name, or an IP address.
+            t_port = # default postgres port
+            t_dbname = 
+            t_user = 
+            t_pw = 
             self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,
                                          options="-c search_path=cmms")
             select_item = self.tableWidget.currentItem()
@@ -678,11 +678,11 @@ class Ui_Mainwindow(object):
 
     def RoadOpenList(self):
         try:
-            t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-            t_port = "5432"  # default postgres port
-            t_dbname = "postgres"
-            t_user = "postgres"
-            t_pw = "rjator"
+            t_host = # either "localhost", a domain name, or an IP address.
+            t_port = # default postgres port
+            t_dbname = 
+            t_user = 
+            t_pw = 
             self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,options="-c search_path=cmms")
             csv_file = open("도로개통정보.csv", "w",encoding='utf-8')
             writer = csv.writer(csv_file, lineterminator="\n", delimiter='|', quoting=csv.QUOTE_NONE, escapechar='\\')
@@ -701,11 +701,11 @@ class Ui_Mainwindow(object):
 
     def EntireList(self):
         try:
-            t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-            t_port = "5432"  # default postgres port
-            t_dbname = "postgres"
-            t_user = "postgres"
-            t_pw = "rjator"
+            t_host = # either "localhost", a domain name, or an IP address.
+            t_port = # default postgres port
+            t_dbname = 
+            t_user = 
+            t_pw = 
             self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,options="-c search_path=cmms")
             csv_file = open("전체리스트.csv", "w", encoding='utf-8')
             writer = csv.writer(csv_file, lineterminator="\n", delimiter='}', quoting=csv.QUOTE_NONE, escapechar='\\')
@@ -724,11 +724,11 @@ class Ui_Mainwindow(object):
 
     def MonitoringList(self):
         try:
-            t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-            t_port = "5432"  # default postgres port
-            t_dbname = "postgres"
-            t_user = "postgres"
-            t_pw = "rjator"
+            t_host = # either "localhost", a domain name, or an IP address.
+            t_port = # default postgres port
+            t_dbname = 
+            t_user = 
+            t_pw = 
             self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw,options="-c search_path=cmms")
             csv_file = open("모니터링리스트.csv", "w", encoding='utf-8')
             writer = csv.writer(csv_file, lineterminator="\n", delimiter='|', quoting=csv.QUOTE_NONE, escapechar='\\')
@@ -835,11 +835,11 @@ class Ui_Mainwindow(object):
 
     def update_txt_export(self):
         try:
-            t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-            t_port = "5432"  # default postgres port
-            t_dbname = "postgres"
-            t_user = "postgres"
-            t_pw = "rjator"
+            t_host = # either "localhost", a domain name, or an IP address.
+            t_port = # default postgres port
+            t_dbname = 
+            t_user = 
+            t_pw = 
             self.conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw, options="-c search_path=cmms")
             outfile = codecs.open('업데이트내역서.txt', 'w',encoding='utf-8')
             query = "select lcode, text, type,polygon_text from cmms_list where map_cat = '완료' and " + self.query_line.text() + ';'

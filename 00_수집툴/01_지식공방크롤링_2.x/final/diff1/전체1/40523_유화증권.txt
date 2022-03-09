@@ -1,4 +1,0 @@
-##NAME|SUBNAME|X|Y|MAPPERS_TYPE|TELNUM|NEWADDR|ADDR|FEAT1|FEAT2|AREA|DATE|ALTNAME|ETCNAME|ORGNAME|ETCADDR|PNUCODE|RD_JIBUN|MAPPERS_CD@@유화증권
-유화증권|강남센터|||유화증권|02-538-3800|서울 강남구 도산대로 318||||||||유화증권 강남센터|SB TOWER 8층 803호|||40523
-유화증권|을지로지점|||유화증권|02-2278-5781|서울시 을지로11길 15||||||||유화증권 을지로지점|동화빌딩 6층|||40523
-유화증권|본사|||유화증권|02-3770-0101|서울시 국제금융로2길 36||||||||유화증권 본사|유화증권빌딩 2층|||40523

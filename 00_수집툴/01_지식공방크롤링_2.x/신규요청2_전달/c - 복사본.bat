@@ -1,1 +1,0 @@
-python 아디다스.py >> log.txt

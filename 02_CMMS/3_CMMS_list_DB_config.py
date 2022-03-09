@@ -12,7 +12,7 @@ import schedule
 def oracle_export():
     LOCATION = r"C:\ora64\instantclient_21_3"
     os.environ["PATH"] = LOCATION + ";" + os.environ["PATH"]
-    db = cx_Oracle.connect('contentsteam', 'zjsxpscm', '192.168.10.30:1521/imdb', encoding='UTF-8',
+    db = cx_Oracle.connect(, encoding='UTF-8',
                            nencoding='UTF-8')
     cursor = db.cursor()
     csv_file = open("workList.csv", "w")
@@ -29,11 +29,11 @@ def oracle_export():
     print('오라클 DB 추출 완료')
 
 def postgresqol_table_create():
-    t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-    t_port = "5432"  # default postgres port
-    t_dbname = "postgres"
-    t_user = "postgres"
-    t_pw = "rjator"
+    t_host = # either "localhost", a domain name, or an IP address.
+    t_port = # default postgres port
+    t_dbname = 
+    t_user = 
+    t_pw = 
     conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw)
     cursor = conn.cursor()
     query = """
@@ -75,11 +75,11 @@ def postgresql_backup_update():
     #################### 여기부터는 기존 테이블 업데이트를 위한 코드 ####################
 
     # 백업 테이블 생성 및 구조 복사
-    t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-    t_port = "5432"  # default postgres port
-    t_dbname = "postgres"
-    t_user = "postgres"
-    t_pw = "rjator"
+    t_host = # either "localhost", a domain name, or an IP address.
+    t_port = # default postgres port
+    t_dbname = 
+    t_user = 
+    t_pw = 
     conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw)
     cursor = conn.cursor()
     query3 = "create table cmms.cmms_list_temp (like cmms.cmms_list including all);"
@@ -90,11 +90,11 @@ def postgresql_backup_update():
     time.sleep(1)
 
     #백업 테이블 칼럼을 지워서 csv 칼럼과 동일하게 만듦
-    t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-    t_port = "5432"  # default postgres port
-    t_dbname = "postgres"
-    t_user = "postgres"
-    t_pw = "rjator"
+    t_host = # either "localhost", a domain name, or an IP address.
+    t_port = # default postgres port
+    t_dbname = 
+    t_user = 
+    t_pw = 
     conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw)
     cursor = conn.cursor()
     query4 = "alter table cmms.cmms_list_temp drop column cmms_update_date, drop column poi_cat, drop column poi_date, drop column net_cat, drop column net_date, drop column map_cat, drop column map_date, drop column data_check, drop column service_check;"
@@ -105,11 +105,11 @@ def postgresql_backup_update():
     time.sleep(1)
 
     #백업 테이블에 CSV Data inset
-    t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-    t_port = "5432"  # default postgres port
-    t_dbname = "postgres"
-    t_user = "postgres"
-    t_pw = "rjator"
+    t_host = # either "localhost", a domain name, or an IP address.
+    t_port = # default postgres port
+    t_dbname = 
+    t_user = 
+    t_pw = 
     conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw)
     cursor = conn.cursor()
     csv_file_name = 'workList.csv'
@@ -121,11 +121,11 @@ def postgresql_backup_update():
     time.sleep(1)
 
     #백업테이블 데이터 cmms_list 로 업데이트.
-    t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-    t_port = "5432"  # default postgres port
-    t_dbname = "postgres"
-    t_user = "postgres"
-    t_pw = "rjator"
+    t_host = # either "localhost", a domain name, or an IP address.
+    t_port = # default postgres port
+    t_dbname = 
+    t_user = 
+    t_pw = 
     conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw, options="-c search_path=cmms")
     cursor = conn.cursor()
     query5 = "insert into cmms_list(type, text, nid, lcode, complete_date, limit_date ,result, request_date, review_date, height_limit, weight_limit, road_work, time_id, url, create_date, update_date, del_flag, polygon_text) select * from cmms_list_temp ;"
@@ -136,11 +136,11 @@ def postgresql_backup_update():
     time.sleep(1)
 
     # 백업 테이블 삭제.
-    t_host = "192.168.11.61"  # either "localhost", a domain name, or an IP address.
-    t_port = "5432"  # default postgres port
-    t_dbname = "postgres"
-    t_user = "postgres"
-    t_pw = "rjator"
+    t_host = # either "localhost", a domain name, or an IP address.
+    t_port = # default postgres port
+    t_dbname = 
+    t_user = 
+    t_pw = 
     conn = psycopg2.connect(host=t_host, port=t_port, database=t_dbname, user=t_user, password=t_pw)
     cursor = conn.cursor()
     query6 = "drop table cmms.cmms_list_temp;"
